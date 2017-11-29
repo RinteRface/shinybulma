@@ -2,10 +2,10 @@
 #'
 #' Build a bulma Shiny app.
 #'
-#' @param ... any page element.
+#' @param ... any element.
 #'
 #' @export
-bulma_page <- function(...){
+bulmaPage <- function(...){
 
   shiny::tags$html(
     # Head --------------------------------------------------------------------
