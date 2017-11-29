@@ -4,10 +4,19 @@
 \alias{bulmaColumns}
 \title{Add a column}
 \usage{
-bulmaColumns(...)
+bulmaColumns(..., gapless = FALSE, centered = FALSE, multiline = FALSE,
+  mobile = FALSE, tablet = FALSE, desktop = FALSE)
 }
 \arguments{
 \item{...}{any element.}
+
+\item{gapless}{if \code{TRUE} remove gaps between columns.}
+
+\item{centered}{to center columns.}
+
+\item{multiline}{to create a flexible, centered list.}
+
+\item{mobile, tablet, desktop}{set to force columns on device.}
 }
 \description{
 Add a column

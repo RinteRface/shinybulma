@@ -2,4 +2,5 @@
 
 export(bulmaColumn)
 export(bulmaColumns)
+export(bulmaContainer)
 export(bulmaPage)

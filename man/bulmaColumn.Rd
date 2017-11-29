@@ -4,10 +4,14 @@
 \alias{bulmaColumn}
 \title{Add a column}
 \usage{
-bulmaColumn(...)
+bulmaColumn(..., width = NULL, narrow = FALSE)
 }
 \arguments{
 \item{...}{any element.}
+
+\item{width}{width of column (12-column system).}
+
+\item{narrow}{use for column to only take the space it needs.}
 }
 \description{
 Add a column

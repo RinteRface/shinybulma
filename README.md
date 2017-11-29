@@ -12,7 +12,19 @@ devtools::install_github("JohnCoene/shinybulma")
 ## Example
 
 ``` r
-ui <- bulmaPage()
+ui <- bulmaPage(
+  bulmaColumns(
+    bulmaColumn(
+      width = 4
+    ),
+    bulmaColumn(
+      width = 4
+    ),
+    bulmaColumn(
+      width = 4
+    )
+  )
+)
 
 # Server logic
 server <- function(input, output) {}
