@@ -1,0 +1,11 @@
+Package: shinybulma
+Title: Bulma for Shiny
+Version: 0.0.0.9000
+Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
+Description: Bulma for Shiny.
+Depends: R (>= 3.4.2)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: shiny
+RoxygenNote: 6.0.1
