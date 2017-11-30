@@ -12,11 +12,20 @@
 #'   ui = bulmaPage(
 #'     bulmaLevel(
 #'       bulmaLevelItem("Tweets", "3'456"),
-#'       bulmaLevelItem("Following", 123),
-#'       bulmaLevelItem("Followers", "456K")
-#'     )
+#'       bulmaLevelItem("Following", 765),
+#'       bulmaLevelItem("Followers", "2'134")
+#'     ),
+#'     bulmaLevelOutput("levels")
 #'   ),
-#'   server = function(input, output) {}
+#'   server = function(input, output) {
+#'     output$levels <- renderBulmaLevel({
+#'       bulmaLevel(
+#'         bulmaLevelItem("Tweets", sample(100:5000, 1)),
+#'         bulmaLevelItem("Following", sample(100:5000, 1)),
+#'         bulmaLevelItem("Followers", sample(100:5000, 1))
+#'       )
+#'     })
+#'   }
 #' )
 #'
 #' @rdname level
@@ -57,4 +66,23 @@ bulmaLevelItem <- function(heading, value, centered = TRUE){
       )
     )
   )
+}
+
+
+#' @rdname level
+#' @inheritParams shiny::renderUI
+#' @export
+renderBulmaLevel <- function(expr, env = parent.frame(), quoted = FALSE){
+
+  fun <- shiny::exprToFunction(expr, env, quoted)
+
+  shiny::renderUI({
+    prog <- fun()
+  })
+}
+
+#' @rdname level
+#' @export
+bulmaLevelOutput <- function(outputId){
+  shiny::uiOutput(outputId)
 }
