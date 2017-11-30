@@ -12,3 +12,14 @@ bulmaPage(...)
 \description{
 Build a bulma Shiny app.
 }
+\examples{
+library(shiny)
+
+shinyApp(
+  ui = bulmaPage(
+   bulmaTitle("Hello Bulma")
+  ),
+  server = function(input, output) {}
+)
+
+}

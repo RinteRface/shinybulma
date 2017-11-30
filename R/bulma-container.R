@@ -2,7 +2,7 @@
 #'
 #' @inheritParams bulmaPage
 #' @param fluid If you don't want to have a maximum width but want to keep the 24px margin on the left and right sides.
-#' @param fullwidth until the \code{widescreen} breakpoint.
+#' @param widescreen until the \code{widescreen} breakpoint.
 #' @param fullhd until the \code{fullhd} breakpoint.
 #'
 #' @export

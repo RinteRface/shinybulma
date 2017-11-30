@@ -4,6 +4,16 @@
 #'
 #' @param ... any element.
 #'
+#' @examples
+#' library(shiny)
+#'
+#' shinyApp(
+#'   ui = bulmaPage(
+#'    bulmaTitle("Hello Bulma")
+#'   ),
+#'   server = function(input, output) {}
+#' )
+#'
 #' @export
 bulmaPage <- function(...){
 
@@ -16,6 +26,10 @@ bulmaPage <- function(...){
       shiny::tags$meta(
         name = "viewport",
         content = "width=device-width, initial-scale=1"
+      ),
+      shiny::tags$link(
+        rel = "stylesheet",
+        href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       ),
       shiny::includeCSS(
         system.file("css/bulma.min.css",

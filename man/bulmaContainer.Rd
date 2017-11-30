@@ -11,9 +11,9 @@ bulmaContainer(..., fluid = FALSE, widescreen = FALSE, fullhd = FALSE)
 
 \item{fluid}{If you don't want to have a maximum width but want to keep the 24px margin on the left and right sides.}
 
-\item{fullhd}{until the \code{fullhd} breakpoint.}
+\item{widescreen}{until the \code{widescreen} breakpoint.}
 
-\item{fullwidth}{until the \code{widescreen} breakpoint.}
+\item{fullhd}{until the \code{fullhd} breakpoint.}
 }
 \description{
 Add container
