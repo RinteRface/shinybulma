@@ -1,6 +1,7 @@
 #' Add subtitle
 #'
 #' @inheritParams bulmaPage
+#' @param tag html tag.
 #'
 #' @examples
 #' shinyApp(
@@ -32,8 +33,8 @@
 #'
 #' @rdname title
 #' @export
-bulmaTitle <- function(...){
-  shiny::tags$h1(
+bulmaTitle <- function(..., tag = shiny::h1){
+  tag(
     class = "title",
     ...
   )
@@ -41,8 +42,8 @@ bulmaTitle <- function(...){
 
 #' @rdname title
 #' @export
-bulmaSubtitle <- function(...){
-  shiny::tags$h1(
+bulmaSubtitle <- function(..., tag = shiny::h2){
+  tag(
     class = "subtitle",
     ...
   )
