@@ -17,14 +17,8 @@
 #'     color = "danger",
 #'     bulmaHeroHead(
 #'       bulmaContainer(
-#'         bulmaTitle("Hero Title")
-#'       )
-#'     ),
-#'     bulmaHeroHead(
-#'       bulmaContainer(
-#'         bulmaSubtitle(
-#'           "Some content"
-#'         )
+#'         bulmaTitle("Hero Title"),
+#'         bulmaSubtitle("Some content")
 #'       )
 #'     ),
 #'     bulmaHeroFoot(
