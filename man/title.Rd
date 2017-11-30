@@ -5,12 +5,14 @@
 \alias{bulmaSubtitle}
 \title{Add subtitle}
 \usage{
-bulmaTitle(...)
+bulmaTitle(..., tag = shiny::h1)
 
-bulmaSubtitle(...)
+bulmaSubtitle(..., tag = shiny::h2)
 }
 \arguments{
 \item{...}{any element.}
+
+\item{tag}{html tag.}
 }
 \description{
 Add subtitle

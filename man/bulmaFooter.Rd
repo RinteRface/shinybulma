@@ -4,25 +4,45 @@
 \alias{bulmaFooter}
 \title{Add a footer}
 \usage{
-bulmaFooter(..., container = TRUE)
+bulmaFooter(..., container = TRUE, centered = TRUE)
 }
 \arguments{
 \item{...}{any element.}
+
+\item{centered}{wheter to center the text.}
 }
 \description{
 Add a footer
 }
 \examples{
 library(shiny)
-shinyApp(
-  ui = bulmaPage(
-    bulmaFooter(
-      shiny::p(
+
+ui <- bulmaPage(
+  bulmaHero(
+    fullheight = TRUE,
+    color = "primary",
+    bulmaHeroHead(
+      bulmaContainer(
+        bulmaTitle("Hero Title")
+      )
+    ),
+    bulmaHeroHead(
+      bulmaContainer(
+        bulmaSubtitle(
+          "Some content"
+        )
+      )
+    ),
+    bulmaHeroFoot(
+      bulmaContainer(
         "The footer"
       )
     )
-  ),
-  server = function(input, output) {}
+  )
 )
+
+server <- function(input, output){}
+
+shinyApp(ui, server)
 
 }

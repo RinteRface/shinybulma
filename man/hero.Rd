@@ -31,10 +31,12 @@ bulmaHeroFoot(...)
 Add a section tag.
 }
 \examples{
-bulmaPage(
+library(shiny)
+
+ui <- bulmaPage(
   bulmaHero(
     fullheight = TRUE,
-    color = "primary",
+    color = "danger",
     bulmaHeroHead(
       bulmaContainer(
         bulmaTitle("Hero Title")
@@ -54,5 +56,9 @@ bulmaPage(
     )
   )
 )
+
+server <- function(input, output){}
+
+shinyApp(ui, server)
 
 }

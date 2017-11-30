@@ -3,16 +3,30 @@
 \name{bulmaLevel}
 \alias{bulmaLevel}
 \alias{bulmaLevelItem}
+\alias{renderBulmaLevel}
+\alias{bulmaLevelOutput}
 \title{Add level}
 \usage{
 bulmaLevel(..., mobile = FALSE)
 
 bulmaLevelItem(heading, value, centered = TRUE)
+
+renderBulmaLevel(expr, env = parent.frame(), quoted = FALSE)
+
+bulmaLevelOutput(outputId)
 }
 \arguments{
 \item{...}{any element.}
 
 \item{mobile}{set to \code{TRUE} if you want the level to be horizontal on mobile.}
+
+\item{expr}{An expression that returns a Shiny tag object, \code{\link{HTML}},
+or a list of such objects.}
+
+\item{env}{The environment in which to evaluate \code{expr}.}
+
+\item{quoted}{Is \code{expr} a quoted expression (with \code{quote()})? This
+is useful if you want to save an expression in a variable.}
 }
 \description{
 Add levels
@@ -24,11 +38,20 @@ shinyApp(
   ui = bulmaPage(
     bulmaLevel(
       bulmaLevelItem("Tweets", "3'456"),
-      bulmaLevelItem("Following", 123),
-      bulmaLevelItem("Followers", "456K")
-    )
+      bulmaLevelItem("Following", 765),
+      bulmaLevelItem("Followers", "2'134")
+    ),
+    bulmaLevelOutput("levels")
   ),
-  server = function(input, output) {}
+  server = function(input, output) {
+    output$levels <- renderBulmaLevel({
+      bulmaLevel(
+        bulmaLevelItem("Tweets", sample(100:5000, 1)),
+        bulmaLevelItem("Following", sample(100:5000, 1)),
+        bulmaLevelItem("Followers", sample(100:5000, 1))
+      )
+    })
+  }
 )
 
 }

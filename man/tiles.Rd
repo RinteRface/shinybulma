@@ -32,7 +32,8 @@ shinyApp(
        vertical = TRUE,
        bulmaTileChild(
          bulmaTitle("Tile 1"),
-         tags$p("some graph")
+         tags$p("some graph"),
+         color = "primary"
        ),
        bulmaTileChild(
          bulmaTitle("Tile 2"),
@@ -45,10 +46,12 @@ shinyApp(
          tags$p("some other graph")
        ),
        bulmaTileChild(
-         bulmaTitle("Tile 5")
+         bulmaTitle("Tile 5"),
+         tags$p("some other graph")
        ),
        bulmaTileChild(
-         bulmaTitle("Tile 6")
+         bulmaTitle("Tile 6"),
+         tags$p("some other graph")
        )
      )
    )
