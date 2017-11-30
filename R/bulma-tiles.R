@@ -30,10 +30,12 @@
 #'          tags$p("some other graph")
 #'        ),
 #'        bulmaTileChild(
-#'          bulmaTitle("Tile 5")
+#'          bulmaTitle("Tile 5"),
+#'          tags$p("some other graph")
 #'        ),
 #'        bulmaTileChild(
-#'          bulmaTitle("Tile 6")
+#'          bulmaTitle("Tile 6"),
+#'          tags$p("some other graph")
 #'        )
 #'      )
 #'    )
