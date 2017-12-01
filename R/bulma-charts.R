@@ -36,14 +36,14 @@
 #' shinyApp(
 #'   ui = bulmaPage(
 #'    bulmaTitle("Hello Bulma"),
-#'    bulmaImage("path/to/image")
+#'    bulmaFigure("path/to/image")
 #'   ),
 #'   server = function(input, output) {}
 #' )
 #' }
 #'
 #' @export
-bulmaImage <- function(src, size = NULL, ratio = NULL, alt = ""){
+bulmaFigure <- function(src, size = NULL, ratio = NULL, alt = ""){
 
   if(missing(src))
     stop("missing src", call. = FALSE)
@@ -56,8 +56,8 @@ bulmaImage <- function(src, size = NULL, ratio = NULL, alt = ""){
   shiny::tags$figure(
     class = cl,
     shiny::tags$img(
-      src,
-      alt
+      src = src,
+      alt = alt
     )
   )
 }

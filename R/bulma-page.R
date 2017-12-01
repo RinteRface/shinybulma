@@ -19,6 +19,7 @@ bulmaPage <- function(...){
 
   shiny::tags$html(
     # Head --------------------------------------------------------------------
+    id = "shinybulma-html",
     shiny::tags$head(
       shiny::tags$meta(
         charset = "utf-8"
@@ -33,6 +34,10 @@ bulmaPage <- function(...){
       ),
       shiny::includeCSS(
         system.file("css/bulma.min.css",
+                    package = "shinybulma")
+      ),
+      shiny::includeScript(
+        system.file("js/custom.js",
                     package = "shinybulma")
       )
     ),

@@ -15,15 +15,10 @@
 #'   bulmaHero(
 #'     fullheight = TRUE,
 #'     color = "danger",
-#'     bulmaHeroHead(
+#'     bulmaHeroBody(
 #'       bulmaContainer(
-#'         bulmaTitle("Hero Title"),
-#'         bulmaSubtitle("Some content")
-#'       )
-#'     ),
-#'     bulmaHeroFoot(
-#'       bulmaContainer(
-#'         "The footer"
+#'         bulmaTitle("Hello Bulma*"),
+#'         bulmaSubtitle("shinybula*")
 #'       )
 #'     )
 #'   )
