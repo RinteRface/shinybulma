@@ -6,6 +6,8 @@
 \alias{bulmaNavbarMenu}
 \alias{bulmaNavbarItem}
 \alias{bulmaNavbarLink}
+\alias{bulmaNavbarBurger}
+\alias{bulmaNavbarDropdown}
 \title{Add navbar}
 \usage{
 bulmaNavbar(..., transparent = FALSE, color = NULL, fix.top = FALSE,
@@ -18,6 +20,10 @@ bulmaNavbarMenu(...)
 bulmaNavbarItem(..., href = "")
 
 bulmaNavbarLink(..., href = "")
+
+bulmaNavbarBurger()
+
+bulmaNavbarDropdown(..., label, href = "")
 }
 \arguments{
 \item{...}{any element.}
@@ -36,14 +42,26 @@ shinyApp(
      bulmaNavbarBrand(
        bulmaNavbarItem(
          "shinybulma"
-       )
+       ),
+       bulmaNavbarBurger()
      ),
      bulmaNavbarMenu( # not visible on smaller devices
        bulmaNavbarItem(
-         "Menu"
+         "Item  1"
+       ),
+       bulmaNavbarItem(
+         "Item 2"
+       ),
+     bulmaNavbarDropdown(
+       label = "Drop-down",
+       bulmaNavbarItem(
+         "Select 1"
+       ),
+       bulmaNavbarItem(
+         "Select 2"
        )
-     ),
-     bulmaNavbar
+     )
+     )
    )
   ),
   server = function(input, output) {}

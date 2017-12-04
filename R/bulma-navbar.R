@@ -15,14 +15,26 @@
 #'      bulmaNavbarBrand(
 #'        bulmaNavbarItem(
 #'          "shinybulma"
-#'        )
+#'        ),
+#'        bulmaNavbarBurger()
 #'      ),
 #'      bulmaNavbarMenu( # not visible on smaller devices
 #'        bulmaNavbarItem(
-#'          "Menu"
+#'          "Item  1"
+#'        ),
+#'        bulmaNavbarItem(
+#'          "Item 2"
+#'        ),
+#'      bulmaNavbarDropdown(
+#'        label = "Drop-down",
+#'        bulmaNavbarItem(
+#'          "Select 1"
+#'        ),
+#'        bulmaNavbarItem(
+#'          "Select 2"
 #'        )
-#'      ),
-#'      bulmaNavbar
+#'      )
+#'      )
 #'    )
 #'   ),
 #'   server = function(input, output) {}
@@ -96,5 +108,34 @@ bulmaNavbarLink <- function(..., href = ""){
     class = "navbar-link",
     href = href,
     ...
+  )
+}
+
+#' @rdname navbar
+#' @export
+bulmaNavbarBurger <- function(){
+  shiny::tags$button(
+    class = "button navbar-burger",
+    `data-target` = "navMenu",
+    shiny::tags$span(),
+    shiny::tags$span(),
+    shiny::tags$span()
+  )
+}
+
+#' @rdname navbar
+#' @export
+bulmaNavbarDropdown <- function(..., label, href = ""){
+  shiny::tags$div(
+    class = "navbar-item has-dropdown is-hoverable",
+    shiny::tags$a(
+      class = "navbar-link",
+      href = href,
+      label
+    ),
+    shiny::tags$div(
+      class = "navbar-dropdown is-boxed",
+      ...
+    )
   )
 }
