@@ -11,7 +11,6 @@
 #'   ui = bulmaPage(
 #'    bulmaNavbar(
 #'      fix.top = TRUE,
-#'      color = "primary",
 #'      bulmaNavbarBrand(
 #'        bulmaNavbarItem(
 #'          "shinybulma"

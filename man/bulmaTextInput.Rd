@@ -22,9 +22,12 @@ library(shiny)
 shinyApp(
   ui = bulmaPage(
    bulmaTitle("Hello Bulma"),
-   bulmaTextInput("text-input", label = "Input text", placeholder = "Type here")
+   bulmaTextInput("txt", label = "Input text", placeholder = "Type here"),
+   verbatimTextOutput("default")
   ),
-  server = function(input, output) {}
+  server = function(input, output) {
+    output$default <- renderText({ input$txt })
+  }
 )
 
 }

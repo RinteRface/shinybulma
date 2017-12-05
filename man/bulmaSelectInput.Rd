@@ -22,9 +22,14 @@ library(shiny)
 shinyApp(
   ui = bulmaPage(
    bulmaTitle("Hello Bulma"),
-   bulmaSelectInput("dropdown", "Select", choices = c("Shiny", "Bulma"))
+   bulmaSelectInput("var", "Select", choices = c("mpg", "disp")),
+   tableOutput("plot")
   ),
-  server = function(input, output) {}
+  server = function(input, output) {
+    output$plot <- renderTable({
+      mtcars[, c("mpg", input$variable), drop = FALSE]
+    }, rownames = TRUE)
+  }
 )
 
 }

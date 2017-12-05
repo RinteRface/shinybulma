@@ -1,0 +1,3 @@
+  $( function() {
+    $( ".bulma-tabs" ).tabs();
+  } );

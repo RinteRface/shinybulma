@@ -20,9 +20,14 @@ library(shiny)
 shinyApp(
   ui = bulmaPage(
    bulmaTitle("Hello Bulma"),
-   bulmaRadioInput("radio-buttons", c("Yes", "No"))
+   bulmaRadioInput("radio", c("mpg", "gear")),
+   plotOutput("plot")
   ),
-  server = function(input, output) {}
+  server = function(input, output) {
+    output$plot <- renderPlot(
+      plot(1:nrow(mtcars), mtcars[[input$radio]])
+    )
+  }
 )
 
 }

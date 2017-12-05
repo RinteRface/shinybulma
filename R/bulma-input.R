@@ -9,9 +9,14 @@
 #' shinyApp(
 #'   ui = bulmaPage(
 #'    bulmaTitle("Hello Bulma"),
-#'    bulmaRadioInput("radio-buttons", c("Yes", "No"))
+#'    bulmaRadioInput("radio", c("mpg", "gear")),
+#'    plotOutput("plot")
 #'   ),
-#'   server = function(input, output) {}
+#'   server = function(input, output) {
+#'     output$plot <- renderPlot(
+#'       plot(1:nrow(mtcars), mtcars[[input$radio]])
+#'     )
+#'   }
 #' )
 #'
 #' @export
@@ -19,24 +24,29 @@ bulmaRadioInput <- function(inputId, choices){
   if(missing(choices)) stop("missing choices", call. = FALSE)
 
   shiny::tags$div(
-    class = "control"
+    id = inputId,
+    class = "control bulma-radio"
   ) -> control
 
   for(choice in choices){
     choiceTag <- shiny::tags$label(class = "radio", choice,
                                    shiny::tags$input(
                                      type = "radio",
-                                     name = inputId
+                                     name = inputId,
+                                     value = choice
                                    ))
     control <- shiny::tagAppendChild(control, choiceTag)
   }
 
-  shiny::tags$div(
-    class = "field",
-    shiny::tags$div(
-      class = "control",
-      control
-    )
+  shiny::tagList(
+    shiny::singleton(
+      shiny::tags$head(
+        shiny::includeScript(
+          system.file(file.path("js", "bulma-radio-js.js"), package = "shinybulma")
+        )
+      )
+    ),
+    control
   )
 }
 
@@ -52,14 +62,17 @@ bulmaRadioInput <- function(inputId, choices){
 #' shinyApp(
 #'   ui = bulmaPage(
 #'    bulmaTitle("Hello Bulma"),
-#'    bulmaTextInput("text-input", label = "Input text", placeholder = "Type here")
+#'    bulmaTextInput("txt", label = "Input text", placeholder = "Type here"),
+#'    verbatimTextOutput("default")
 #'   ),
-#'   server = function(input, output) {}
+#'   server = function(input, output) {
+#'     output$default <- renderText({ input$txt })
+#'   }
 #' )
 #'
 #' @export
 bulmaTextInput <- function(inputId, label, placeholder){
-  shiny::tags$div(
+  txt <- shiny::tags$div(
     class = "field",
     shiny::tags$label(
       class = "label",
@@ -68,11 +81,23 @@ bulmaTextInput <- function(inputId, label, placeholder){
     shiny::tags$div(
       class = "control",
       shiny::tags$input(
-        class = "input",
+        class = "input shinybulmaTextInput",
         type = "text",
+        id = inputId,
         placeholder = placeholder
       )
     )
+  )
+
+  shiny::tagList(
+    shiny::singleton(
+      shiny::tags$head(
+        shiny::includeScript(
+          system.file(file.path("js", "bulma-text-js.js"), package = "shinybulma")
+        )
+      )
+    ),
+    txt
   )
 }
 
@@ -88,20 +113,38 @@ bulmaTextInput <- function(inputId, label, placeholder){
 #' shinyApp(
 #'   ui = bulmaPage(
 #'    bulmaTitle("Hello Bulma"),
-#'    bulmaSelectInput("dropdown", "Select", choices = c("Shiny", "Bulma"))
+#'    bulmaSelectInput("var", "Select", choices = c("mpg", "disp")),
+#'    tableOutput("plot")
 #'   ),
-#'   server = function(input, output) {}
+#'   server = function(input, output) {
+#'     output$plot <- renderTable({
+#'       mtcars[, c("mpg", input$variable), drop = FALSE]
+#'     }, rownames = TRUE)
+#'   }
 #' )
 #'
 #' @export
 bulmaSelectInput <- function(inputId, label, choices){
-  select <- shiny::tags$select()
+  select <- shiny::tags$select(
+    id = inputId,
+    class = "shinyBulmaSelect"
+  )
 
-  for(choice in choices){
-    select <- shiny::tagAppendChild(select, shiny::tags$option(choice))
+  if(length(names(choices))){
+    opts <- data.frame(name = names(choices), value = unname(choices))
+  } else {
+    opts <- data.frame(name = unname(choices), value = unname(choices))
   }
 
-  shiny::tags$div(
+  for(i in 1:nrow(opts)){
+    select <- shiny::tagAppendChild(select,
+                                    shiny::tags$option(
+                                      opts$name[i],
+                                      value = opts$value[i]
+                                    ))
+  }
+
+  select <- shiny::tags$div(
     class = "field",
     shiny::tags$label(
       class = "label",
@@ -114,6 +157,17 @@ bulmaSelectInput <- function(inputId, label, choices){
         select
       )
     )
+  )
+
+  shiny::tagList(
+    shiny::singleton(
+      shiny::tags$head(
+        shiny::includeScript(
+          system.file(file.path("js", "bulma-select-js.js"), package = "shinybulma")
+        )
+      )
+    ),
+    select
   )
 }
 
