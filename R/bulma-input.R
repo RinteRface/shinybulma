@@ -9,32 +9,40 @@
 #' shinyApp(
 #'   ui = bulmaPage(
 #'    bulmaTitle("Hello Bulma"),
-#'    bulmaRadioInput("radio", c("mpg", "gear")),
+#'    bulmaRadioInput("select", c("mpg", "drat"), selected = "mpg"),
 #'    plotOutput("plot")
 #'   ),
 #'   server = function(input, output) {
 #'     output$plot <- renderPlot(
-#'       plot(1:nrow(mtcars), mtcars[[input$radio]])
+#'       plot(1:nrow(mtcars), mtcars[[input$select]])
 #'     )
 #'   }
 #' )
 #'
 #' @export
-bulmaRadioInput <- function(inputId, choices){
-  if(missing(choices)) stop("missing choices", call. = FALSE)
+bulmaRadioInput <- function(inputId, choices, selected){
+  if(missing(choices) || missing(selected))
+    stop("missing choices or selected", call. = FALSE)
 
   shiny::tags$div(
     id = inputId,
-    class = "control bulma-radio"
+    class = "control shinyBulmaRadio"
   ) -> control
 
   for(choice in choices){
+
+    input <- shiny::tags$input(
+      type = "radio",
+      name = inputId,
+      value = choice
+    )
+
+    if(choice == selected)
+      input <- tagAppendAttributes(input, checked = NA)
+
     choiceTag <- shiny::tags$label(class = "radio", choice,
-                                   shiny::tags$input(
-                                     type = "radio",
-                                     name = inputId,
-                                     value = choice
-                                   ))
+                                   input)
+
     control <- shiny::tagAppendChild(control, choiceTag)
   }
 
@@ -118,7 +126,7 @@ bulmaTextInput <- function(inputId, label, placeholder){
 #'   ),
 #'   server = function(input, output) {
 #'     output$plot <- renderTable({
-#'       mtcars[, c("mpg", input$variable), drop = FALSE]
+#'       mtcars[, c("wt", input$var), drop = FALSE]
 #'     }, rownames = TRUE)
 #'   }
 #' )

@@ -7,7 +7,7 @@ $(document).ready(function () {
         },
         getValue: function (el) {
           console.log($(el).val());
-            return $(el).val();
+          return $(el).val();
         },
         subscribe: function (el, callback) {
             $(el).on("change.shinyBulmaSelectInput", function (e) {

@@ -4,7 +4,7 @@
 \alias{bulmaRadioInput}
 \title{Add radio buttons}
 \usage{
-bulmaRadioInput(inputId, choices)
+bulmaRadioInput(inputId, choices, selected)
 }
 \arguments{
 \item{inputId}{the input slot that will be used to access the value.}
@@ -20,12 +20,12 @@ library(shiny)
 shinyApp(
   ui = bulmaPage(
    bulmaTitle("Hello Bulma"),
-   bulmaRadioInput("radio", c("mpg", "gear")),
+   bulmaRadioInput("select", c("mpg", "gear"), selected = "mpg"),
    plotOutput("plot")
   ),
   server = function(input, output) {
     output$plot <- renderPlot(
-      plot(1:nrow(mtcars), mtcars[[input$radio]])
+      plot(1:nrow(mtcars), mtcars[[input$select]])
     )
   }
 )

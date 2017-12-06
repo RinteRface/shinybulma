@@ -27,7 +27,7 @@ shinyApp(
   ),
   server = function(input, output) {
     output$plot <- renderTable({
-      mtcars[, c("mpg", input$variable), drop = FALSE]
+      mtcars[, c("wt", input$var), drop = FALSE]
     }, rownames = TRUE)
   }
 )
