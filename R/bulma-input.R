@@ -9,7 +9,8 @@
 #' shinyApp(
 #'   ui = bulmaPage(
 #'    bulmaTitle("Hello Bulma"),
-#'    bulmaRadioInput("select", c("mpg", "drat"), selected = "mpg"),
+#'    bulmaRadioInput("select", c("Miles per galon" = "mpg", "Rear axle ratio" = "drat"),
+#'      selected = "Miles"),
 #'    plotOutput("plot")
 #'   ),
 #'   server = function(input, output) {
@@ -24,26 +25,32 @@ bulmaRadioInput <- function(inputId, choices, selected){
   if(missing(choices) || missing(selected))
     stop("missing choices or selected", call. = FALSE)
 
+  if(length(names(choices))){
+    choices <- data.frame(name = names(choices), value = unname(choices))
+  } else {
+    choices <- data.frame(name = choices, value = choices)
+  }
+
   shiny::tags$div(
     id = inputId,
     class = "control shinyBulmaRadio"
   ) -> control
 
-  for(choice in choices){
+  for(i in 1:nrow(choices)){
 
     input <- shiny::tags$input(
       type = "radio",
       name = inputId,
-      value = choice
+      value = choices$value[i]
     )
 
-    if(choice == selected)
+    if(choices$name[i] == selected)
       input <- tagAppendAttributes(input, checked = NA)
 
-    choiceTag <- shiny::tags$label(class = "radio", choice,
-                                   input)
+      choiceTag <- shiny::tags$label(class = "radio", choices$name[i],
+                                     input)
 
-    control <- shiny::tagAppendChild(control, choiceTag)
+      control <- shiny::tagAppendChild(control, choiceTag)
   }
 
   shiny::tagList(

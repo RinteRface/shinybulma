@@ -20,7 +20,7 @@ library(shiny)
 shinyApp(
   ui = bulmaPage(
    bulmaTitle("Hello Bulma"),
-   bulmaRadioInput("select", c("mpg", "gear"), selected = "mpg"),
+   bulmaRadioInput("select", c("mpg", "drat"), selected = "mpg"),
    plotOutput("plot")
   ),
   server = function(input, output) {
