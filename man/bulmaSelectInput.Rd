@@ -22,7 +22,8 @@ library(shiny)
 shinyApp(
   ui = bulmaPage(
    bulmaTitle("Hello Bulma"),
-   bulmaSelectInput("var", "Select", choices = c("mpg", "disp")),
+   bulmaSelectInput("var", "Select",
+     choices = c("Miles per galon" = "mpg", "Displacement" = "disp")),
    tableOutput("plot")
   ),
   server = function(input, output) {

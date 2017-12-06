@@ -1,7 +1,8 @@
 #' Add radio buttons
 #'
 #' @param inputId the input slot that will be used to access the value.
-#' @param choices vector of choices.
+#' @param choices vector of choices, named or unnamed.
+#' @param selected selected radio input.
 #'
 #' @examples
 #' library(shiny)
@@ -10,7 +11,7 @@
 #'   ui = bulmaPage(
 #'    bulmaTitle("Hello Bulma"),
 #'    bulmaRadioInput("select", c("Miles per galon" = "mpg", "Rear axle ratio" = "drat"),
-#'      selected = "Miles"),
+#'      selected = "mpg"),
 #'    plotOutput("plot")
 #'   ),
 #'   server = function(input, output) {
@@ -44,7 +45,7 @@ bulmaRadioInput <- function(inputId, choices, selected){
       value = choices$value[i]
     )
 
-    if(choices$name[i] == selected)
+    if(choices$value[i] == selected)
       input <- tagAppendAttributes(input, checked = NA)
 
       choiceTag <- shiny::tags$label(class = "radio", choices$name[i],
@@ -128,7 +129,8 @@ bulmaTextInput <- function(inputId, label, placeholder){
 #' shinyApp(
 #'   ui = bulmaPage(
 #'    bulmaTitle("Hello Bulma"),
-#'    bulmaSelectInput("var", "Select", choices = c("mpg", "disp")),
+#'    bulmaSelectInput("var", "Select",
+#'      choices = c("Miles per galon" = "mpg", "Displacement" = "disp")),
 #'    tableOutput("plot")
 #'   ),
 #'   server = function(input, output) {
@@ -197,24 +199,39 @@ bulmaSelectInput <- function(inputId, label, choices){
 #'
 #' shinyApp(
 #'   ui = bulmaPage(
-#'    bulmaTitle("Hello Bulma"),
-#'    bulmaSubmitButton("submit-button", "Submit", "primary")
+#'     bulmaActionButton("go", "Go")
 #'   ),
-#'   server = function(input, output) {}
+#'   server = function(input, output, session) {
+#'     observeEvent(input$go, {
+#'       print(paste("This will only be printed once; all",
+#'         "subsequent button clicks won't do anything"))
+#'     }, once = TRUE)
+#'  }
 #' )
 #'
 #' @export
-bulmaSubmitButton <- function(inputId, label, color){
+bulmaActionButton <- function(inputId, label, color = NULL){
 
-  cl <- "button"
+  cl <- "button shinyBulmaRadio"
 
   if(!is.null(color)) cl <- paste0(cl, " is-", color)
 
-  shiny::tags$div(
+  button <- shiny::tags$div(
     class = "control",
     shiny::tags$button(
       class = cl,
       label
     )
+  )
+
+  shiny::tagList(
+    shiny::singleton(
+      shiny::tags$head(
+        shiny::includeScript(
+          system.file(file.path("js", "bulma-button-js.js"), package = "shinybulma")
+        )
+      )
+    ),
+    button
   )
 }

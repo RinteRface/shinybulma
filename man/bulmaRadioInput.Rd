@@ -9,7 +9,9 @@ bulmaRadioInput(inputId, choices, selected)
 \arguments{
 \item{inputId}{the input slot that will be used to access the value.}
 
-\item{choices}{vector of choices.}
+\item{choices}{vector of choices, named or unnamed.}
+
+\item{selected}{selected radio input.}
 }
 \description{
 Add radio buttons
@@ -20,7 +22,8 @@ library(shiny)
 shinyApp(
   ui = bulmaPage(
    bulmaTitle("Hello Bulma"),
-   bulmaRadioInput("select", c("mpg", "drat"), selected = "mpg"),
+   bulmaRadioInput("select", c("Miles per galon" = "mpg", "Rear axle ratio" = "drat"),
+     selected = "mpg"),
    plotOutput("plot")
   ),
   server = function(input, output) {
