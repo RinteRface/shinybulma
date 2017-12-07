@@ -4,7 +4,7 @@
 \alias{bulmaSelectInput}
 \title{Add dropdown input}
 \usage{
-bulmaSelectInput(inputId, label, choices)
+bulmaSelectInput(inputId, label, choices, icon = NULL, rounded = FALSE)
 }
 \arguments{
 \item{inputId}{the input slot that will be used to access the value.}
@@ -12,6 +12,8 @@ bulmaSelectInput(inputId, label, choices)
 \item{label}{input label.}
 
 \item{choices}{vector of choices.}
+
+\item{rounded}{set to round corners.}
 }
 \description{
 Add dropdown input

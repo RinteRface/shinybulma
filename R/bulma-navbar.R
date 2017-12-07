@@ -8,9 +8,8 @@
 #' library(shiny)
 #'
 #' shinyApp(
-#'   ui = bulmaPage(
+#'   ui = bulmaNavbarPage(
 #'    bulmaNavbar(
-#'      fix.top = TRUE,
 #'      bulmaNavbarBrand(
 #'        bulmaNavbarItem(
 #'          "shinybulma"
@@ -19,7 +18,7 @@
 #'      ),
 #'      bulmaNavbarMenu( # not visible on smaller devices
 #'        bulmaNavbarItem(
-#'          "Item  1"
+#'          "Item 1"
 #'        ),
 #'        bulmaNavbarItem(
 #'          "Item 2"
@@ -33,7 +32,15 @@
 #'          "Select 2"
 #'        )
 #'      )
-#'      )
+#'     )
+#'    ),
+#'    bulmaNav(
+#'      "Item 1",
+#'      bulmaTitle("Content for item 1 here.")
+#'    ),
+#'    bulmaNav(
+#'      "Item 2",
+#'      bulmaTitle("Content for item 2 here.")
 #'    )
 #'   ),
 #'   server = function(input, output) {}
@@ -68,7 +75,16 @@ bulmaNavbar <- function(..., transparent = FALSE, color = NULL, fix.top = FALSE,
     nav <- shiny::tagAppendChild(nav, shiny::tags$script(addClass))
   }
 
-  nav
+  shiny::tagList(
+    shiny::singleton(
+      shiny::tags$head(
+        shiny::includeScript(
+          system.file(file.path("js", "bulma-nav-js.js"), package = "shinybulma")
+        )
+      )
+    ),
+    nav
+  )
 }
 
 #' @rdname navbar
@@ -92,21 +108,28 @@ bulmaNavbarMenu <- function(...){
 
 #' @rdname navbar
 #' @export
-bulmaNavbarItem <- function(..., href = ""){
+bulmaNavbarItem <- function(label, href = NULL){
+
+  if(is.null(href)){
+    href <- gsub("[[:space:]]|[[:cntrl:]]|[[:punct:]]", "-", label)
+    href <- paste0("#", href)
+  }
+
+
   shiny::tags$a(
     class = "navbar-item",
     href = href,
-    ...
+    label
   )
 }
 
 #' @rdname navbar
 #' @export
-bulmaNavbarLink <- function(..., href = ""){
+bulmaNavbarLink <- function(label, href = ""){
   shiny::tags$a(
     class = "navbar-link",
     href = href,
-    ...
+    label
   )
 }
 
@@ -136,5 +159,17 @@ bulmaNavbarDropdown <- function(..., label, href = ""){
       class = "navbar-dropdown is-boxed",
       ...
     )
+  )
+}
+
+#' @rdname navbar
+#' @export
+bulmaNav <- function(target, ...){
+
+  target <- gsub("[[:space:]]|[[:cntrl:]]|[[:punct:]]", "-", target)
+
+  shiny::tags$div(
+    id = target,
+    ...
   )
 }

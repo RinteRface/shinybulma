@@ -40,7 +40,7 @@ ui <- bulmaPage(
     bulmaHeroBody(
       bulmaContainer(
         bulmaTitle("Hello Bulma*"),
-        bulmaSubtitle("shinybula*")
+        bulmaSubtitle("shinybulma*")
       )
     )
   )

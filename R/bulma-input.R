@@ -122,6 +122,7 @@ bulmaTextInput <- function(inputId, label, placeholder){
 #' @param inputId the input slot that will be used to access the value.
 #' @param label input label.
 #' @param choices vector of choices.
+#' @param rounded set to round corners.
 #'
 #' @examples
 #' library(shiny)
@@ -141,7 +142,7 @@ bulmaTextInput <- function(inputId, label, placeholder){
 #' )
 #'
 #' @export
-bulmaSelectInput <- function(inputId, label, choices){
+bulmaSelectInput <- function(inputId, label, choices, icon = NULL, rounded = FALSE){
   select <- shiny::tags$select(
     id = inputId,
     class = "shinyBulmaSelect"
@@ -161,6 +162,9 @@ bulmaSelectInput <- function(inputId, label, choices){
                                     ))
   }
 
+  cl <- "select"
+  if(isTRUE(cl)) cl <- paste(cl, "is-rounded")
+
   select <- shiny::tags$div(
     class = "field",
     shiny::tags$label(
@@ -170,7 +174,7 @@ bulmaSelectInput <- function(inputId, label, choices){
     shiny::tags$div(
       class = "control",
       shiny::tags$div(
-        class = "select",
+        class = cl,
         select
       )
     )
