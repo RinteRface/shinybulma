@@ -38,7 +38,7 @@ Add a responsive horizontal navbar.
 library(shiny)
 
 shinyApp(
-  ui = bulmaNavbarPage(
+  ui = bulmaPage(
    bulmaNavbar(
      bulmaNavbarBrand(
        bulmaNavbarItem(

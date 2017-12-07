@@ -55,12 +55,4 @@ bulmaPage <- function(...){
 
 #' @rdname page
 #' @export
-bulmaNavbarPage <- function(...){
-
-  bulma_page(shiny::tags$div(
-    class = "shinybulmaNavbar",
-    id = "shinybulmaNavbar",
-    ...
-  ))
-
-}
+bulmaNavbarPage <- bulmaPage

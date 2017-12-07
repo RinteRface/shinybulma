@@ -8,7 +8,7 @@
 #' library(shiny)
 #'
 #' shinyApp(
-#'   ui = bulmaNavbarPage(
+#'   ui = bulmaPage(
 #'    bulmaNavbar(
 #'      bulmaNavbarBrand(
 #'        bulmaNavbarItem(
@@ -115,12 +115,28 @@ bulmaNavbarItem <- function(label, href = NULL){
     href <- paste0("#", href)
   }
 
+  id <- gsub("[[:space:]]|[[:cntrl:]]|[[:punct:]]", "-", label)
+  id <- paste0(id, "button")
 
-  shiny::tags$a(
+
+  item <- shiny::tags$a(
+    id = id,
     class = "navbar-item",
     href = href,
     label
   )
+
+  shiny::tagList(
+    shiny::singleton(
+      shiny::tags$head(
+        shiny::tags$script(
+          paste0('$(document).ready(function(){$("#', id,'").click(function(){$("', href,'").toggle().siblings("div").hide();;});});')
+        )
+      )
+    ),
+    item
+  )
+
 }
 
 #' @rdname navbar
@@ -170,6 +186,8 @@ bulmaNav <- function(target, ...){
 
   shiny::tags$div(
     id = target,
+    class = "navTab",
+    style = "display:none",
     ...
   )
 }
