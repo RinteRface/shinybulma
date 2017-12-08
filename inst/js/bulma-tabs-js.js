@@ -1,3 +1,3 @@
-  $( function() {
-    $( ".bulma-tabs" ).tabs();
-  } );
+$( function() {
+  $( ".bulmaTabs" ).tabs();
+} );

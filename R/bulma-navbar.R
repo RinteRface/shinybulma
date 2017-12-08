@@ -43,11 +43,16 @@
 #'    bulmaNav(
 #'      "Item 2",
 #'      bulmaContainer(
-#'        bulmaTitle("Item 2")
+#'        bulmaTitle("Item 2"),
+#'        plotOutput("hist")
 #'      )
 #'    )
 #'   ),
-#'   server = function(input, output) {}
+#'   server = function(input, output) {
+#'     output$hist <- renderPlot({
+#'       hist(rnorm(20, 10))
+#'     })
+#'   }
 #' )
 #'
 #' @rdname navbar

@@ -15,7 +15,7 @@
 #'      ),
 #'      bulmaTab(
 #'        "Tab 2",
-#'        "Content of the second Tab."
+#'        plotOutput("plot")
 #'      ),
 #'      bulmaTab(
 #'        "Tab 3",
@@ -23,7 +23,11 @@
 #'      )
 #'    )
 #'   ),
-#'   server = function(input, output) {}
+#'   server = function(input, output) {
+#'     output$plot <- renderPlot({
+#'       hist(rnorm(20, 10))
+#'     })
+#'   }
 #' )
 #'
 #' @rdname tabs
@@ -45,7 +49,7 @@ bulmaTabs <- function(tabs, center = FALSE, ...){
   if(isTRUE(center)) cl <- paste(cl, "is-centered")
 
   cmb <- shiny::tags$div(
-    class = "bulma-tabs",
+    class = "bulmaTabs",
     shiny::tags$div(
       list,
       class = cl

@@ -15,12 +15,13 @@ bulma_page <- function(...){
         href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       ),
       shiny::includeCSS(
-        system.file("css/bulma.min.css",
-                    package = "shinybulma")
+        system.file("css/bulma.min.css", package = "shinybulma")
       ),
       shiny::includeScript(
-        system.file("js/jquery-ui.min.js",
-                    package = "shinybulma")
+        system.file("js/jquery.min.js", package = "shinybulma")
+      ),
+      shiny::includeScript(
+        system.file("js/jquery-ui.min.js", package = "shinybulma")
       )
     ),
     # Body --------------------------------------------------------------------
