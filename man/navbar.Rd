@@ -66,11 +66,15 @@ shinyApp(
    ),
    bulmaNav(
      "Item 1",
-     bulmaTitle("Content for item 1 here.")
+     bulmaContainer(
+       bulmaTitle("Item 1")
+     )
    ),
    bulmaNav(
      "Item 2",
-     bulmaTitle("Content for item 2 here.")
+     bulmaContainer(
+       bulmaTitle("Item 2")
+     )
    )
   ),
   server = function(input, output) {}

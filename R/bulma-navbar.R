@@ -36,11 +36,15 @@
 #'    ),
 #'    bulmaNav(
 #'      "Item 1",
-#'      bulmaTitle("Content for item 1 here.")
+#'      bulmaContainer(
+#'        bulmaTitle("Item 1")
+#'      )
 #'    ),
 #'    bulmaNav(
 #'      "Item 2",
-#'      bulmaTitle("Content for item 2 here.")
+#'      bulmaContainer(
+#'        bulmaTitle("Item 2")
+#'      )
 #'    )
 #'   ),
 #'   server = function(input, output) {}
@@ -132,7 +136,7 @@ bulmaNavbarItem <- function(label, href = NULL){
         shiny::tags$script(
           paste0('$(document).ready(function(){
                  $("#', id,'").click(function(){
-                     $("', href,'").toggle().siblings("div").hide();
+                     $("', href,'").show().siblings("div").hide();
                  })
                 ;});')
         )
