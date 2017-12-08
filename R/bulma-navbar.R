@@ -130,7 +130,11 @@ bulmaNavbarItem <- function(label, href = NULL){
     shiny::singleton(
       shiny::tags$head(
         shiny::tags$script(
-          paste0('$(document).ready(function(){$("#', id,'").click(function(){$("', href,'").toggle().siblings("div").hide();;});});')
+          paste0('$(document).ready(function(){
+                 $("#', id,'").click(function(){
+                     $("', href,'").toggle().siblings("div").hide();
+                 })
+                ;});')
         )
       )
     ),

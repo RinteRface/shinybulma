@@ -1,3 +1,3 @@
-$( function() {
-  $( ".shinybulmaNavbar" ).tabs();
-} );
+//$( function() {
+//  $( ".shinybulmaNavbar" ).tabs();
+//} );

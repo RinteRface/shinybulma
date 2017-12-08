@@ -1,5 +1,2 @@
-  $( function() {
-
-    $( ".navTab" ).first().css( "display", "" );
-
-  } );
+$( ".navTab" ).first().css( "display", "" );
+$( ".navTab" ).first().show();

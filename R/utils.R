@@ -18,16 +18,18 @@ bulma_page <- function(...){
         system.file("css/bulma.min.css",
                     package = "shinybulma")
       ),
-      # shiny::includeScript(
-      #   system.file("js/jquery-1.12.4.js",
-      #               package = "shinybulma")
-      # ),
       shiny::includeScript(
         system.file("js/jquery-ui.min.js",
                     package = "shinybulma")
       )
     ),
     # Body --------------------------------------------------------------------
-    shiny::tags$body(...)
+    shiny::tags$body(
+      ...,
+      shiny::includeScript(
+        system.file("js/custom-js.js",
+                    package = "shinybulma")
+      )
+    )
   )
 }
