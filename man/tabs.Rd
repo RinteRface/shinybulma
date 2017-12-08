@@ -29,17 +29,23 @@ shinyApp(
      ),
      bulmaTab(
        "Tab 2",
-       plotOutput("plot")
+       plotOutput("hist")
      ),
      bulmaTab(
        "Tab 3",
-       "Content of the third Tab."
+       bulmaContainer(
+         bulmaTitle("Plot"),
+         plotOutput("plot")
+       )
      )
    )
   ),
   server = function(input, output) {
-    output$plot <- renderPlot({
+    output$hist <- renderPlot({
       hist(rnorm(20, 10))
+    })
+    output$plot <- renderPlot({
+      plot(1:20, rnorm(20, 20))
     })
   }
 )
