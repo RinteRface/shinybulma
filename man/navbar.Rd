@@ -67,7 +67,24 @@ shinyApp(
    bulmaNav(
      "Item 1",
      bulmaContainer(
-       bulmaTitle("Item 1")
+       bulmaTitle("Item 1"),
+       bulmaTabs(
+       tabs = c("Tab 1", "Tab 2", "Tab 3"),
+       center = TRUE,
+         bulmaTab(
+           "Tab 1",
+           bulmaTitle("Tab 1")
+         ),
+         bulmaTab(
+           "Tab 2",
+           bulmaTitle("Tab 2"),
+           plotOutput("plot")
+         ),
+         bulmaTab(
+           "Tab 3",
+           bulmaTitle("Tab 3")
+         )
+       )
      )
    ),
    bulmaNav(
@@ -81,6 +98,9 @@ shinyApp(
   server = function(input, output) {
     output$hist <- renderPlot({
       hist(rnorm(20, 10))
+    })
+    output$plot <- renderPlot({
+      plot(1:20, rnorm(20, 20))
     })
   }
 )
