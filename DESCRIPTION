@@ -1,8 +1,12 @@
 Package: shinybulma
 Title: Bulma for Shiny
-Version: 0.0.0.9000
-Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
-Description: Bulma for Shiny.
+Version: 0.0.1
+Authors@R: c(person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre")),
+  person("David", "Granjon", email = "david.granjon@uzh.ch", role = "ctb", comment = "bulma-extensions"))
+Description: Bulma for Shiny. Contains also an implementation of some of the major components
+  of the bulma extension library.
+URL: https://github.com/JohnCoene/shinybulma 
+BugReports: https://github.com/JohnCoene/shinybulma/issues
 Depends: R (>= 3.4.2)
 License: MIT + file LICENSE
 Encoding: UTF-8

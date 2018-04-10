@@ -1,6 +1,7 @@
 # shinybulma
 
-[bulma.io](https://bulma.io) for [Shiny](https://shiny.rstudio.com/).
+[bulma.io](https://bulma.io) for [Shiny](https://shiny.rstudio.com/). Contains
+also some extensions: [bulma-extensions](https://wikiki.github.io)
 
 ## Installation
 
@@ -72,3 +73,8 @@ server <- function(input, output) {}
 # Complete app with UI and server components
 shinyApp(ui, server)
 ```
+
+## bulma extension demo
+
+https://dgranjon.shinyapps.io/bulmaExtension/
+
