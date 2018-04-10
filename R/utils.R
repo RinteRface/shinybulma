@@ -17,11 +17,20 @@ bulma_page <- function(...){
       shiny::includeCSS(
         system.file("css/bulma.min.css", package = "shinybulma")
       ),
+      shiny::includeCSS(
+        system.file("css/bulma-extensions.min.css", package = "shinybulma")
+      ),
       shiny::includeScript(
         system.file("js/jquery.min.js", package = "shinybulma")
       ),
       shiny::includeScript(
         system.file("js/jquery-ui.min.js", package = "shinybulma")
+      ),
+      shiny::includeScript(
+        system.file("js/bulma-carousel.min.js", package = "shinybulma")
+      ),
+      shiny::includeScript(
+        system.file("js/bulma-steps.min.js", package = "shinybulma")
       )
     ),
     # Body --------------------------------------------------------------------
