@@ -10,5 +10,6 @@ bulmaTagAddonList(...)
 \item{...}{Slot for bulmaTagAddons.}
 }
 \description{
-Create an horizontal list of bulmaTagAddons objects \url{https://bulma.io/documentation/elements/tag/}.
+Create an horizontal list of bulmaTagAddons objects
+\url{https://bulma.io/documentation/elements/tag/}.
 }

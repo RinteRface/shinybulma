@@ -13,7 +13,7 @@ bulmaStepDetail(..., color = NULL, completed = FALSE, title = NULL,
 \item{color}{Step color : \code{link}, \code{info}, \code{primary}, \code{warning},
 \code{danger}, \code{success}, \code{black}, \code{dark} and \code{ligth}.}
 
-\item{completed}{TRUE or FALSE. Is the current step completed or not?}
+\item{completed}{\code{TRUE} or \code{FALSE}. Is the current step completed or not?}
 
 \item{title}{Step title.}
 

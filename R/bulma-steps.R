@@ -5,7 +5,7 @@
 #' @description Create a step element \url{https://wikiki.github.io/components/steps/}.
 #'
 #' @param ... Slot for bulmaStepItem.
-#' @param size Global size : \code{small},\code{medium} and \code{large}.
+#' @param size Global size : \code{small}, \code{medium} and \code{large}.
 #'
 #' @export
 #'
@@ -105,13 +105,11 @@ bulmaStepItem <- function(..., color = NULL, completed = FALSE, active = FALSE) 
 #' @param ... Description of the step.
 #' @param color Step color : \code{link}, \code{info}, \code{primary}, \code{warning},
 #'  \code{danger}, \code{success}, \code{black}, \code{dark} and \code{ligth}.
-#' @param completed TRUE or FALSE. Is the current step completed or not?
+#' @param completed \code{TRUE} or \code{FALSE}. Is the current step completed or not?
 #' @param title Step title.
 #' @param marker Whether to put a marker in the round circle.
 #'
 #' @export
-#'
-
 bulmaStepDetail <- function(..., color = NULL, completed = FALSE,
                             title = NULL, marker = NULL) {
 

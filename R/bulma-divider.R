@@ -7,9 +7,8 @@
 #' @param content Content to display (In mathematical textbooks we usually find ***).
 #' @param vertical TRUE or FALSE. Whether to use a vertical or horizontal divider.
 #'
-#' @note If vertical is TRUE, you need to wrap the divider in a bulmaColumns() configuration. See example below.
-#'
-#' @export
+#' @note If vertical is TRUE, you need to wrap the divider in a \code{\link{bulmaColumns}} configuration.
+#' See example below.
 #'
 #' @examples
 #' if (interactive()) {
@@ -45,7 +44,7 @@
 #'  shinyApp(ui = ui, server = server)
 #'
 #' }
-#'
+#' @export
 bulmaDivider <- function(content = NULL, vertical = FALSE){
   if (vertical == FALSE) {
     shiny::tags$div(

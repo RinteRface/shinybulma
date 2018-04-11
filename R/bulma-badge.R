@@ -9,10 +9,9 @@
 #'  \code{danger}, \code{success}, \code{black}, \code{dark} and \code{ligth}.
 #' @param size Badge size : \code{small}, \code{medium} and \code{large}.
 #' @param style Badge style :  \code{outlined}. NULL by default
-#' @param position Badge position : \code{left}, \code{bottom-left} and \code{bottom}. When NULL, it is displayed on the right side by default.
+#' @param position Badge position : \code{left}, \code{bottom-left} and \code{bottom}.
+#' When \code{NULL}, it is displayed on the right side by default.
 #' @param badge_text Badge content : avoid too large content (a number is better).
-#'
-#' @export
 #'
 #' @examples
 #' if (interactive()) {
@@ -136,13 +135,11 @@
 #'   )
 #'  )
 #'
-#'  server <- function(input, output, session) {
-#'
-#'  }
+#'  server <- function(input, output, session) {}
 #'
 #'  shinyApp(ui = ui, server = server)
 #' }
-#'
+#' @export
 bulmaBadge <- function(..., color = NULL, size = NULL, style = NULL,
                        position = NULL, badge_text = NULL){
 

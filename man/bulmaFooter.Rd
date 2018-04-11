@@ -14,7 +14,7 @@ bulmaFooter(..., container = TRUE, centered = TRUE)
 \item{centered}{wheter to center the text.}
 }
 \description{
-Add a footer
+Add footer
 }
 \examples{
 if(interactive()){

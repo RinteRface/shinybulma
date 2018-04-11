@@ -8,8 +8,6 @@
 #'
 #' @note It is lighter than a bulmaCard element.
 #'
-#' @export
-#'
 #' @examples
 #' if (interactive()) {
 #'  library(shiny)
@@ -43,7 +41,7 @@
 #'
 #'  shinyApp(ui = ui, server = server)
 #' }
-#'
+#' @export
 bulmaBox <- function(...) {
   shiny::tags$div(
     class = "box",

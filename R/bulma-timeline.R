@@ -7,12 +7,10 @@
 #' @param ... Slot for bulmaTimelineHeader and bulmaTimelineItem.
 #' @param centered FALSE by default. Whether to center the timeline.
 #' @param rtl FALSE by default. If rtl is TRUE, the timeline is displayed
-#' right to left. If FALSE (and if centered is FALSE), the timeline is displayed
+#' right to left. If \code{FALSE} (and if centered is \code{FALSE}), the timeline is displayed
 #' left to right (by default).
 #'
 #' @note known problem: when centered is TRUE, lines cannot be colored.
-#'
-#' @export
 #'
 #' @examples
 #' if (interactive()) {
@@ -56,7 +54,7 @@
 #'
 #'  shinyApp(ui = ui, server = server)
 #' }
-
+#' @export
 bulmaTimeline <- function(..., centered = FALSE, rtl = FALSE) {
 
   cl <- "timeline"
@@ -83,8 +81,6 @@ bulmaTimeline <- function(..., centered = FALSE, rtl = FALSE) {
 #' @note you can insert any number of headers.
 #'
 #' @export
-#'
-
 bulmaTimelineHeader <- function(text = NULL, size = NULL, color = NULL) {
 
   cl <- "tag"
@@ -138,8 +134,6 @@ bulmaTimelineHeader <- function(text = NULL, size = NULL, color = NULL) {
 #' }
 #'
 #' @export
-#'
-
 bulmaTimelineItem <- function(..., color = NULL, marker_color = NULL,
                               marker_image = FALSE, marker_image_size = NULL,
                               marker_icon = FALSE, content_header = NULL,

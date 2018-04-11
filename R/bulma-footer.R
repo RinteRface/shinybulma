@@ -1,5 +1,7 @@
 #' Add a footer
 #'
+#' Add footer
+#'
 #' @inheritParams bulmaPage
 #' @param container set to \code{TRUE} to wrap in \code{\link{bulmaContainer}}.
 #' @param centered wheter to center the text.

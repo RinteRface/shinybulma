@@ -9,8 +9,6 @@
 #' @param navigation Where to display the navigations arrow : \code{centered} or \code{overlay}.
 #' If NULL, arrows are at the bottom and more spaced.
 #'
-#' @export
-#'
 #' @examples
 #' if (interactive()) {
 #'  library(shiny)
@@ -52,7 +50,7 @@
 #'  shinyApp(ui = ui, server = server)
 #'
 #' }
-#'
+#' @export
 bulmaCarousel <- function(..., autoplay = FALSE, navigation = NULL) {
 
   cl_nav <- "carousel-navigation"

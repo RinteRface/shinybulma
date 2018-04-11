@@ -12,7 +12,7 @@ bulmaTimeline(..., centered = FALSE, rtl = FALSE)
 \item{centered}{FALSE by default. Whether to center the timeline.}
 
 \item{rtl}{FALSE by default. If rtl is TRUE, the timeline is displayed
-right to left. If FALSE (and if centered is FALSE), the timeline is displayed
+right to left. If \code{FALSE} (and if centered is \code{FALSE}), the timeline is displayed
 left to right (by default).}
 }
 \description{

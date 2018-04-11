@@ -15,10 +15,9 @@
 #'  \code{danger}, \code{success}, \code{black}, \code{dark} and \code{ligth}.
 #' @param badge_size Size of the button : \code{small},\code{medium} and \code{large}.
 #' @param badge_style Style of the button :  \code{outlined}.
-#' @param badge_position Position of the badge : \code{left}, \code{bottom-left} and \code{bottom}. Right by default.
-#' @param badge_text Badge content : avoid too large content (a number is better).
-#'
-#' @export
+#' @param badge_position Position of the badge : \code{left}, \code{bottom-left} and \code{bottom}.
+#' Right by default.
+#' @param badge_text Badge content: avoid too large content (a number is better).
 #'
 #' @examples
 #' if (interactive()) {
@@ -90,7 +89,7 @@
 #'  shinyApp(ui = ui, server = server)
 #'
 #' }
-#'
+#' @export
 bulmaButtonBadge <- function(label = NULL, url = NULL, color = NULL, style = NULL, loading = FALSE,
                              size = NULL, badge_color = NULL, badge_style = NULL,
                              badge_size = NULL, badge_position = NULL, badge_text = NULL) {
