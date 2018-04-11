@@ -32,6 +32,3 @@ is highlighted.}
 \description{
 Create a pricing table plan to insert in a bulmaPricingTable \url{https://wikiki.github.io/components/pricingtable/}.
 }
-\note{
-the status "disabled" does not work at the moment.
-}

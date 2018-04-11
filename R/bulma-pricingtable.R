@@ -156,8 +156,6 @@ bulmaPricingtable <- function(..., horizontal = FALSE) {
 #' @param button_status Button status. NULL or \code{"disabled"}.
 #' @param button_name Button label.
 #'
-#' @note the status "disabled" does not work at the moment.
-#'
 #' @export
 bulmaPricingPlan <- function(..., active = FALSE, color = NULL, plan_title = NULL,
                              plan_price = NULL, plan_currency = NULL,
@@ -169,36 +167,56 @@ bulmaPricingPlan <- function(..., active = FALSE, color = NULL, plan_title = NUL
   if (active == TRUE) cl <- paste0(cl, " is-active")
 
 
-  shiny::tags$div(
-    class = cl,
-    # header
-    shiny::tags$div(class = "plan-header", plan_title),
-    # price
-    shiny::tags$div(
-      class = "plan-price",
-      shiny::tags$span(
-        class = "plan-price-amount",
-        shiny::tags$span(class = "plan-price-currency", plan_currency),
-        plan_price
-      ),
-      plan_period
-    ),
-    # items
-    shiny::tags$div(
-      class = "plan-items",
-      # items
-      ...
-    ),
-    # footer button
-    shiny::tags$div(
-      class = "plan-footer",
-      shiny::tags$button(
-        class = "button is-fullwidth",
-        if (!is.null(button_status)) disabled = button_status,
-        button_name
-      )
-    )
+  # main tag
+  pricingPlanTag <- shiny::tags$div(
+    class = cl
   )
+
+  # header
+  headerTag <- shiny::tags$div(class = "plan-header", plan_title)
+
+  # price
+  priceTag <- shiny::tags$div(
+    class = "plan-price",
+    shiny::tags$span(
+      class = "plan-price-amount",
+      shiny::tags$span(class = "plan-price-currency", plan_currency),
+      plan_price
+    ),
+    plan_period
+  )
+
+  # items
+  itemsTag <- shiny::tags$div(
+    class = "plan-items",
+    # items
+    ...
+  )
+  # footer
+  footerTag <- shiny::tags$div(
+    class = "plan-footer"
+  )
+
+  # footer button
+  footerButtonTag <- shiny::tags$button(
+    class = "button is-fullwidth",
+    button_name
+  )
+
+  if (!is.null(button_status)) footerButtonTag$attribs$disabled <- button_status
+
+  footerTag <- shiny::tagAppendChild(footerTag, footerButtonTag)
+
+  pricingPlanTag <- shiny::tagAppendChildren(
+    pricingPlanTag,
+      headerTag,
+      priceTag,
+      itemsTag,
+      footerTag
+  )
+
+  pricingPlanTag
+
 }
 
 
