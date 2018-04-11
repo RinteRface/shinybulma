@@ -20,6 +20,12 @@ bulmaLevelOutput(outputId)
 
 \item{mobile}{set to \code{TRUE} if you want the level to be horizontal on mobile.}
 
+\item{heading}{level heading.}
+
+\item{value}{level value.}
+
+\item{centered}{whether to center to level.}
+
 \item{expr}{An expression that returns a Shiny tag object, \code{\link{HTML}},
 or a list of such objects.}
 
@@ -27,11 +33,14 @@ or a list of such objects.}
 
 \item{quoted}{Is \code{expr} a quoted expression (with \code{quote()})? This
 is useful if you want to save an expression in a variable.}
+
+\item{outputId}{id of output.}
 }
 \description{
 Add levels
 }
 \examples{
+if(interactive()){
 library(shiny)
 
 shinyApp(
@@ -53,5 +62,6 @@ shinyApp(
     })
   }
 )
+}
 
 }

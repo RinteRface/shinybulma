@@ -4,15 +4,14 @@
 #'
 #' @description Create a carousel \url{https://wikiki.github.io/components/carousel/}.
 #'
-#' @param ... Slot for bulmaCarouselItem.
-#' @param autoplay FALSE by default. If TRUE, the carousel automatically change its content.
+#' @param ... Slot for \code{bulmaCarouselItem}.
+#' @param autoplay \code{FALSE} by default. If TRUE, the carousel automatically change its content.
 #' @param navigation Where to display the navigations arrow : \code{centered} or \code{overlay}.
 #' If NULL, arrows are at the bottom and more spaced.
 #'
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' if (interactive()) {
 #'  library(shiny)
 #'
@@ -53,11 +52,7 @@
 #'  shinyApp(ui = ui, server = server)
 #'
 #' }
-#' }
-
-
-# navigation: centered, overlay
-# autoplay: TRUE or FALSE
+#'
 bulmaCarousel <- function(..., autoplay = FALSE, navigation = NULL) {
 
   cl_nav <- "carousel-navigation"
@@ -104,8 +99,6 @@ bulmaCarousel <- function(..., autoplay = FALSE, navigation = NULL) {
 #' @param url_text External link text, if any.
 #'
 #' @export
-#'
-
 bulmaCarouselItem <- function(background = TRUE, active = FALSE, src = NULL,
                               title = NULL, url = NULL, url_text = NULL) {
   cl <- "carousel-item"

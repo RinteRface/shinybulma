@@ -18,7 +18,6 @@ Create a vertical or horizontal divider \url{https://wikiki.github.io/layout/div
 If vertical is TRUE, you need to wrap the divider in a bulmaColumns() configuration. See example below.
 }
 \examples{
-\dontrun{
 if (interactive()) {
  library(shiny)
 
@@ -52,7 +51,7 @@ if (interactive()) {
  shinyApp(ui = ui, server = server)
 
 }
-}
+
 }
 \author{
 David Granjon, \email{dgranjon@ymail.com}

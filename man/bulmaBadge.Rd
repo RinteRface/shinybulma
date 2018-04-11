@@ -25,7 +25,6 @@ bulmaBadge(..., color = NULL, size = NULL, style = NULL,
 Create a badge to highlight a given element \url{https://wikiki.github.io/elements/badge/}.
 }
 \examples{
-\dontrun{
 if (interactive()) {
  library(shiny)
 
@@ -152,9 +151,8 @@ if (interactive()) {
  }
 
  shinyApp(ui = ui, server = server)
+}
 
-}
-}
 }
 \author{
 David Granjon, \email{dgranjon@ymail.com}

@@ -16,7 +16,6 @@ or horizontally.}
 Create an horizontal or vertical pricing table \url{https://wikiki.github.io/components/pricingtable/}.
 }
 \examples{
-\dontrun{
 if (interactive()) {
  library(shiny)
 
@@ -135,7 +134,7 @@ if (interactive()) {
  shinyApp(ui = ui, server = server)
 
 }
-}
+
 }
 \author{
 David Granjon, \email{dgranjon@ymail.com}

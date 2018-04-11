@@ -4,6 +4,7 @@
 #' @param tag html tag.
 #'
 #' @examples
+#' if(interactive()){
 #' shinyApp(
 #'   ui = bulmaPage(
 #'     bulmaHero(
@@ -30,6 +31,7 @@
 #'   ),
 #'   server = function(input, output) {}
 #' )
+#' }
 #'
 #' @rdname title
 #' @export

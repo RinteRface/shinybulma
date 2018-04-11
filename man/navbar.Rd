@@ -30,11 +30,22 @@ bulmaNav(target, ...)
 }
 \arguments{
 \item{...}{any element.}
+
+\item{transparent}{set to have transparent.}
+
+\item{color}{navbar color.}
+
+\item{fix.top, fix.bottom}{set one to have navbar fixed at top or bottom of page.}
+
+\item{label}{item label.}
+
+\item{href, target}{id of \code{bulmaNav} linked, \code{href} and \code{target} must be identical.}
 }
 \description{
 Add a responsive horizontal navbar.
 }
 \examples{
+if(interactive()){
 library(shiny)
 
 shinyApp(
@@ -42,7 +53,8 @@ shinyApp(
    bulmaNavbar(
      bulmaNavbarBrand(
        bulmaNavbarItem(
-         "shinybulma"
+         "shinybulma",
+         href = "Item 1"
        ),
        bulmaNavbarBurger()
      ),
@@ -104,5 +116,6 @@ shinyApp(
     })
   }
 )
+}
 
 }

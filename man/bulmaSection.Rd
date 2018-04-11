@@ -15,6 +15,7 @@ bulmaSection(..., size = NULL)
 Add a container to divide your page into sections
 }
 \examples{
+if(interactive()){
 library(shiny)
 
 shinyApp(
@@ -35,5 +36,6 @@ shinyApp(
   ),
   server = function(input, output) {}
 )
+}
 
 }

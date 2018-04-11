@@ -41,7 +41,7 @@ Valid \code{ratio}:
 }
 }
 \examples{
-\dontrun{
+if(interactive()){
 library(shiny)
 
 shinyApp(

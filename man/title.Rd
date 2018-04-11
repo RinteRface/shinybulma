@@ -18,6 +18,7 @@ bulmaSubtitle(..., tag = shiny::h2)
 Add subtitle
 }
 \examples{
+if(interactive()){
 shinyApp(
   ui = bulmaPage(
     bulmaHero(
@@ -44,5 +45,6 @@ shinyApp(
   ),
   server = function(input, output) {}
 )
+}
 
 }

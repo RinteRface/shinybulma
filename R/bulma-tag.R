@@ -13,7 +13,6 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' if (interactive()) {
 #'  library(shiny)
 #'
@@ -86,7 +85,7 @@
 #'  shinyApp(ui = ui, server = server)
 #'
 #' }
-#' }
+#'
 
 bulmaTag <- function(label = NULL, color = NULL, size = NULL, style = NULL) {
   cl <- "tag"
@@ -118,10 +117,6 @@ bulmaTagList <- function(...) {
     ...
   )
 }
-
-############ tagAddons ############
-
-
 
 #' @title bulma tag addon
 #'

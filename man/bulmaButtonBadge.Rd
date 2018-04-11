@@ -37,7 +37,6 @@ bulmaButtonBadge(label = NULL, url = NULL, color = NULL, style = NULL,
 Create a button with a badge \url{https://wikiki.github.io/elements/badge/}.
 }
 \examples{
-\dontrun{
 if (interactive()) {
  library(shiny)
 
@@ -107,7 +106,7 @@ if (interactive()) {
  shinyApp(ui = ui, server = server)
 
 }
-}
+
 }
 \author{
 David Granjon, \email{dgranjon@ymail.com}

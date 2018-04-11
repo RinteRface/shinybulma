@@ -30,7 +30,7 @@
 #' }
 #'
 #' @examples
-#' \dontrun{
+#' if(interactive()){
 #' library(shiny)
 #'
 #' shinyApp(

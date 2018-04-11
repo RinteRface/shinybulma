@@ -15,7 +15,6 @@ bulmaSteps(..., size = NULL)
 Create a step element \url{https://wikiki.github.io/components/steps/}.
 }
 \examples{
-\dontrun{
 if (interactive()) {
  library(shiny)
 
@@ -62,7 +61,7 @@ if (interactive()) {
  shinyApp(ui = ui, server = server)
 
 }
-}
+
 }
 \author{
 David Granjon, \email{dgranjon@ymail.com}

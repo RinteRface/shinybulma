@@ -16,6 +16,7 @@ bulmaNavbarPage(...)
 Build a bulma Shiny app.
 }
 \examples{
+if(interactive()){
 library(shiny)
 
 shinyApp(
@@ -56,5 +57,6 @@ shinyApp(
   ),
   server = function(input, output) {}
 )
+}
 
 }

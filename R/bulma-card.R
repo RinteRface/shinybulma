@@ -6,6 +6,7 @@
 #' @param tag html tag.
 #'
 #' @examples
+#' if(interactive()){
 #' library(shiny)
 #'
 #' shinyApp(
@@ -35,6 +36,7 @@
 #'   ),
 #'   server = function(input, output) {}
 #' )
+#' }
 #'
 #' @rdname card
 #' @export

@@ -9,12 +9,15 @@ bulmaFooter(..., container = TRUE, centered = TRUE)
 \arguments{
 \item{...}{any element.}
 
+\item{container}{set to \code{TRUE} to wrap in \code{\link{bulmaContainer}}.}
+
 \item{centered}{wheter to center the text.}
 }
 \description{
 Add a footer
 }
 \examples{
+if(interactive()){
 library(shiny)
 
 ui <- bulmaPage(
@@ -44,5 +47,5 @@ ui <- bulmaPage(
 server <- function(input, output){}
 
 shinyApp(ui, server)
-
+}
 }

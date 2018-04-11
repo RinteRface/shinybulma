@@ -31,6 +31,7 @@ bulmaHeroFoot(...)
 Add a section tag.
 }
 \examples{
+if(interactive()){
 library(shiny)
 
 ui <- bulmaPage(
@@ -49,5 +50,6 @@ ui <- bulmaPage(
 server <- function(input, output){}
 
 shinyApp(ui, server)
+}
 
 }

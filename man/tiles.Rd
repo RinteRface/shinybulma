@@ -18,11 +18,16 @@ bulmaTileChild(..., title = "", subtitle = "", color = NULL)
 \item{vertical}{set to \code{TRUE} if you want to stack tiles vertically.}
 
 \item{width}{define width of tile.}
+
+\item{title, subtitle}{tile title and subtitle.}
+
+\item{color}{color of tile.}
 }
 \description{
 Add masonry-like tiles.
 }
 \examples{
+if(interactive()){
 library(shiny)
 
 shinyApp(
@@ -62,6 +67,6 @@ shinyApp(
     })
   }
 )
-
+}
 
 }

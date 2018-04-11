@@ -16,7 +16,6 @@ bulmaNotification(..., color = NULL)
 Create a notification box \url{https://bulma.io/documentation/elements/notification/}.
 }
 \examples{
-\dontrun{
 if (interactive()) {
  library(shiny)
 
@@ -82,7 +81,7 @@ if (interactive()) {
  shinyApp(ui = ui, server = server)
 
 }
-}
+
 }
 \author{
 David Granjon, \email{dgranjon@ymail.com}

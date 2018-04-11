@@ -17,6 +17,7 @@ bulmaTextInput(inputId, label, placeholder)
 Add text input
 }
 \examples{
+if(interactive()){
 library(shiny)
 
 shinyApp(
@@ -29,5 +30,6 @@ shinyApp(
     output$default <- renderText({ input$txt })
   }
 )
+}
 
 }

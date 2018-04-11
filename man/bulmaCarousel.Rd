@@ -7,9 +7,9 @@
 bulmaCarousel(..., autoplay = FALSE, navigation = NULL)
 }
 \arguments{
-\item{...}{Slot for bulmaCarouselItem.}
+\item{...}{Slot for \code{bulmaCarouselItem}.}
 
-\item{autoplay}{FALSE by default. If TRUE, the carousel automatically change its content.}
+\item{autoplay}{\code{FALSE} by default. If TRUE, the carousel automatically change its content.}
 
 \item{navigation}{Where to display the navigations arrow : \code{centered} or \code{overlay}.
 If NULL, arrows are at the bottom and more spaced.}
@@ -18,7 +18,6 @@ If NULL, arrows are at the bottom and more spaced.}
 Create a carousel \url{https://wikiki.github.io/components/carousel/}.
 }
 \examples{
-\dontrun{
 if (interactive()) {
  library(shiny)
 
@@ -59,7 +58,7 @@ if (interactive()) {
  shinyApp(ui = ui, server = server)
 
 }
-}
+
 }
 \author{
 David Granjon, \email{dgranjon@ymail.com}

@@ -3,8 +3,14 @@
 #' Add a responsive horizontal navbar.
 #'
 #' @inheritParams bulmaPage
+#' @param transparent set to have transparent.
+#' @param color navbar color.
+#' @param fix.top,fix.bottom set one to have navbar fixed at top or bottom of page.
+#' @param label item label.
+#' @param href,target id of \code{bulmaNav} linked, \code{href} and \code{target} must be identical.
 #'
 #' @examples
+#' if(interactive()){
 #' library(shiny)
 #'
 #' shinyApp(
@@ -12,7 +18,8 @@
 #'    bulmaNavbar(
 #'      bulmaNavbarBrand(
 #'        bulmaNavbarItem(
-#'          "shinybulma"
+#'          "shinybulma",
+#'          href = "Item 1"
 #'        ),
 #'        bulmaNavbarBurger()
 #'      ),
@@ -74,6 +81,7 @@
 #'     })
 #'   }
 #' )
+#' }
 #'
 #' @rdname navbar
 #' @export
@@ -161,9 +169,14 @@ bulmaNavbarItem <- function(label, href = NULL){
         shiny::tags$script(
           paste0('$(document).ready(function(){
                  $("#', id,'").click(function(){
-                     $("', href,'").show().siblings("div").hide();
+                     $(".navTab").hide();
+                     $(".navTab").trigger(\'hide\');
+                     $(".navTab").trigger(\'hidden\');
+                     $(".navTab").removeClass(\'active\');
+                     $("', href,'").show();
                      $("', href,'").addClass("active");
-                     $("', href,'").css( "display", "block" );
+                     $("', href,'").trigger(\'show\');
+                     $("', href,'").trigger(\'shown\');
                  })
                 ;});')
         )
@@ -235,7 +248,6 @@ bulmaNav <- function(target, ...){
   shiny::tags$div(
     id = target,
     class = "navTab",
-    style = "display:none",
     ...
   )
 }

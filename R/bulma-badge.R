@@ -15,7 +15,6 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' if (interactive()) {
 #'  library(shiny)
 #'
@@ -142,11 +141,8 @@
 #'  }
 #'
 #'  shinyApp(ui = ui, server = server)
+#' }
 #'
-#' }
-#' }
-
-
 bulmaBadge <- function(..., color = NULL, size = NULL, style = NULL,
                        position = NULL, badge_text = NULL){
 

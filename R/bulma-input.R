@@ -5,6 +5,7 @@
 #' @param selected selected radio input.
 #'
 #' @examples
+#' if(interactive()){
 #' library(shiny)
 #'
 #' shinyApp(
@@ -20,6 +21,7 @@
 #'     )
 #'   }
 #' )
+#' }
 #'
 #' @export
 bulmaRadioInput <- function(inputId, choices, selected){
@@ -46,7 +48,7 @@ bulmaRadioInput <- function(inputId, choices, selected){
     )
 
     if(choices$value[i] == selected)
-      input <- tagAppendAttributes(input, checked = NA)
+      input <- shiny::tagAppendAttributes(input, checked = NA)
 
       choiceTag <- shiny::tags$label(class = "radio", choices$name[i],
                                      input)
@@ -73,6 +75,7 @@ bulmaRadioInput <- function(inputId, choices, selected){
 #' @param placeholder input placeholder.
 #'
 #' @examples
+#' if(interactive()){
 #' library(shiny)
 #'
 #' shinyApp(
@@ -85,6 +88,7 @@ bulmaRadioInput <- function(inputId, choices, selected){
 #'     output$default <- renderText({ input$txt })
 #'   }
 #' )
+#' }
 #'
 #' @export
 bulmaTextInput <- function(inputId, label, placeholder){
@@ -125,6 +129,7 @@ bulmaTextInput <- function(inputId, label, placeholder){
 #' @param rounded set to round corners.
 #'
 #' @examples
+#' if(interactive()){
 #' library(shiny)
 #'
 #' shinyApp(
@@ -140,9 +145,9 @@ bulmaTextInput <- function(inputId, label, placeholder){
 #'     }, rownames = TRUE)
 #'   }
 #' )
-#'
+#' }
 #' @export
-bulmaSelectInput <- function(inputId, label, choices, icon = NULL, rounded = FALSE){
+bulmaSelectInput <- function(inputId, label, choices, rounded = FALSE){
   select <- shiny::tags$select(
     id = inputId,
     class = "shinyBulmaSelect"
@@ -199,6 +204,7 @@ bulmaSelectInput <- function(inputId, label, choices, icon = NULL, rounded = FAL
 #' @param label button label.
 #'
 #' @examples
+#' if(interactive()){
 #' library(shiny)
 #'
 #' shinyApp(
@@ -212,7 +218,7 @@ bulmaSelectInput <- function(inputId, label, choices, icon = NULL, rounded = FAL
 #'     }, once = TRUE)
 #'  }
 #' )
-#'
+#' }
 #' @export
 bulmaActionButton <- function(inputId, label, color = NULL){
 

@@ -11,7 +11,6 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' if (interactive()) {
 #'  library(shiny)
 #'
@@ -130,8 +129,7 @@
 #'  shinyApp(ui = ui, server = server)
 #'
 #' }
-#' }
-
+#'
 bulmaPricingtable <- function(..., horizontal = FALSE) {
 
   cl <- "pricing-table"
@@ -161,8 +159,6 @@ bulmaPricingtable <- function(..., horizontal = FALSE) {
 #' @note the status "disabled" does not work at the moment.
 #'
 #' @export
-#'
-
 bulmaPricingPlan <- function(..., active = FALSE, color = NULL, plan_title = NULL,
                              plan_price = NULL, plan_currency = NULL,
                              plan_period = NULL, button_status = NULL,

@@ -9,12 +9,22 @@ bulmaTabs(tabs, center = FALSE, ...)
 
 bulmaTab(label, ...)
 }
+\arguments{
+\item{tabs}{\code{bulmaTab} elements.}
+
+\item{center}{set to center.}
+
+\item{...}{any element.}
+
+\item{label}{label of tab.}
+}
 \description{
 Add tabs
 
 Add tab
 }
 \examples{
+#' if(interactive()){
 library(shiny)
 
 shinyApp(
@@ -49,5 +59,6 @@ shinyApp(
     })
   }
 )
+}
 
 }

@@ -11,7 +11,6 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' if (interactive()) {
 #'  library(shiny)
 #'
@@ -43,10 +42,8 @@
 #'  }
 #'
 #'  shinyApp(ui = ui, server = server)
+#' }
 #'
-#' }
-#' }
-
 bulmaBox <- function(...) {
   shiny::tags$div(
     class = "box",
@@ -82,11 +79,8 @@ bulmaBox <- function(...) {
 #'
 #' @rdname box
 #' @export
-#'
-
-
 bulmaBoxMedia <- function(..., src = NULL, size = "64x64") {
-  tagList(
+  shiny::tagList(
     # media left
     shiny::tags$div(
       class = "media-left",

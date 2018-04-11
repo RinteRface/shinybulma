@@ -5,6 +5,7 @@
 #' @param ... any element.
 #'
 #' @examples
+#' if(interactive()){
 #' library(shiny)
 #'
 #' shinyApp(
@@ -45,6 +46,7 @@
 #'   ),
 #'   server = function(input, output) {}
 #' )
+#' }
 #'
 #' @rdname page
 #' @export

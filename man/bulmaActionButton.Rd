@@ -17,6 +17,7 @@ bulmaActionButton(inputId, label, color = NULL)
 Add submit button
 }
 \examples{
+if(interactive()){
 library(shiny)
 
 shinyApp(
@@ -30,5 +31,5 @@ shinyApp(
     }, once = TRUE)
  }
 )
-
+}
 }

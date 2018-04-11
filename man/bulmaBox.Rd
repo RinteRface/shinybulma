@@ -16,7 +16,6 @@ Create a simple box with or without media \url{https://bulma.io/documentation/el
 It is lighter than a bulmaCard element.
 }
 \examples{
-\dontrun{
 if (interactive()) {
  library(shiny)
 
@@ -48,9 +47,8 @@ if (interactive()) {
  }
 
  shinyApp(ui = ui, server = server)
+}
 
-}
-}
 }
 \author{
 David Granjon, \email{dgranjon@ymail.com}

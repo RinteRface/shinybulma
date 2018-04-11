@@ -30,6 +30,7 @@ bulmaCardFooterItem(..., tag = shiny::span)
 Flexible card component.
 }
 \examples{
+if(interactive()){
 library(shiny)
 
 shinyApp(
@@ -59,5 +60,6 @@ shinyApp(
   ),
   server = function(input, output) {}
 )
+}
 
 }

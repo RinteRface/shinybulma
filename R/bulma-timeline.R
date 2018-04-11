@@ -15,7 +15,6 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' if (interactive()) {
 #'  library(shiny)
 #'
@@ -28,19 +27,22 @@
 #'     bulmaTimelineItem(
 #'       color = "primary", marker_color = "primary",
 #'       marker_image = FALSE, marker_icon = FALSE,
-#'       content_header = "January 2016", content_body = "Timeline content - Can include any HTML element"
+#'       content_header = "January 2016",
+#'       content_body = "Timeline content - Can include any HTML element"
 #'     ),
 #'     bulmaTimelineItem(
 #'       color = "warning", marker_color = "warning",
 #'       marker_image = TRUE, marker_image_size = "32x32", marker_icon = FALSE,
-#'       content_header = "February 2016", content_body = "Timeline content - Can include any HTML element",
+#'       content_header = "February 2016",
+#'       content_body = "Timeline content - Can include any HTML element",
 #'       tags$img(src = "http://bulma.io/images/placeholders/32x32.png")
 #'     ),
 #'     bulmaTimelineHeader(text = "2017", size = NULL, color = "primary"),
 #'     bulmaTimelineItem(
 #'       color = "danger", marker_color = "danger",
 #'       marker_image = FALSE, marker_icon = TRUE,
-#'       content_header = "March 2016", content_body = "Timeline content - Can include any HTML element",
+#'       content_header = "March 2016",
+#'       content_body = "Timeline content - Can include any HTML element",
 #'       tags$i(class = "fa fa-flag")
 #'     ),
 #'     bulmaTimelineHeader(text = "End", size = "medium", color = "primary")
@@ -53,8 +55,6 @@
 #'  }
 #'
 #'  shinyApp(ui = ui, server = server)
-#'
-#' }
 #' }
 
 bulmaTimeline <- function(..., centered = FALSE, rtl = FALSE) {

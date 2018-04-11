@@ -7,9 +7,11 @@
 #' @param max maximum value.
 #' @param size size of progress bar, default to \code{NULL}
 #' takes \code{small}, \code{meidum} or \code{large}.
+#' @param color color of progress bar.
 #' @param outputId id of element.
 #'
 #' @examples
+#' if(interactive()){
 #' library(shiny)
 #'
 #' shinyApp(
@@ -28,6 +30,7 @@
 #'     })
 #'   }
 #' )
+#' }
 #'
 #' @rdname progress
 #' @export

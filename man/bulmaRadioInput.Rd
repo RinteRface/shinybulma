@@ -17,6 +17,7 @@ bulmaRadioInput(inputId, choices, selected)
 Add radio buttons
 }
 \examples{
+if(interactive()){
 library(shiny)
 
 shinyApp(
@@ -32,5 +33,6 @@ shinyApp(
     )
   }
 )
+}
 
 }

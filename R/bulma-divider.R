@@ -12,7 +12,6 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' if (interactive()) {
 #'  library(shiny)
 #'
@@ -46,9 +45,7 @@
 #'  shinyApp(ui = ui, server = server)
 #'
 #' }
-#' }
-
-
+#'
 bulmaDivider <- function(content = NULL, vertical = FALSE){
   if (vertical == FALSE) {
     shiny::tags$div(

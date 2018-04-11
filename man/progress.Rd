@@ -19,6 +19,8 @@ bulmaProgressOutput(outputId)
 
 \item{max}{maximum value.}
 
+\item{color}{color of progress bar.}
+
 \item{size}{size of progress bar, default to \code{NULL}
 takes \code{small}, \code{meidum} or \code{large}.}
 
@@ -36,6 +38,7 @@ is useful if you want to save an expression in a variable.}
 Add a progress bar.
 }
 \examples{
+if(interactive()){
 library(shiny)
 
 shinyApp(
@@ -54,5 +57,6 @@ shinyApp(
     })
   }
 )
+}
 
 }

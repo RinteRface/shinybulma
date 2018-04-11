@@ -10,7 +10,6 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' if (interactive()) {
 #'  library(shiny)
 #'
@@ -57,7 +56,7 @@
 #'  shinyApp(ui = ui, server = server)
 #'
 #' }
-#' }
+#'
 
 bulmaSteps <- function(..., size = NULL) {
 
@@ -121,7 +120,7 @@ bulmaStepDetail <- function(..., color = NULL, completed = FALSE,
   if (!is.null(color)) cl <- paste0(cl, " is-", color)
   if (completed == TRUE) cl <- paste0(cl, " is-completed")
 
-  tagList(
+  shiny::tagList(
     shiny::tags$div(
       class = "step-marker",
       if (!is.null(marker)) paste0(marker)

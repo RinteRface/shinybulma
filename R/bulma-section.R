@@ -6,6 +6,7 @@
 #' @param size change the spacing, takes \code{medium} or \code{large}.
 #'
 #' @examples
+#' if(interactive()){
 #' library(shiny)
 #'
 #' shinyApp(
@@ -26,6 +27,7 @@
 #'   ),
 #'   server = function(input, output) {}
 #' )
+#' }
 #'
 #' @export
 bulmaSection <- function(..., size = NULL){

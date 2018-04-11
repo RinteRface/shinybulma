@@ -11,7 +11,6 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' if (interactive()) {
 #'  library(shiny)
 #'
@@ -77,7 +76,7 @@
 #'  shinyApp(ui = ui, server = server)
 #'
 #' }
-#' }
+#'
 
 bulmaNotification <- function(..., color = NULL) {
 
