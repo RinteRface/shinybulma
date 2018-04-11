@@ -90,7 +90,7 @@ shinyApp(
          bulmaTab(
            "Tab 2",
            bulmaTitle("Tab 2"),
-           plotOutput("plot")
+           plotOutput("hist")
          ),
          bulmaTab(
            "Tab 3",
@@ -103,7 +103,23 @@ shinyApp(
      "Item 2",
      bulmaContainer(
        bulmaTitle("Item 2"),
-       plotOutput("hist")
+       bulmaTabs(
+       tabs = c("Tab 1", "Tab 2", "Tab 3"),
+       center = TRUE,
+         bulmaTab(
+           "Tab 1",
+           bulmaTitle("Tab 1")
+         ),
+         bulmaTab(
+           "Tab 2",
+           bulmaTitle("Tab 2"),
+           plotOutput("plot")
+         ),
+         bulmaTab(
+           "Tab 3",
+           bulmaTitle("Tab 3")
+         )
+       )
      )
    )
   ),
