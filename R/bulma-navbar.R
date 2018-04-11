@@ -187,13 +187,26 @@ bulmaNavbarLink <- function(label, href = ""){
 #' @rdname navbar
 #' @export
 bulmaNavbarBurger <- function(){
-  shiny::tags$button(
+
+  burger <- shiny::tags$button(
     class = "button navbar-burger",
     `data-target` = "navMenu",
     shiny::tags$span(),
     shiny::tags$span(),
     shiny::tags$span()
   )
+
+  shiny::tagList(
+    shiny::singleton(
+      shiny::tags$head(
+        shiny::includeScript(
+          system.file(file.path("js", "bulma-burger-js.js"), package = "shinybulma")
+        )
+      )
+    ),
+    burger
+  )
+
 }
 
 #' @rdname navbar
