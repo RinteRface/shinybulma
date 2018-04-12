@@ -3,12 +3,10 @@
 $(document).ready(function () {
   // hide all
   $(".navTab").hide();
-  $(".navTab").trigger('hide');
-  $(".navTab").trigger('hidden');
-  $(".navTab").removeClass('active');
+  $(".navTab").removeClass('is-active');
 
   // show first
   $(".navTab").first().show();
-  $(".navTab").first().addCalss('active');
+  $(".navTab").first().addClass('active');
 });
 

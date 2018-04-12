@@ -68,6 +68,7 @@
 #'      "Item 2",
 #'      bulmaContainer(
 #'        bulmaTitle("Item 2"),
+#'        plotOutput("plot2"),
 #'        bulmaTabs(
 #'        tabs = c("Tab 1", "Tab 2", "Tab 3"),
 #'        center = TRUE,
@@ -93,6 +94,11 @@
 #'       hist(rnorm(20, 10))
 #'     })
 #'     output$plot <- renderPlot({
+#'       plot(1:20, rnorm(20, 20))
+#'     })
+#'     
+#'     output$plot2 <- renderPlot({
+#'       print("rendered plot #2")
 #'       plot(1:20, rnorm(20, 20))
 #'     })
 #'   }
@@ -171,35 +177,14 @@ bulmaNavbarItem <- function(label, href = NULL){
   id <- gsub("[[:space:]]|[[:cntrl:]]|[[:punct:]]", "-", label)
   id <- paste0(id, "button")
 
-
-  item <- shiny::tags$a(
+  fct <- paste0("showHide('", href, "')") # bulma-nav-js.js
+  
+  shiny::tags$a(
     id = id,
     class = "navbar-item",
     href = "javascript:void(0)",
+    onclick = fct,
     label
-  )
-
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::tags$script(
-          paste0('$(document).ready(function(){
-                 $("#', id,'").click(function(){
-                     $(".navTab").hide();
-                     $(".navTab").trigger(\'hide\');
-                     $(".navTab").trigger(\'hidden\');
-                     $(".navTab").removeClass(\'active\');
-                     $("', href,'").show();
-                     $("', href,'").addClass("active");
-                     $("', href,'").css({ \'display\': "block" });
-                     $("', href,'").trigger(\'show\');
-                     $("', href,'").trigger(\'shown\');
-                 })
-                ;});')
-        )
-      )
-    ),
-    item
   )
 
 }
@@ -264,7 +249,7 @@ bulmaNav <- function(target, ...){
 
   shiny::tags$div(
     id = target,
-    # style = "display:none;", # plots do not render
+    # style = "display:none", # plots do not render
     class = "navTab",
     ...
   )
