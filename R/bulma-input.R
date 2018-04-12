@@ -13,10 +13,10 @@
 #'    bulmaTitle("Hello Bulma"),
 #'    bulmaRadioInput("select", c("Miles per galon" = "mpg", "Rear axle ratio" = "drat"),
 #'      selected = "mpg"),
-#'    plotOutput("plot")
+#'    plotOutput("value")
 #'   ),
 #'   server = function(input, output) {
-#'     output$plot <- renderPlot(
+#'     output$value <- renderPlot(
 #'       plot(1:nrow(mtcars), mtcars[[input$select]])
 #'     )
 #'   }

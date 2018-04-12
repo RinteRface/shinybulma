@@ -1,24 +1,20 @@
-$(document).ready(function () {
-
-    var shinyBulmaRadioInput = new Shiny.InputBinding();
-    $.extend(shinyBulmaRadioInput, {
-        find: function (scope) {
-            return $(scope).find(".shinyBulmaRadio");
-        },
-        getValue: function (el) {
-          var val = $('input[name=' + $(el).attr('id') + ']:checked').val();
-          console.log(val);
-          return val;
-        },
-        subscribe: function (el, callback) {
-            $(el).on("change.shinyBulmaRadioInput", function (e) {
-                callback();
-            });
-        },
-        unsubscribe: function (el) {
-            $(el).off(".shinyBulmaRadio");
-        }
+var shinyBulmaRadio = new Shiny.InputBinding();
+$.extend(shinyBulmaRadio, {
+  find: function(scope) {
+    return $(scope).find(".shinyBulmaRadio");
+  },
+  getValue: function(el) {
+    console.log($('input:radio:checked').val());
+    return $('input:radio:checked').val();
+  },
+  subscribe: function(el, callback) {
+    $(el).on("change.shinyBulmaRadio", function(e) {
+      callback();
     });
-
-    Shiny.inputBindings.register(shinyBulmaRadioInput);
+  },
+  unsubscribe: function(el) {
+    $(el).off(".shinyBulmaRadio");
+  }
 });
+
+Shiny.inputBindings.register(shinyBulmaRadio);

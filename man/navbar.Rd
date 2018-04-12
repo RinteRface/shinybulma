@@ -103,6 +103,7 @@ shinyApp(
      "Item 2",
      bulmaContainer(
        bulmaTitle("Item 2"),
+       plotOutput("plot2"),
        bulmaTabs(
        tabs = c("Tab 1", "Tab 2", "Tab 3"),
        center = TRUE,
@@ -128,6 +129,11 @@ shinyApp(
       hist(rnorm(20, 10))
     })
     output$plot <- renderPlot({
+      plot(1:20, rnorm(20, 20))
+    })
+    
+    output$plot2 <- renderPlot({
+      print("rendered plot #2")
       plot(1:20, rnorm(20, 20))
     })
   }
