@@ -88,11 +88,11 @@ bulmaPage <- function(...){
     ),
     # Body --------------------------------------------------------------------
     shiny::tags$body(
-      ...,
       shiny::includeScript(
         system.file("js/custom-js.js",
                     package = "shinybulma")
-      )
+      ), 
+      ...
     )
   )
 }
