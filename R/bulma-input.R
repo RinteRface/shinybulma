@@ -209,27 +209,28 @@ bulmaSelectInput <- function(inputId, label, choices, rounded = FALSE){
 #'
 #' shinyApp(
 #'   ui = bulmaPage(
-#'     bulmaActionButton("go", "Go")
+#'     bulmaActionButton("goButton", "Render in console")
 #'   ),
-#'   server = function(input, output, session) {
-#'     observeEvent(input$go, {
-#'       print(paste("This will only be printed once; all",
-#'         "subsequent button clicks won't do anything"))
-#'     }, once = TRUE)
+#'   server = function(input, output) {
+#'     observeEvent(input$goButton, {
+#'       print("button clicked")
+#'     })
 #'  }
 #' )
 #' }
 #' @export
 bulmaActionButton <- function(inputId, label, color = NULL){
 
-  cl <- "button shinyBulmaRadio"
+  cl <- "button shinyBulmaActionButton"
 
   if(!is.null(color)) cl <- paste0(cl, " is-", color)
 
   button <- shiny::tags$div(
     class = "control",
     shiny::tags$button(
+      id = inputId,
       class = cl,
+      value = 0,
       label
     )
   )

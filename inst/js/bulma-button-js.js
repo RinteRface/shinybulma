@@ -1,22 +1,31 @@
 $(document).ready(function () {
-
-  var shinyBulmaSubmitButton = new Shiny.InputBinding();
-  $.extend(shinyBulmaSubmitButton, {
-    find: function (scope) {
-      return $(scope).find(".shinyBulmaRadio");
-    },
-    getValue: function (el) {
-      return $(el).val();
-    },
-    subscribe: function (el, callback) {
-      $(el).on("change.shinyBulmaSubmitButton", function (e) {
-        callback();
-      });
-    },
-    unsubscribe: function (el) {
-      $(el).off(".shinyBulmaRadio");
-    }
-  });
-
-  Shiny.inputBindings.register(shinyBulmaSubmitButton);
+  
+    $(document).on("click", ".shinyBulmaActionButton", function(evt) {
+        var el = $(evt.target);
+        var curVal = parseInt(el.val());
+        el.val(curVal + 1);
+        console.log(el.val());
+        el.trigger("change");
+    });
+    
+    var shinyBulmaActionButton = new Shiny.InputBinding();
+    $.extend(shinyBulmaActionButton, {
+      find: function(scope) {
+        return $(scope).find(".shinyBulmaActionButton");
+      },
+      getValue: function(el) {
+        return parseInt($(el).val());
+      },
+      subscribe: function(el, callback) {
+        $(el).on("change.shinyBulmaActionButton", function(e) {
+          console.log(el);
+          callback();
+        });
+      },
+      unsubscribe: function(el) {
+        $(el).off(".shinyBulmaActionButton");
+      }
+    });
+    
+    Shiny.inputBindings.register(shinyBulmaActionButton);
 });

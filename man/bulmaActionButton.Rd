@@ -22,13 +22,12 @@ library(shiny)
 
 shinyApp(
   ui = bulmaPage(
-    bulmaActionButton("go", "Go")
+    bulmaActionButton("goButton", "Render in console")
   ),
-  server = function(input, output, session) {
-    observeEvent(input$go, {
-      print(paste("This will only be printed once; all",
-        "subsequent button clicks won't do anything"))
-    }, once = TRUE)
+  server = function(input, output) {
+    observeEvent(input$goButton, {
+      print("button clicked")
+    })
  }
 )
 }
