@@ -12,6 +12,9 @@ $(document).ready(function () {
             $(el).on("change.shinyBulmaText", function (e) {
                 callback();
             });
+        },
+        unsubscribe: function(el) {
+          $(el).off(".shinyBulmaRadio");
         }
     });
 

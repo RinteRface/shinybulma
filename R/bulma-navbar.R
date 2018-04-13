@@ -30,6 +30,9 @@
 #'        bulmaNavbarItem(
 #'          "Item 2"
 #'        ),
+#'        bulmaNavbarItem(
+#'          "Item 3"
+#'        ),
 #'      bulmaNavbarDropdown(
 #'        label = "Drop-down",
 #'        bulmaNavbarItem(
@@ -86,6 +89,12 @@
 #'            bulmaTitle("Tab 3")
 #'          )
 #'        )
+#'      )
+#'    ),
+#'    bulmaNav(
+#'      "Item 3",
+#'      bulmaContainer(
+#'        bulmaTitle("Item 3")
 #'      )
 #'    )
 #'   ),
@@ -174,15 +183,10 @@ bulmaNavbarItem <- function(label, href = NULL){
     href <- paste0("#", href)
   }
 
-  id <- gsub("[[:space:]]|[[:cntrl:]]|[[:punct:]]", "-", label)
-  id <- paste0(id, "button")
-
   fct <- paste0("showHide('", href, "')") # bulma-nav-js.js
   
   shiny::tags$a(
-    id = id,
     class = "navbar-item",
-    href = "javascript:void(0)",
     onclick = fct,
     label
   )
@@ -249,7 +253,7 @@ bulmaNav <- function(target, ...){
 
   shiny::tags$div(
     id = target,
-    # style = "display:none", # plots do not render
+    style = "display:none", # plots do not render
     class = "navTab",
     ...
   )
