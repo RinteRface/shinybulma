@@ -65,15 +65,9 @@ shinyApp(
        bulmaNavbarItem(
          "Item 2"
        ),
-     bulmaNavbarDropdown(
-       label = "Drop-down",
        bulmaNavbarItem(
-         "Select 1"
-       ),
-       bulmaNavbarItem(
-         "Select 2"
+         "Item 3"
        )
-     )
     )
    ),
    bulmaNav(
@@ -122,6 +116,12 @@ shinyApp(
          )
        )
      )
+   ),
+   bulmaNav(
+     "Item 3",
+     bulmaContainer(
+       bulmaTitle("Item 3")
+     )
    )
   ),
   server = function(input, output) {
@@ -133,7 +133,6 @@ shinyApp(
     })
     
     output$plot2 <- renderPlot({
-      print("rendered plot #2")
       plot(1:20, rnorm(20, 20))
     })
   }

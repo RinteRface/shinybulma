@@ -2,6 +2,7 @@
 #'
 #' @inheritParams bulmaPage
 #' @param tag html tag.
+#' @param id target to set an html anchor.
 #'
 #' @examples
 #' if(interactive()){
@@ -35,18 +36,20 @@
 #'
 #' @rdname title
 #' @export
-bulmaTitle <- function(..., tag = shiny::h1){
+bulmaTitle <- function(..., tag = shiny::h1, id = NULL){
   tag(
-    class = "title",
+    class = "title", 
+    id = id,
     ...
   )
 }
 
 #' @rdname title
 #' @export
-bulmaSubtitle <- function(..., tag = shiny::h2){
+bulmaSubtitle <- function(..., tag = shiny::h2, id = NULL){
   tag(
     class = "subtitle",
+    id = id,
     ...
   )
 }
