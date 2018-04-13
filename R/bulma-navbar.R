@@ -32,16 +32,7 @@
 #'        ),
 #'        bulmaNavbarItem(
 #'          "Item 3"
-#'        ),
-#'      bulmaNavbarDropdown(
-#'        label = "Drop-down",
-#'        bulmaNavbarItem(
-#'          "Select 1"
-#'        ),
-#'        bulmaNavbarItem(
-#'          "Select 2"
 #'        )
-#'      )
 #'     )
 #'    ),
 #'    bulmaNav(
@@ -107,7 +98,6 @@
 #'     })
 #'     
 #'     output$plot2 <- renderPlot({
-#'       print("rendered plot #2")
 #'       plot(1:20, rnorm(20, 20))
 #'     })
 #'   }
@@ -253,7 +243,7 @@ bulmaNav <- function(target, ...){
 
   shiny::tags$div(
     id = target,
-    style = "display:none", # plots do not render
+    # style = "display:none", # plots do not render
     class = "navTab",
     ...
   )

@@ -25,7 +25,3 @@ $( function() {
      });
   };
 });
-
-$('#Item-2').on('shiny:visualchange', function(event) {
-  console.log("hello plot");
-});
