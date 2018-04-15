@@ -4,10 +4,12 @@
 \alias{bulmaSliderInput}
 \title{Slider}
 \usage{
-bulmaSliderInput(value, min, max, step = 1, class = NULL, size = NULL,
-  orient = "horizontal")
+bulmaSliderInput(inputId, value, min, max, step = 1, class = NULL,
+  size = NULL, orient = "horizontal", ...)
 }
 \arguments{
+\item{inputId}{Id to access value.}
+
 \item{value, min, max}{Current value, maximum and minimum of slider.}
 
 \item{class}{Additional class.}
@@ -15,6 +17,8 @@ bulmaSliderInput(value, min, max, step = 1, class = NULL, size = NULL,
 \item{size}{Size of slider, see details.}
 
 \item{orient}{Slider orientation, takes, \code{horizontal} or \code{vertical}.}
+
+\item{...}{Any other parameter to pass to \code{input}.}
 }
 \description{
 Add a slider input
@@ -27,4 +31,30 @@ Valid \code{size}:
   \item{\code{medium}}
   \item{\code{large}}
 }
+}
+\examples{
+if(interactive()){
+  library(shiny)
+  
+  ui <- bulmaPage(
+    bulmaContainer(
+      br(),
+      bulmaSliderInput("slider", 10, 3, 150),
+      plotOutput("plot")
+    )
+  )
+  
+  server <- function(input, output){
+    data <- reactive({
+      rnorm(input$slider, 20, 4)
+    })
+    
+    output$plot <- renderPlot({
+      hist(data())
+    })
+  }
+  
+  shinyApp(ui, server)
+}
+
 }

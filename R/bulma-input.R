@@ -409,10 +409,12 @@ bulmaSwitchInput <- function(inputId, label = NULL, value = FALSE,
 #' Slider
 #' 
 #' Add a slider input
+#' @param inputId Id to access value.
 #' @param value,min,max Current value, maximum and minimum of slider.
 #' @param class Additional class.
 #' @param size Size of slider, see details.
 #' @param orient Slider orientation, takes, \code{horizontal} or \code{vertical}.
+#' @param ... Any other parameter to pass to \code{input}.
 #' 
 #' @details 
 #' Valid \code{size}:
@@ -449,7 +451,8 @@ bulmaSwitchInput <- function(inputId, label = NULL, value = FALSE,
 #' }
 #' 
 #' @export
-bulmaSliderInput <- function(id, value, min, max, step = 1, class = NULL, size = NULL, orient = "horizontal"){
+bulmaSliderInput <- function(inputId, value, min, max, step = 1, class = NULL, size = NULL, 
+                             orient = "horizontal", ...){
   
   if(missing(value) || missing(min) || missing(max))
     stop("must pass value, min and max", call. = FALSE)
@@ -462,17 +465,18 @@ bulmaSliderInput <- function(id, value, min, max, step = 1, class = NULL, size =
   cl <- paste0(cl, size)
   
   input <- shiny::tags$input(
-    id = id,
+    id = inputId,
     class = cl,
     type = "range",
     step = step,
     min = min,
     max = max,
-    orient = orient
+    orient = orient,
+    ...
   )
   
   output <- shiny::tags$output(
-    `for` = id,
+    `for` = inputId,
     value
   )
   
