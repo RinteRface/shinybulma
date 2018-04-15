@@ -17,9 +17,7 @@ Build a bulma Shiny app.
 }
 \examples{
 if(interactive()){
-library(shiny)
-
-shinyApp(
+shiny::shinyApp(
   ui = bulmaNavbarPage(
    bulmaNavbar(
      bulmaNavbarBrand(

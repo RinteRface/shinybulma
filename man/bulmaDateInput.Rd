@@ -5,15 +5,31 @@
 \title{Date picker}
 \usage{
 bulmaDateInput(inputId, value, min = Sys.Date() - 3, max = Sys.Date(),
-  overlay = FALSE, lang = "en", ...)
+  overlay = FALSE, lang = "en", class = NULL, ...)
+}
+\arguments{
+\item{inputId}{Id to access value.}
+
+\item{value}{Current date.}
+
+\item{min, max}{Minimum and maximum selectable dates.}
+
+\item{overlay}{Set to \code{TRUE} to heave the calendar appear as overlay.}
+
+\item{lang}{Language.}
+
+\item{class}{Additional CSS class.}
+
+\item{...}{any other option}
 }
 \description{
 Add date picker
 }
+\note{
+Does not work in RStudio, open app in browser.
+}
 \examples{
 if(interactive()){
-  library(shiny)
-  
   ui <- bulmaPage(
     bulmaContainer(
       br(),
@@ -29,7 +45,7 @@ if(interactive()){
     })
   }
   
-  shinyApp(ui, server)
+  shiny::shinyApp(ui, server)
 }
 
 }
