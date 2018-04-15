@@ -4,13 +4,15 @@
 \alias{bulmaSliderInput}
 \title{Slider}
 \usage{
-bulmaSliderInput(inputId, value, min, max, step = 1, class = NULL,
-  size = NULL, orient = "horizontal", ...)
+bulmaSliderInput(inputId, value, min, max, color = NULL, step = 1,
+  class = NULL, size = NULL, orient = "horizontal", ...)
 }
 \arguments{
 \item{inputId}{Id to access value.}
 
 \item{value, min, max}{Current value, maximum and minimum of slider.}
+
+\item{color}{Slider color.}
 
 \item{step}{Slider step.}
 

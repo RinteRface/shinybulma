@@ -417,6 +417,7 @@ bulmaSwitchInput <- function(inputId, label = NULL, value = FALSE,
 #' @param step Slider step.
 #' @param class Additional class.
 #' @param size Size of slider, see details.
+#' @param color Slider color.
 #' @param orient Slider orientation, takes, \code{horizontal} or \code{vertical}.
 #' @param ... Any other parameter to pass to \code{input}.
 #' 
@@ -455,16 +456,19 @@ bulmaSwitchInput <- function(inputId, label = NULL, value = FALSE,
 #' }
 #' 
 #' @export
-bulmaSliderInput <- function(inputId, value, min, max, step = 1, class = NULL, size = NULL, 
+bulmaSliderInput <- function(inputId, value, min, max, color = NULL, step = 1, class = NULL, size = NULL, 
                              orient = "horizontal", ...){
   
   if(missing(value) || missing(min) || missing(max))
     stop("must pass value, min and max", call. = FALSE)
   
-  cl <- paste("bulmaSliderInput slider has-output is-fullwidth", class)
+  cl <- paste("bulmaSliderInput slider has-output is-fullwidth is-circle", class)
   
   if(!is.null(size))
     size <- paste0("is-", size)
+  
+  if(!is.null(size))
+    color <- paste0("is-", color)
   
   cl <- paste(cl, size)
   
