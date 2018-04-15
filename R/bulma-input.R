@@ -409,6 +409,7 @@ bulmaSwitchInput <- function(inputId, label = NULL, value = FALSE,
 #' Slider
 #' 
 #' Add a slider input
+#' 
 #' @param inputId Id to access value.
 #' @param value,min,max Current value, maximum and minimum of slider.
 #' @param class Additional class.
@@ -496,6 +497,14 @@ bulmaSliderInput <- function(inputId, value, min, max, step = 1, class = NULL, s
 #' 
 #' Add date picker
 #' 
+#' @param inputId Id to access value.
+#' @param value Current date.
+#' @param min,max Minimum and maximum selectable dates.
+#' @param overlay Set to \code{TRUE} to heave the calendar appear as overlay.
+#' @param lang Language.
+#' @param class Additional CSS class.
+#' @param ... any other option
+#' 
 #' @examples 
 #' if(interactive()){
 #'   ui <- bulmaPage(
@@ -516,9 +525,11 @@ bulmaSliderInput <- function(inputId, value, min, max, step = 1, class = NULL, s
 #'   shiny::shinyApp(ui, server)
 #' }
 #' 
+#' @note Does not work in RStudio, open app in browser.
+#' 
 #' @export
 bulmaDateInput <- function(inputId, value, min = Sys.Date() - 3, max = Sys.Date(), 
-                           overlay = FALSE, lang = 'en', ...){
+                           overlay = FALSE, lang = 'en', class = NULL, ...){
   
   if(missing(inputId) || missing(value))
     stop("must pass inputId and value")
@@ -543,9 +554,11 @@ document.addEventListener( 'DOMContentLoaded', function () {
     "
   )
   
+  cl <- paste("input bulmaCalendarInput", class)
+  
   input <- shiny::tags$input(
     id = inputId,
-    class = "input bulmaCalendarInput",
+    class = cl,
     value = value,
     ...
   )
