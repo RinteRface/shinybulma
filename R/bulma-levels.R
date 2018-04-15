@@ -34,6 +34,7 @@
 #' )
 #' }
 #'
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @rdname level
 #' @export
 bulmaLevel <- function(..., mobile = FALSE){

@@ -14,7 +14,7 @@ bulmaRadioInput(inputId, choices, selected)
 \item{selected}{selected radio input.}
 }
 \description{
-Add radio buttons
+Add radio buttons.
 }
 \examples{
 if(interactive()){
@@ -34,5 +34,7 @@ shinyApp(
   }
 )
 }
-
+}
+\author{
+John Coene, \email{jcoenep@gmail.com}
 }

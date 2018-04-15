@@ -16,7 +16,7 @@ bulmaSelectInput(inputId, label, choices, rounded = FALSE)
 \item{rounded}{set to round corners.}
 }
 \description{
-Add dropdown input
+Add dropdown otpions.
 }
 \examples{
 if(interactive()){
@@ -36,4 +36,7 @@ shinyApp(
   }
 )
 }
+}
+\author{
+John Coene, \email{jcoenep@gmail.com}
 }

@@ -104,6 +104,7 @@
 #' )
 #' }
 #'
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @rdname navbar
 #' @export
 bulmaNavbar <- function(..., transparent = FALSE, color = NULL, fix.top = FALSE, fix.bottom = FALSE){

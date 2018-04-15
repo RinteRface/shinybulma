@@ -45,6 +45,7 @@
 #' )
 #' }
 #'
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @rdname tabs
 #' @export
 bulmaTabs <- function(tabs, center = FALSE, ...){
@@ -84,8 +85,6 @@ bulmaTabs <- function(tabs, center = FALSE, ...){
   )
 }
 
-#' Add tab
-#'
 #' @rdname tabs
 #' @export
 bulmaTab <- function(label, ...){

@@ -16,3 +16,9 @@ bulmaColumn(..., width = NULL, narrow = FALSE)
 \description{
 Add a column
 }
+\seealso{
+\code{\link{bulmaColumn}}
+}
+\author{
+John Coene, \email{jcoenep@ymail.com}
+}

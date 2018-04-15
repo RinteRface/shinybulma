@@ -38,6 +38,8 @@
 #'
 #' shinyApp(ui, server)
 #' }
+#' 
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export
 bulmaFooter <- function(..., container = TRUE, centered = TRUE){
 

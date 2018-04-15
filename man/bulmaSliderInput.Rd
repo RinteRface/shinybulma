@@ -25,7 +25,7 @@ bulmaSliderInput(inputId, value, min, max, color = NULL, step = 1,
 \item{...}{Any other parameter to pass to \code{input}.}
 }
 \description{
-Add a slider input
+Add a slider input.
 }
 \details{
 Valid \code{size}:
@@ -60,5 +60,7 @@ if(interactive()){
   
   shinyApp(ui, server)
 }
-
+}
+\author{
+John Coene, \email{jcoenep@gmail.com}
 }

@@ -29,6 +29,7 @@
 #' )
 #' }
 #'
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export
 bulmaSection <- function(..., size = NULL){
   cl <- "section"

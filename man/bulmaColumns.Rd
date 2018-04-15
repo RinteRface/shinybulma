@@ -21,3 +21,33 @@ bulmaColumns(..., gapless = FALSE, centered = FALSE, multiline = FALSE,
 \description{
 Add a column
 }
+\examples{
+if(interactive()){
+ui <- bulmaPage(
+  bulmaContainer(
+    bulmaColumns(
+      bulmaColumn(
+        bulmaTitle("2 columns")
+      ),
+      bulmaColumn(
+        plotOutput("plot")
+      )
+    )
+  )
+)
+
+server <- function(input, output){
+  output$plot <- renderPlot({
+    plot(1:20, rnorm(20), type = "l")
+  })
+}
+
+shiny::shinyApp(ui, server)
+}
+}
+\seealso{
+\code{\link{bulmaColumn}}
+}
+\author{
+John Coene, \email{jcoenep@gmail.com}
+}

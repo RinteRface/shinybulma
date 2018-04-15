@@ -5,6 +5,8 @@
 #' @param widescreen until the \code{widescreen} breakpoint.
 #' @param fullhd until the \code{fullhd} breakpoint.
 #'
+#' @author John Coene, \email{jcoenep@@gmail.com}
+#'
 #' @export
 bulmaContainer <- function(..., fluid = FALSE, widescreen = FALSE, fullhd = FALSE){
 

@@ -140,3 +140,6 @@ shinyApp(
 }
 
 }
+\author{
+John Coene, \email{jcoenep@gmail.com}
+}

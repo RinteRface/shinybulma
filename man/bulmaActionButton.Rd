@@ -2,7 +2,7 @@
 % Please edit documentation in R/bulma-input.R
 \name{bulmaActionButton}
 \alias{bulmaActionButton}
-\title{Add submit button}
+\title{Add action button}
 \usage{
 bulmaActionButton(inputId, label, color = NULL)
 }
@@ -14,7 +14,7 @@ bulmaActionButton(inputId, label, color = NULL)
 \item{color}{button color.}
 }
 \description{
-Add submit button
+Add an action button.
 }
 \examples{
 if(interactive()){
@@ -31,4 +31,7 @@ shinyApp(
  }
 )
 }
+}
+\author{
+John Coene, \email{jcoenep@gmail.com}
 }

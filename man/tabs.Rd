@@ -20,8 +20,6 @@ bulmaTab(label, ...)
 }
 \description{
 Add tabs
-
-Add tab
 }
 \examples{
 if(interactive()){
@@ -61,4 +59,7 @@ shinyApp(
 )
 }
 
+}
+\author{
+John Coene, \email{jcoenep@gmail.com}
 }

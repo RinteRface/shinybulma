@@ -23,7 +23,7 @@ bulmaDateInput(inputId, value, min = Sys.Date() - 3, max = Sys.Date(),
 \item{...}{any other option}
 }
 \description{
-Add date picker
+Add date picker.
 }
 \note{
 Does not work in RStudio, open app in browser.
@@ -48,4 +48,7 @@ if(interactive()){
   shiny::shinyApp(ui, server)
 }
 
+}
+\author{
+John Coene, \email{jcoenep@gmail.com}
 }

@@ -29,7 +29,8 @@
 #'
 #' shinyApp(ui, server)
 #' }
-#'
+#' 
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @rdname hero
 #' @export
 bulmaHero <- function(..., color = NULL, size = NULL, bold = FALSE,

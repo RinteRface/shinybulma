@@ -38,6 +38,8 @@
 #' )
 #' }
 #'
+#' @author John Coene, \email{jcoenep@@ymail.com}
+#'
 #' @rdname card
 #' @export
 bulmaCard <- function(...){

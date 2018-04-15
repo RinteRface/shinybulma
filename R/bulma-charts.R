@@ -41,6 +41,8 @@
 #'   server = function(input, output) {}
 #' )
 #' }
+#' 
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #'
 #' @export
 bulmaFigure <- function(src, size = NULL, ratio = NULL, alt = ""){

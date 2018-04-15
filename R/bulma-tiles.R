@@ -51,6 +51,7 @@
 #' )
 #' }
 #'
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @rdname tiles
 #' @export
 bulmaTileAncestor <- function(...){

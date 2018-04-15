@@ -14,7 +14,7 @@ bulmaTextInput(inputId, label, placeholder)
 \item{placeholder}{input placeholder.}
 }
 \description{
-Add text input
+Add text input.
 }
 \examples{
 if(interactive()){
@@ -31,5 +31,7 @@ shinyApp(
   }
 )
 }
-
+}
+\author{
+John Coene, \email{jcoenep@gmail.com}
 }

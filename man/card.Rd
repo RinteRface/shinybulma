@@ -63,3 +63,6 @@ shinyApp(
 }
 
 }
+\author{
+John Coene, \email{jcoenep@ymail.com}
+}

@@ -34,6 +34,7 @@
 #' )
 #' }
 #'
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @rdname title
 #' @export
 bulmaTitle <- function(..., tag = shiny::h1, id = NULL){

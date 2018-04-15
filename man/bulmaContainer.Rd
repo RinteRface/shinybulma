@@ -18,3 +18,6 @@ bulmaContainer(..., fluid = FALSE, widescreen = FALSE, fullhd = FALSE)
 \description{
 Add container
 }
+\author{
+John Coene, \email{jcoenep@gmail.com}
+}
