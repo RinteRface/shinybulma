@@ -405,3 +405,85 @@ bulmaSwitchInput <- function(inputId, label = NULL, value = FALSE,
   
   field
 }
+
+#' Slider
+#' 
+#' Add a slider input
+#' @param value,min,max Current value, maximum and minimum of slider.
+#' @param class Additional class.
+#' @param size Size of slider, see details.
+#' @param orient Slider orientation, takes, \code{horizontal} or \code{vertical}.
+#' 
+#' @details 
+#' Valid \code{size}:
+#' \itemize{
+#'   \item{\code{NULL} (standard)}
+#'   \item{\code{small}}
+#'   \item{\code{medium}}
+#'   \item{\code{large}}
+#' }
+#' 
+#' @examples 
+#' if(interactive()){
+#'   library(shiny)
+#'   
+#'   ui <- bulmaPage(
+#'     bulmaContainer(
+#'       br(),
+#'       bulmaSliderInput("slider", 10, 3, 150),
+#'       plotOutput("plot")
+#'     )
+#'   )
+#'   
+#'   server <- function(input, output){
+#'     data <- reactive({
+#'       rnorm(input$slider, 20, 4)
+#'     })
+#'     
+#'     output$plot <- renderPlot({
+#'       hist(data())
+#'     })
+#'   }
+#'   
+#'   shinyApp(ui, server)
+#' }
+#' 
+#' @export
+bulmaSliderInput <- function(id, value, min, max, step = 1, class = NULL, size = NULL, orient = "horizontal"){
+  
+  if(missing(value) || missing(min) || missing(max))
+    stop("must pass value, min and max", call. = FALSE)
+  
+  cl <- paste("bulmaSliderInput slider has-output is-fullwidth", class)
+  
+  if(!is.null(size))
+    size <- paste0("is-", size)
+  
+  cl <- paste0(cl, size)
+  
+  input <- shiny::tags$input(
+    id = id,
+    class = cl,
+    type = "range",
+    step = step,
+    min = min,
+    max = max,
+    orient = orient
+  )
+  
+  output <- shiny::tags$output(
+    `for` = id,
+    value
+  )
+  
+  shiny::tagList(
+    shiny::singleton(
+      shiny::tags$head(
+        shiny::includeScript(
+          system.file(file.path("js", "bulma-slider-js.js"), package = "shinybulma")
+        )
+      )
+    ),
+    input, output
+  )
+}

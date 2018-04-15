@@ -4,7 +4,6 @@ $(document).ready(function () {
         var el = $(evt.target);
         var curVal = parseInt(el.val());
         el.val(curVal + 1);
-        console.log(el.val());
         el.trigger("change");
     });
     

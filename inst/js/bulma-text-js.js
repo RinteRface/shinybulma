@@ -14,7 +14,7 @@ $(document).ready(function () {
             });
         },
         unsubscribe: function(el) {
-          $(el).off(".shinyBulmaRadio");
+          $(el).off(".shinybulmaTextInput");
         }
     });
 

@@ -1,5 +1,7 @@
 # shinybulma
 
+[![Travis-CI Build Status](https://travis-ci.org/JohnCoene/shinybulma.svg?branch=master)](https://travis-ci.org/JohnCoene/shinybulma)
+
 [bulma.io](https://bulma.io) for [Shiny](https://shiny.rstudio.com/). Contains
 also some extensions: [bulma-extensions](https://wikiki.github.io)
 
