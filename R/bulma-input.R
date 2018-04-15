@@ -467,10 +467,10 @@ bulmaSliderInput <- function(inputId, value, min, max, color = NULL, step = 1, c
   if(!is.null(size))
     size <- paste0("is-", size)
   
-  if(!is.null(size))
+  if(!is.null(color))
     color <- paste0("is-", color)
   
-  cl <- paste(cl, size)
+  cl <- paste(cl, size, color)
   
   input <- shiny::tags$input(
     id = inputId,
@@ -491,6 +491,12 @@ bulmaSliderInput <- function(inputId, value, min, max, color = NULL, step = 1, c
   shiny::tagList(
     shiny::singleton(
       shiny::tags$head(
+        shiny::includeScript(
+          system.file(file.path("js", "bulma-slider.min.js"), package = "shinybulma")
+        ),
+        shiny::includeCSS(
+          system.file(file.path("css", "bulma-slider.min.css"), package = "shinybulma")
+        ),
         shiny::includeScript(
           system.file(file.path("js", "bulma-slider-js.js"), package = "shinybulma")
         )
