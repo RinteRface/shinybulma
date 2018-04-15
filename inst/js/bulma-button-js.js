@@ -17,7 +17,6 @@ $(document).ready(function () {
       },
       subscribe: function(el, callback) {
         $(el).on("change.shinyBulmaActionButton", function(e) {
-          console.log(el);
           callback();
         });
       },

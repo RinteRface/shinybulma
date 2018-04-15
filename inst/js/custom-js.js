@@ -1,5 +1,3 @@
-//$( ".navTab" ).first().css( "display", "block" );
-//$( ".navTab" ).first().addClass("active");
 $(document).ready(function () {
   
   var first_id = $(".navTab").first().attr('id'); // first element
@@ -14,3 +12,15 @@ $(document).ready(function () {
   $("#" + first_id).addClass('is-active');
   $("#" + first_id).css("display", "block");
 });
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+}
