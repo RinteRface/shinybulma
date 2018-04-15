@@ -462,7 +462,7 @@ bulmaSliderInput <- function(inputId, value, min, max, step = 1, class = NULL, s
   if(!is.null(size))
     size <- paste0("is-", size)
   
-  cl <- paste0(cl, size)
+  cl <- paste(cl, size)
   
   input <- shiny::tags$input(
     id = inputId,
