@@ -8,6 +8,8 @@ bulmaSwitchInput(inputId, label = NULL, value = FALSE, color = NULL,
   size = NULL, style = NULL, rtl = FALSE, disabled = FALSE)
 }
 \arguments{
+\item{inputId}{Id to access value.}
+
 \item{label}{Switch label.}
 
 \item{value}{TRUE or FALSE, FALSE by default.}
@@ -22,7 +24,9 @@ bulmaSwitchInput(inputId, label = NULL, value = FALSE, color = NULL,
 is thin-outlined, mixed3 is rounded-outlined and mixed4 is thin-rounded-outlined)
 NULL by default, which corresponds to squared style.}
 
-\item{inpuId}{The input slot that will be used to access the value.}
+\item{rtl}{Set to invert switch.}
+
+\item{disabled}{Set to disable switch.}
 }
 \description{
 Create a switch input \url{https://wikiki.github.io/form/switch/}.

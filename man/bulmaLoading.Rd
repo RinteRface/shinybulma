@@ -6,6 +6,11 @@
 \usage{
 bulmaLoading(title = "Loading", class = NULL)
 }
+\arguments{
+\item{title}{Title of loading page.}
+
+\item{class}{Any additional class.}
+}
 \description{
 Show loading page
 }

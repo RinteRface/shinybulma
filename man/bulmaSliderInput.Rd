@@ -12,6 +12,8 @@ bulmaSliderInput(inputId, value, min, max, step = 1, class = NULL,
 
 \item{value, min, max}{Current value, maximum and minimum of slider.}
 
+\item{step}{Slider step.}
+
 \item{class}{Additional class.}
 
 \item{size}{Size of slider, see details.}

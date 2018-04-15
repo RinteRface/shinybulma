@@ -105,7 +105,7 @@ bulmaMessage <- function(..., color = NULL, size = NULL, header = TRUE, header_t
   shiny::tags$article(
     class = cl,
     if (header == TRUE) {
-      tagList(
+      shiny::tagList(
         shiny::tags$div(
           class = "message-header",
           shiny::tags$p(header_title)

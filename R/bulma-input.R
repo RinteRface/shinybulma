@@ -255,8 +255,10 @@ bulmaActionButton <- function(inputId, label, color = NULL){
 #'
 #' @description Create a switch input \url{https://wikiki.github.io/form/switch/}.
 #'
-#' @param inpuId The input slot that will be used to access the value.
+#' @param inputId Id to access value.
 #' @param label Switch label.
+#' @param rtl Set to invert switch.
+#' @param disabled Set to disable switch.
 #' @param value TRUE or FALSE, FALSE by default.
 #' @param color Switch color : \code{link}, \code{info}, \code{primary}, \code{warning},
 #'  \code{danger}, \code{success}, \code{black}, \code{dark} and \code{ligth}.
@@ -412,6 +414,7 @@ bulmaSwitchInput <- function(inputId, label = NULL, value = FALSE,
 #' 
 #' @param inputId Id to access value.
 #' @param value,min,max Current value, maximum and minimum of slider.
+#' @param step Slider step.
 #' @param class Additional class.
 #' @param size Size of slider, see details.
 #' @param orient Slider orientation, takes, \code{horizontal} or \code{vertical}.

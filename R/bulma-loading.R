@@ -1,5 +1,8 @@
 #' Show loading page
 #' 
+#' @param title Title of loading page.
+#' @param class Any additional class.
+#' 
 #' @export
 bulmaLoading <- function(title = "Loading", class = NULL){
   cl <- paste("pageloader", class)
