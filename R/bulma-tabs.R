@@ -8,7 +8,7 @@
 #' @param label label of tab.
 #'
 #' @examples
-#' #' if(interactive()){
+#' if(interactive()){
 #' library(shiny)
 #'
 #' shinyApp(

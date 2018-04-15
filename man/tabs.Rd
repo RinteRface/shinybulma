@@ -24,7 +24,7 @@ Add tabs
 Add tab
 }
 \examples{
-#' if(interactive()){
+if(interactive()){
 library(shiny)
 
 shinyApp(
