@@ -18,9 +18,7 @@ Add an action button.
 }
 \examples{
 if(interactive()){
-library(shiny)
-
-shinyApp(
+shiny::shinyApp(
   ui = bulmaPage(
     bulmaActionButton("goButton", "Render in console")
   ),

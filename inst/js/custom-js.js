@@ -5,11 +5,15 @@ $(document).ready(function () {
   
   $('#' + first_id).siblings('.navTab').each(function () {
      $(this).hide();
+     $(this).trigger('hide');
+     $(this).trigger('hidden');
      $(this).removeClass('is-active');
   });
   
   // show first
   $("#" + first_id).show();
+  $("#" + first_id).trigger('show');
+  $("#" + first_id).trigger('shown');
   $("#" + first_id).addClass('is-active');
   $("#" + first_id).css("display", "block");
   

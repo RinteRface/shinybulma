@@ -11,9 +11,7 @@
 #'
 #' @examples
 #' if(interactive()){
-#' library(shiny)
-#'
-#' shinyApp(
+#' shiny::shinyApp(
 #'   ui = bulmaPage(
 #'    bulmaNavbar(
 #'      bulmaNavbarBrand(
