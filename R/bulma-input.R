@@ -1,4 +1,6 @@
 #' Add radio buttons
+#' 
+#' Add radio buttons.
 #'
 #' @param inputId the input slot that will be used to access the value.
 #' @param choices vector of choices, named or unnamed.
@@ -22,7 +24,7 @@
 #'   }
 #' )
 #' }
-#'
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export
 bulmaRadioInput <- function(inputId, choices, selected){
   if(missing(choices) || missing(selected))
@@ -69,6 +71,8 @@ bulmaRadioInput <- function(inputId, choices, selected){
 }
 
 #' Add text input
+#' 
+#' Add text input.
 #'
 #' @param inputId the input slot that will be used to access the value.
 #' @param label input label.
@@ -89,7 +93,7 @@ bulmaRadioInput <- function(inputId, choices, selected){
 #'   }
 #' )
 #' }
-#'
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export
 bulmaTextInput <- function(inputId, label, placeholder){
   txt <- shiny::tags$div(
@@ -122,6 +126,8 @@ bulmaTextInput <- function(inputId, label, placeholder){
 }
 
 #' Add dropdown input
+#' 
+#' Add dropdown otpions.
 #'
 #' @param inputId the input slot that will be used to access the value.
 #' @param label input label.
@@ -146,6 +152,7 @@ bulmaTextInput <- function(inputId, label, placeholder){
 #'   }
 #' )
 #' }
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export
 bulmaSelectInput <- function(inputId, label, choices, rounded = FALSE){
   select <- shiny::tags$select(
@@ -197,7 +204,9 @@ bulmaSelectInput <- function(inputId, label, choices, rounded = FALSE){
   )
 }
 
-#' Add submit button
+#' Add action button
+#'
+#' Add an action button.
 #'
 #' @param inputId the input slot that will be used to access the value.
 #' @param color button color.
@@ -218,6 +227,7 @@ bulmaSelectInput <- function(inputId, label, choices, rounded = FALSE){
 #'  }
 #' )
 #' }
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export
 bulmaActionButton <- function(inputId, label, color = NULL){
 
@@ -410,7 +420,7 @@ bulmaSwitchInput <- function(inputId, label = NULL, value = FALSE,
 
 #' Slider
 #' 
-#' Add a slider input
+#' Add a slider input.
 #' 
 #' @param inputId Id to access value.
 #' @param value,min,max Current value, maximum and minimum of slider.
@@ -454,13 +464,13 @@ bulmaSwitchInput <- function(inputId, label = NULL, value = FALSE,
 #'   
 #'   shinyApp(ui, server)
 #' }
-#' 
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export
 bulmaSliderInput <- function(inputId, value, min, max, color = NULL, step = 1, class = NULL, size = NULL, 
                              orient = "horizontal", ...){
   
-  if(missing(value) || missing(min) || missing(max))
-    stop("must pass value, min and max", call. = FALSE)
+  if(missing(inputId) || missing(value) || missing(min) || missing(max))
+    stop("must pass inputId, value, min and max", call. = FALSE)
   
   cl <- paste("bulmaSliderInput slider has-output is-fullwidth is-circle", class)
   
@@ -508,7 +518,7 @@ bulmaSliderInput <- function(inputId, value, min, max, color = NULL, step = 1, c
 
 #' Date picker
 #' 
-#' Add date picker
+#' Add date picker.
 #' 
 #' @param inputId Id to access value.
 #' @param value Current date.
@@ -539,7 +549,7 @@ bulmaSliderInput <- function(inputId, value, min, max, color = NULL, step = 1, c
 #' }
 #' 
 #' @note Does not work in RStudio, open app in browser.
-#' 
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export
 bulmaDateInput <- function(inputId, value, min = Sys.Date() - 3, max = Sys.Date(), 
                            overlay = FALSE, lang = 'en', class = NULL, ...){
