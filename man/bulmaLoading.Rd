@@ -14,3 +14,31 @@ bulmaLoading(title = "Loading", class = NULL)
 \description{
 Show loading page
 }
+\examples{
+if(interactive()){
+  ui <- bulmaPage(
+    bulmaTitle("Loader"),
+    bulmaSliderInput("slider", 50, 5, 100, step = 5),
+    bulmaLoading(),
+    bulmaContainer(
+      plotOutput("plot")
+    )
+  )
+  
+  server <- function(input, output){
+    data <- reactive({
+      rnorm(input$slider, 10, 5)
+    })
+    
+    output$plot <- renderPlot({
+      hist(data())
+    })
+  }
+  
+  shiny::shinyApp(ui, server)
+}
+
+}
+\author{
+John Coene, \email{jcoenep@gmail.com}
+}
