@@ -1,6 +1,6 @@
 # shinybulma
 
-[![Travis-CI Build Status](https://travis-ci.org/JohnCoene/shinybulma.svg?branch=master)](https://travis-ci.org/JohnCoene/shinybulma)
+[![Travis-CI Build Status](https://travis-ci.org/JohnCoene/shinybulma.svg?branch=master)](https://travis-ci.org/JohnCoene/shinybulma) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/JohnCoene/shinybulma?branch=master&svg=true)](https://ci.appveyor.com/project/JohnCoene/shinybulma)
 
 [bulma.io](https://bulma.io) for [Shiny](https://shiny.rstudio.com/). Contains
 also some extensions: [bulma-extensions](https://wikiki.github.io)
