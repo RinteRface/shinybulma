@@ -491,3 +491,84 @@ bulmaSliderInput <- function(inputId, value, min, max, step = 1, class = NULL, s
     input, output
   )
 }
+
+#' Date picker
+#' 
+#' Add date picker
+#' 
+#' @examples 
+#' if(interactive()){
+#'   ui <- bulmaPage(
+#'     bulmaContainer(
+#'       br(),
+#'       bulmaDateInput("date", Sys.Date(), overlay = TRUE),
+#'       verbatimTextOutput("selected")
+#'     )
+#'   )
+#'   
+#'   server <- function(input, output){
+#'     
+#'     output$selected <- renderText({
+#'       input$date
+#'     })
+#'   }
+#'   
+#'   shiny::shinyApp(ui, server)
+#' }
+#' 
+#' @export
+bulmaDateInput <- function(inputId, value, min = Sys.Date() - 3, max = Sys.Date(), 
+                           overlay = FALSE, lang = 'en', ...){
+  
+  if(missing(inputId) || missing(value))
+    stop("must pass inputId and value")
+
+  var <- sample(LETTERS, 5)
+  var <- paste0(var, collapse = "")
+  
+  fun <- paste0(
+    "
+document.addEventListener( 'DOMContentLoaded', function () {
+  var ", var, " = new bulmaCalendar( document.getElementById( '", inputId, "' ), {
+    dateFormat: 'yyyy-mm-dd', 
+    lang: 'en', 
+    overlay: ", noquote(tolower(overlay)), ",
+    closeOnOverlayClick: true,
+    closeOnSelect: true,
+    onClose: function(){
+      $('#", inputId, "').trigger('change');
+    }
+  } );
+} );
+    "
+  )
+  
+  input <- shiny::tags$input(
+    id = inputId,
+    class = "input bulmaCalendarInput",
+    value = value,
+    ...
+  )
+  
+  shiny::tagList(
+    shiny::singleton(
+      shiny::tags$head(
+        shiny::includeScript(
+          system.file(file.path("js", "bulma-calendar.min.js"), package = "shinybulma")
+        ),
+        shiny::includeCSS(
+          system.file(file.path("css", "bulma-extensions.min.css"), package = "shinybulma")
+        ),
+        shiny::includeCSS(
+          system.file(file.path("css", "bulma-calendar.min.css"), package = "shinybulma")
+        ),
+        shiny::includeScript(
+          system.file(file.path("js", "bulma-calendar-js.js"), package = "shinybulma")
+        )
+      )
+    ),
+    shiny::tags$script(fun),
+    input
+  )
+  
+}
