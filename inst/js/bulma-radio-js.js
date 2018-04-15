@@ -4,7 +4,7 @@ $.extend(shinyBulmaRadio, {
     return $(scope).find(".shinyBulmaRadio");
   },
   getValue: function(el) {
-    return $('input:radio:checked').val();
+    return $(el).find('input:radio:checked').val();
   },
   subscribe: function(el, callback) {
     $(el).on("change.shinyBulmaRadio", function(e) {

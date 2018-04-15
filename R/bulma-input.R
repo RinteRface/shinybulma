@@ -606,3 +606,110 @@ document.addEventListener( 'DOMContentLoaded', function () {
   )
   
 }
+
+#' Check boxes
+#' 
+#' Add add check boxes.
+#'
+#' @param inputId The input slot that will be used to access the value.
+#' @param choices Vector of choices, named or unnamed.
+#' @param color Vector of colors.
+#' @param checked Values of checked boxes. 
+#' 
+#' @examples
+#' if(interactive()){
+#' shiny::shinyApp(
+#'   ui = bulmaPage(
+#'    bulmaTitle("Hello Bulma"),
+#'    bulmaCheckInput("select", c("Miles per galon" = "mpg", "Rear axle ratio" = "drat"),
+#'      checked = "mpg", color = c("danger", "info")),
+#'    verbatimTextOutput("selected")
+#'   ),
+#'   server = function(input, output) {
+#'     output$selected <- renderText({
+#'       input$select
+#'     })
+#'   }
+#' )
+#' }
+#' 
+#' @author John Coene, \email{jcoenep@@gmail.com}
+#' @export
+bulmaCheckInput <- function(inputId, choices, color = NULL, checked = NULL){
+  
+  if(missing(inputId) || missing(choices))
+    stop("missing inputId or choices", call. = FALSE)
+  
+  if(length(choices) != length(color))
+    color <- rep(color, length(choices))
+  
+  if(length(names(choices)) > 0)
+    names <- names(choices)
+  else
+    names <- unname(choices)
+  
+  cl <- "is-checkradio"
+  type <- "checkbox"
+  
+  tags <- shiny::tags$div(
+    class = "field shinyCheckInput",
+    id = inputId
+  )
+  for(i in 1:length(choices)){
+    
+    if(length(color[i])) 
+      col <- paste0("is-", color[i])
+    else
+      col <- color[i]
+    
+    cls <- paste(cl, col)
+    id <- paste0(gsub("[[:cntrl:]]*|[[:punct:]]*|[[:space:]]", "", choices[i]), i)
+    
+    if(is.na(checked[i]))
+      sel <- "xxxxxxxxxxxxxx"
+    else
+      sel <- checked[i]
+    
+    if(sel == choices[i]){
+      input <- shiny::tags$input(
+        class = cls,
+        type = type,
+        id = id,
+        value = choices[i],
+        name = choices[i],
+        checked = "checked"
+      )
+    } else {
+      input <- shiny::tags$input(
+        class = cls,
+        type = type,
+        id = id,
+        value = choices[i],
+        name = choices[i]
+      )
+    }
+    
+    label <- shiny::tags$label(
+      `for` = id,
+      names[i]
+    )
+    
+    t <- shiny::tagList(input, label)
+    
+    tags <- shiny::tagAppendChild(tags, t)
+  }
+  
+  shiny::tagList(
+    shiny::singleton(
+      shiny::tags$head(
+        shiny::includeCSS(
+          system.file(file.path("css", "bulma-checkradio.min.css"), package = "shinybulma")
+        ),
+        shiny::includeScript(
+          system.file(file.path("js", "bulma-checkbox-js.js"), package = "shinybulma")
+        )
+      )
+    ),
+    tags
+  )
+}
