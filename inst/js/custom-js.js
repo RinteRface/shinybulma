@@ -8,6 +8,7 @@ $(document).ready(function () {
      $(this).trigger('hide');
      $(this).trigger('hidden');
      $(this).removeClass('is-active');
+     $(this).css("display", "none");
   });
   
   // show first

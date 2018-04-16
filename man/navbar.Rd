@@ -50,6 +50,7 @@ library(shiny)
 shinyApp(
   ui = bulmaPage(
    bulmaNavbar(
+     color = "primary",
      bulmaNavbarBrand(
        bulmaNavbarItem(
          "shinybulma",
