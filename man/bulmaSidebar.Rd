@@ -26,13 +26,7 @@ if (interactive()) {
  ui <- bulmaPage(
    bulmaContainer(
    bulmaTitle("Right sidebar demo"),  
-   HTML(
-       paste0('<button class="button is-info" 
-               data-show="quickview" data-target="quickviewDefault">
-               <span class="icon"><i class="fas fa-cogs"></i>
-               </span></button>
-              ')
-    )
+   bulmaSidebarTrigger()
    ),
    bulmaSidebar(
      header_title = "test",

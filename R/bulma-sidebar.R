@@ -17,13 +17,7 @@
 #'  ui <- bulmaPage(
 #'    bulmaContainer(
 #'    bulmaTitle("Right sidebar demo"),  
-#'    HTML(
-#'        paste0('<button class="button is-info" 
-#'                data-show="quickview" data-target="quickviewDefault">
-#'                <span class="icon"><i class="fas fa-cogs"></i>
-#'                </span></button>
-#'               ')
-#'     )
+#'    bulmaSidebarTrigger()
 #'    ),
 #'    bulmaSidebar(
 #'      header_title = "test",
@@ -107,5 +101,38 @@ bulmaSidebar <- function(..., header_title = NULL, footer_content = NULL) {
       )
     ),
     sidebar
+  )
+}
+
+
+#' @title bulma right sidebar trigger
+#'
+#' @author David Granjon, \email{dgranjon@@ymail.com}
+#'
+#' @description Create a button to trigger the rigth sidebar \url{https://wikiki.github.io/components/quickview/}.
+#'
+#' @param color Button color : \code{link}, \code{info}, \code{primary}, \code{warning},
+#'  \code{danger}, \code{success}, \code{black}, \code{dark} and \code{ligth}.
+#' @param size Button size : \code{small},\code{medium} and \code{large}.
+#' @param style Button style :  \code{outlined}, \code{inverted}, \code{rounded}
+#' @param state Button state : \code{hovered} or \code{focused}. NULL by default.
+#' 
+#' @note Can be included in the navbar.
+#' @export
+bulmaSidebarTrigger <- function(color = NULL, size = NULL, style = NULL, state = NULL) {
+  cl <- "button"
+  if (!is.null(color)) cl <- paste0(cl, " is-", color)
+  if (!is.null(style)) cl <- paste0(cl, " is-", style)
+  if (!is.null(size)) cl <- paste0(cl, " is-", size)
+  if (!is.null(state)) cl <- paste0(cl, " is-", state)
+  
+  shiny::tags$button(
+    class = cl,
+    `data-show` = "quickview",
+    `data-target` = "quickviewDefault",
+    shiny::tags$span(
+      class="icon",
+      shiny::tags$i(class="fas fa-cogs")
+    )
   )
 }
