@@ -50,7 +50,7 @@
 #' @export
 bulmaPage <- function(...){
 
-  shiny::tags$html(
+  shiny::tagList(
     # Head --------------------------------------------------------------------
     shiny::tags$head(
       shiny::tags$meta(charset = "utf-8"),
@@ -89,9 +89,7 @@ bulmaPage <- function(...){
       )
     ),
     # Body --------------------------------------------------------------------
-    shiny::tags$body(
-      ...
-    )
+    ...
   )
 }
 

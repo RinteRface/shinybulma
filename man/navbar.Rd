@@ -46,7 +46,8 @@ Add a responsive horizontal navbar.
 }
 \examples{
 if(interactive()){
-shiny::shinyApp(
+library(shiny)
+shinyApp(
   ui = bulmaPage(
    bulmaNavbar(
      bulmaNavbarBrand(
