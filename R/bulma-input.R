@@ -74,9 +74,9 @@ bulmaRadioInput <- function(inputId, choices, selected){
 #' 
 #' Add text input.
 #'
-#' @param inputId the input slot that will be used to access the value.
-#' @param label input label.
-#' @param placeholder input placeholder.
+#' @param inputId The input slot that will be used to access the value.
+#' @param label Input label.
+#' @param placeholder Input placeholder.
 #'
 #' @examples
 #' if(interactive()){
@@ -95,23 +95,34 @@ bulmaRadioInput <- function(inputId, choices, selected){
 #' }
 #' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export
-bulmaTextInput <- function(inputId, label, placeholder){
-  txt <- shiny::tags$div(
-    class = "field",
-    shiny::tags$label(
+bulmaTextInput <- function(inputId, label = NULL, placeholder){
+  
+  # init div
+  div <- shiny::tags$div(
+    class = "field"
+  )
+  
+  # append label
+  if(!is.null(label)){
+    label <- shiny::tags$label(
       class = "label",
       label
-    ),
-    shiny::tags$div(
-      class = "control",
-      shiny::tags$input(
-        class = "input shinybulmaTextInput",
-        type = "text",
-        id = inputId,
-        placeholder = placeholder
-      )
+    )
+    div <- shiny::tagAppendChild(div, label)
+  }
+  
+  # create and append input
+  input <- shiny::tags$div(
+    class = "control",
+    shiny::tags$input(
+      class = "input shinybulmaTextInput",
+      type = "text",
+      id = inputId,
+      placeholder = placeholder
     )
   )
+  
+  div <- shiny::tagAppendChild(div, input)
 
   shiny::tagList(
     shiny::singleton(
@@ -121,7 +132,7 @@ bulmaTextInput <- function(inputId, label, placeholder){
         )
       )
     ),
-    txt
+    div
   )
 }
 
