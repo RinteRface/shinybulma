@@ -4,14 +4,14 @@
 \alias{bulmaTextInput}
 \title{Add text input}
 \usage{
-bulmaTextInput(inputId, label, placeholder)
+bulmaTextInput(inputId, label = NULL, placeholder)
 }
 \arguments{
-\item{inputId}{the input slot that will be used to access the value.}
+\item{inputId}{The input slot that will be used to access the value.}
 
-\item{label}{input label.}
+\item{label}{Input label.}
 
-\item{placeholder}{input placeholder.}
+\item{placeholder}{Input placeholder.}
 }
 \description{
 Add text input.
