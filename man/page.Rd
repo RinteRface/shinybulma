@@ -5,9 +5,9 @@
 \alias{bulmaNavbarPage}
 \title{Create a bulma app}
 \usage{
-bulmaPage(..., theme = NULL)
+bulmaPage(..., theme = "default")
 
-bulmaNavbarPage(..., theme = NULL)
+bulmaNavbarPage(..., theme = "default")
 }
 \arguments{
 \item{...}{any element.}
