@@ -48,6 +48,8 @@
 #'   server = function(input, output) {}
 #' )
 #' }
+#' 
+#' @author John Coene, \email{jcoenep@@gmail.com}
 #'
 #' @rdname page
 #' @export

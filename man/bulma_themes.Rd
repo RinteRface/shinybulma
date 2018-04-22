@@ -12,3 +12,6 @@ List all available themes.
 \details{
 All themes are taken from \href{https://jenil.github.io/bulmaswatch/}{bulmaswatch}.
 }
+\author{
+John Coene, \email{jcoenep@gmail.com}
+}

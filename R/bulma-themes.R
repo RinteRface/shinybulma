@@ -4,6 +4,8 @@
 #' 
 #' @details All themes are taken from \href{https://jenil.github.io/bulmaswatch/}{bulmaswatch}.
 #' 
+#' @author John Coene, \email{jcoenep@@gmail.com}
+#' 
 #' @export
 bulma_themes <- function(){
   x <- c(
