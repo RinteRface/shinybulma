@@ -5,18 +5,22 @@
 \alias{bulmaNavbarPage}
 \title{Create a bulma app}
 \usage{
-bulmaPage(...)
+bulmaPage(..., theme = "default")
 
-bulmaNavbarPage(...)
+bulmaNavbarPage(..., theme = "default")
 }
 \arguments{
 \item{...}{any element.}
+
+\item{theme}{a theme.}
 }
 \description{
 Build a bulma Shiny app.
 }
 \examples{
 if(interactive()){
+library(shiny)
+
 shiny::shinyApp(
   ui = bulmaNavbarPage(
    bulmaNavbar(

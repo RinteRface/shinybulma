@@ -3,9 +3,12 @@
 #' Build a bulma Shiny app.
 #'
 #' @param ... any element.
+#' @param theme a theme.
 #'
 #' @examples
 #' if(interactive()){
+#' library(shiny)
+#' 
 #' shiny::shinyApp(
 #'   ui = bulmaNavbarPage(
 #'    bulmaNavbar(
@@ -48,7 +51,10 @@
 #'
 #' @rdname page
 #' @export
-bulmaPage <- function(...){
+bulmaPage <- function(..., theme = "default"){
+  
+  if(!theme %in% bulma_themes())
+    stop("wrong theme", call. = FALSE)
 
   shiny::tagList(
     # Head --------------------------------------------------------------------
@@ -72,9 +78,11 @@ bulmaPage <- function(...){
       shiny::includeCSS(
         system.file("css", "bulma-extensions.min.css", package = "shinybulma")
       ),
-      # shiny::includeScript(
-      #   system.file("js", "jquery.min.js", package = "shinybulma")
-      # ),
+      shiny::tags$link(
+        rel = "stylesheet",
+        text = "text/css",
+        href = paste0("bulmathemes/css/", tolower(theme), ".min.css")
+      ),
       shiny::includeScript(
         system.file("js", "jquery-ui.min.js", package = "shinybulma")
       ),
