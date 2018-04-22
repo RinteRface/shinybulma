@@ -498,7 +498,7 @@ bulmaSliderInput <- function(inputId, value, min, max, color = NULL, step = 1, c
     step = step,
     min = min,
     max = max,
-    style = "width = 100%;",
+    style = "width: 100%;",
     orient = orient,
     ...
   )
