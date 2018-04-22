@@ -41,6 +41,7 @@
 #'
 #'  shinyApp(ui = ui, server = server)
 #' }
+#' 
 #' @export
 bulmaBox <- function(...) {
   shiny::tags$div(
@@ -51,9 +52,6 @@ bulmaBox <- function(...) {
     )
   )
 }
-
-
-
 
 #' @title bulma Box media.
 #'
@@ -75,7 +73,6 @@ bulmaBox <- function(...) {
 #'   \item{128 - 128x128}
 #' }
 #'
-#' @rdname box
 #' @export
 bulmaBoxMedia <- function(..., src = NULL, size = "64x64") {
   shiny::tagList(

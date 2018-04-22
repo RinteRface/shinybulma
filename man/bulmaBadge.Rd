@@ -151,6 +151,7 @@ if (interactive()) {
 
  shinyApp(ui = ui, server = server)
 }
+
 }
 \author{
 David Granjon, \email{dgranjon@ymail.com}

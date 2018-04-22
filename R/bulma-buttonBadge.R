@@ -89,6 +89,7 @@
 #'  shinyApp(ui = ui, server = server)
 #'
 #' }
+#' 
 #' @export
 bulmaButtonBadge <- function(label = NULL, url = NULL, color = NULL, style = NULL, loading = FALSE,
                              size = NULL, badge_color = NULL, badge_style = NULL,

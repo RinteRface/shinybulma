@@ -77,7 +77,7 @@ server <- function(input, output) {}
 shinyApp(ui, server)
 ```
 
-## bulma extension demo
+## Extensions demo
 
 https://dgranjon.shinyapps.io/bulmaExtension/
 
