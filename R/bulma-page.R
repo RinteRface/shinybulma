@@ -69,31 +69,37 @@ bulmaPage <- function(..., theme = "default"){
         `defer` = NA,
         src = "https://use.fontawesome.com/releases/v5.0.7/js/all.js"
       ),
-      shiny::includeCSS(
-        system.file("css", "bulma.min.css", package = "shinybulma")
+      shiny::tags$link(
+        rel = "stylesheet",
+        text = "text/css",
+        src = "bulmacss/bulma.min.css"
       ),
-      shiny::includeCSS(
-        system.file("css", "bulma-tooltip.min.css", package = "shinybulma")
+      shiny::tags$link(
+        rel = "stylesheet",
+        text = "text/css",
+        src = "bulmacss/bulma-tooltip.min.css"
       ),
-      shiny::includeCSS(
-        system.file("css", "bulma-extensions.min.css", package = "shinybulma")
+      shiny::tags$link(
+        rel = "stylesheet",
+        text = "text/css",
+        src = "bulmacss/bulma-extensions.min.css"
       ),
       shiny::tags$link(
         rel = "stylesheet",
         text = "text/css",
         href = paste0("bulmathemes/css/", tolower(theme), ".min.css")
       ),
-      shiny::includeScript(
-        system.file("js", "jquery-ui.min.js", package = "shinybulma")
+      shiny::tags$script(
+        src = "bulmajs/jquery-ui.min.js"
       ),
-      shiny::includeScript(
-        system.file("js", "bulma-carousel.min.js", package = "shinybulma")
+      shiny::tags$script(
+        src = "bulmajs/bulma-carousel.min.js"
       ),
-      shiny::includeScript(
-        system.file("js", "bulma-steps.min.js", package = "shinybulma")
+      shiny::tags$script(
+        src = "bulmajs/bulma-steps.min.js"
       ),
-      shiny::includeScript(
-        system.file("js", "custom-js.js", package = "shinybulma")
+      shiny::tags$script(
+        src = "bulmajs/custom-js.js"
       )
     ),
     # Body --------------------------------------------------------------------
