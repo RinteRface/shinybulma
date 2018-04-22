@@ -72,9 +72,9 @@ bulmaPage <- function(...){
       shiny::includeCSS(
         system.file("css", "bulma-extensions.min.css", package = "shinybulma")
       ),
-      shiny::includeScript(
-        system.file("js", "jquery.min.js", package = "shinybulma")
-      ),
+      # shiny::includeScript(
+      #   system.file("js", "jquery.min.js", package = "shinybulma")
+      # ),
       shiny::includeScript(
         system.file("js", "jquery-ui.min.js", package = "shinybulma")
       ),
