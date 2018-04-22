@@ -244,7 +244,7 @@ bulmaNav <- function(target, ...){
 
   shiny::tags$div(
     id = target,
-    # style = "display: none;", # plots do not render
+    style = "display: none;", # plots do not render
     class = "navTab",
     ...
   )
