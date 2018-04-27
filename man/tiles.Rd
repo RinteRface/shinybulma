@@ -10,7 +10,8 @@ bulmaTileAncestor(...)
 
 bulmaTileParent(..., vertical = FALSE, width = NULL)
 
-bulmaTileChild(..., title = "", subtitle = "", color = NULL)
+bulmaTileChild(..., title = "", subtitle = "", color = NULL,
+  type = "notification")
 }
 \arguments{
 \item{...}{any element.}
@@ -22,6 +23,8 @@ bulmaTileChild(..., title = "", subtitle = "", color = NULL)
 \item{title, subtitle}{tile title and subtitle.}
 
 \item{color}{color of tile.}
+
+\item{type}{type of tile: notification or box.}
 }
 \description{
 Add masonry-like tiles.
