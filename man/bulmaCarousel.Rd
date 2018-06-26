@@ -22,6 +22,7 @@ if (interactive()) {
  library(shiny)
 
  ui <- bulmaPage(
+  theme = "dark",
   bulmaContainer(
     bulmaCarousel(
      autoplay = TRUE, navigation = "overlay",

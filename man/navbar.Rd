@@ -2,6 +2,8 @@
 % Please edit documentation in R/bulma-navbar.R
 \name{bulmaNavbar}
 \alias{bulmaNavbar}
+\alias{bulmaNavbarStart}
+\alias{bulmaNavbarEnd}
 \alias{bulmaNavbarBrand}
 \alias{bulmaNavbarMenu}
 \alias{bulmaNavbarItem}
@@ -13,6 +15,10 @@
 \usage{
 bulmaNavbar(..., transparent = FALSE, color = NULL, fix.top = FALSE,
   fix.bottom = FALSE)
+
+bulmaNavbarStart(...)
+
+bulmaNavbarEnd(...)
 
 bulmaNavbarBrand(...)
 

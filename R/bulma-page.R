@@ -84,12 +84,12 @@ bulmaPage <- function(..., theme = "default"){
       shiny::tags$link(
         rel = "stylesheet",
         text = "text/css",
-        src = "bulmacss/bulma-extensions.min.css"
+        href = paste0("bulmathemes/css/", tolower(theme), ".min.css")
       ),
       shiny::tags$link(
         rel = "stylesheet",
         text = "text/css",
-        href = paste0("bulmathemes/css/", tolower(theme), ".min.css")
+        src = "bulmacss/bulma-extensions.min.css"
       ),
       shiny::tags$script(
         src = "bulmajs/jquery-ui.min.js"

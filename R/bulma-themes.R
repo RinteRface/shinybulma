@@ -31,6 +31,5 @@ bulma_themes <- function(){
     "united",
     "yeti"
   )
-  
   x[order(x)]
 }

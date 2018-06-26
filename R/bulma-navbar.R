@@ -107,12 +107,16 @@
 #' @author John Coene, \email{jcoenep@@gmail.com}
 #' @rdname navbar
 #' @export
-bulmaNavbar <- function(..., transparent = FALSE, color = NULL, fix.top = FALSE, fix.bottom = FALSE){
+bulmaNavbar <- function(..., transparent = FALSE, color = NULL, fix.top = FALSE, 
+                        fix.bottom = FALSE){
 
   if(isTRUE(fix.top) && isTRUE(fix.bottom))
     stop("Can only fix navbar to top or bottom, not both", call. = FALSE)
 
   cl <- "navbar"
+  
+  if(isTRUE(start) && isTRUE(end))
+    stop("can only set start or end to TRUE, not both", call. = FALSE)
 
   if(isTRUE(transparent)) cl <- paste(cl, "is-transparent")
   if(!is.null(color)) cl <- paste0(cl, " is-", color)
@@ -143,6 +147,24 @@ bulmaNavbar <- function(..., transparent = FALSE, color = NULL, fix.top = FALSE,
       )
     ),
     nav
+  )
+}
+
+#' @rdname navbar
+#' @export
+bulmaNavbarStart <- function(...){
+  shiny::tags$div(
+    class = "navbar-start",
+    ...
+  )
+}
+
+#' @rdname navbar
+#' @export
+bulmaNavbarEnd <- function(...){
+  shiny::tags$div(
+    class = "navbar-end",
+    ...
   )
 }
 
