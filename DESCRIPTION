@@ -7,7 +7,7 @@ Description: Bulma for Shiny. Contains also an implementation of some of the maj
   of the bulma extension library.
 URL: https://github.com/JohnCoene/shinybulma 
 BugReports: https://github.com/JohnCoene/shinybulma/issues
-Depends: R (>= 3.4.2)
+Depends: R (>= 3.2.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
