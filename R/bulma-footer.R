@@ -3,7 +3,7 @@
 #' Add footer
 #'
 #' @inheritParams bulmaPage
-#' @param container set to \code{TRUE} to wrap in \code{\link{bulmaContainer}}.
+#' @param container If \code{TRUE} wraps a \code{\link{bulmaContainer}} as a children of the section.
 #' @param centered wheter to center the text.
 #'
 #' @examples

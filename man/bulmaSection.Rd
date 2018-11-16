@@ -4,10 +4,12 @@
 \alias{bulmaSection}
 \title{Add a section}
 \usage{
-bulmaSection(..., size = NULL)
+bulmaSection(..., container = TRUE, size = NULL)
 }
 \arguments{
 \item{...}{any element.}
+
+\item{container}{If \code{TRUE} wraps a \code{\link{bulmaContainer}} as a children of the section.}
 
 \item{size}{change the spacing, takes \code{medium} or \code{large}.}
 }

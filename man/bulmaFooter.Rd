@@ -9,7 +9,7 @@ bulmaFooter(..., container = TRUE, centered = TRUE)
 \arguments{
 \item{...}{any element.}
 
-\item{container}{set to \code{TRUE} to wrap in \code{\link{bulmaContainer}}.}
+\item{container}{If \code{TRUE} wraps a \code{\link{bulmaContainer}} as a children of the section.}
 
 \item{centered}{wheter to center the text.}
 }

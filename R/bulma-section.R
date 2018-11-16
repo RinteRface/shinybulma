@@ -4,6 +4,7 @@
 #'
 #' @inheritParams bulmaPage
 #' @param size change the spacing, takes \code{medium} or \code{large}.
+#' @param container If \code{TRUE} wraps a \code{\link{bulmaContainer}} as a children of the section.
 #'
 #' @examples
 #' if(interactive()){
@@ -31,13 +32,29 @@
 #'
 #' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export
-bulmaSection <- function(..., size = NULL){
+bulmaSection <- function(..., container = TRUE, size = NULL){
   cl <- "section"
 
   if(!is.null(size)) cl <- paste0(cl, " is-", size)
 
-  shiny::tags$section(
+  section <- shiny::tags$section(
     class = cl,
     ...
   )
+  
+  if(isTRUE(container)){
+    shiny::div(
+      class = "section",
+      div(
+        class = "container",
+        ...
+      )
+    )
+  } else {
+    shiny::div(
+      class = "section",
+      ...
+    ) 
+  }
+  
 }

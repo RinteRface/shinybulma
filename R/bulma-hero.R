@@ -7,6 +7,7 @@
 #' @param size hero size takes \code{NULL}, \code{medium} or \code{large}.
 #' @param bold set to \code{TRUE} to generate a subtle gradient.
 #' @param fullheight set to \code{TRUE} to set hero to \code{100vh}.
+#' @param container If \code{TRUE} wraps a \code{\link{bulmaContainer}} as a children of the section.
 #'
 #' @examples
 #' if(interactive()){
@@ -33,7 +34,7 @@
 #' @author John Coene, \email{jcoenep@@gmail.com}
 #' @rdname hero
 #' @export
-bulmaHero <- function(..., color = NULL, size = NULL, bold = FALSE,
+bulmaHero <- function(..., container = TRUE, color = NULL, size = NULL, bold = FALSE,
                       fullheight = FALSE){
 
   cl <- "hero"
@@ -43,10 +44,21 @@ bulmaHero <- function(..., color = NULL, size = NULL, bold = FALSE,
   if(isTRUE(bold)) cl <- paste(cl, "is-bold")
   if(isTRUE(fullheight)) cl <- paste(cl, "is-fullheight")
 
-  shiny::tags$section(
-    class = cl,
-    ...
-  )
+  if(isTRUE(container)){
+    shiny::tags$section(
+      class = cl,
+      shiny::div(
+        class = "container",
+        ...
+      )
+    )
+  } else {
+    shiny::tags$section(
+      class = cl,
+      ...
+    )
+  }
+  
 }
 
 #' @rdname hero

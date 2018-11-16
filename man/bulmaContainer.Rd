@@ -19,6 +19,15 @@ bulmaContainer(..., fluid = FALSE, widescreen = FALSE,
 \description{
 Add container
 }
+\note{
+In order to take effect properly, containers need to be used as children of:
+\itemize{
+  \item{\code{\link{bulmaNavbar}}}
+  \item{\code{\link{bulmaHero}}}
+  \item{\code{\link{bulmaSection}}}
+  \item{\code{\link{bulmaFooter}}}
+}
+}
 \author{
 John Coene, \email{jcoenep@gmail.com}
 }

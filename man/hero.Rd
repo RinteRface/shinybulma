@@ -7,8 +7,8 @@
 \alias{bulmaHeroFoot}
 \title{Add section}
 \usage{
-bulmaHero(..., color = NULL, size = NULL, bold = FALSE,
-  fullheight = FALSE)
+bulmaHero(..., container = TRUE, color = NULL, size = NULL,
+  bold = FALSE, fullheight = FALSE)
 
 bulmaHeroHead(...)
 
@@ -18,6 +18,8 @@ bulmaHeroFoot(...)
 }
 \arguments{
 \item{...}{any element.}
+
+\item{container}{If \code{TRUE} wraps a \code{\link{bulmaContainer}} as a children of the section.}
 
 \item{color}{hero color.}
 
