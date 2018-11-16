@@ -1,6 +1,6 @@
-# shinybulma
+[![Travis build status](https://travis-ci.org/RinteRface/shinybulma.svg?branch=master)](https://travis-ci.org/RinteRface/shinybulma) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/RinteRface/shinybulma?branch=master&svg=true)](https://ci.appveyor.com/project/RinteRface/shinybulma)
 
-[![Travis-CI Build Status](https://travis-ci.org/JohnCoene/shinybulma.svg?branch=master)](https://travis-ci.org/JohnCoene/shinybulma) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/JohnCoene/shinybulma?branch=master&svg=true)](https://ci.appveyor.com/project/JohnCoene/shinybulma)
+# shinybulma
 
 ![](https://bulma.io/images/made-with-bulma.png)
 
