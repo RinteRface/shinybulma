@@ -86,22 +86,7 @@ bulmaSidebar <- function(..., header_title = NULL, footer_content = NULL) {
   )
   
   # load libraries
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-sidebar.min.js"), package = "shinybulma")
-        ),
-        shiny::includeCSS(
-          system.file(file.path("css", "bulma-sidebar.min.css"), package = "shinybulma")
-        ),
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-sidebar-js.js"), package = "shinybulma")
-        )
-      )
-    ),
-    sidebar
-  )
+  return(sidebar)
 }
 
 

@@ -138,16 +138,7 @@ bulmaNavbar <- function(..., transparent = FALSE, color = NULL, fix.top = FALSE,
     nav <- shiny::tagAppendChild(nav, shiny::tags$script(addClass))
   }
 
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-nav-js.js"), package = "shinybulma")
-        )
-      )
-    ),
-    nav
-  )
+  return(nav)
 }
 
 #' @rdname navbar
@@ -219,26 +210,14 @@ bulmaNavbarLink <- function(label, href = ""){
 #' @rdname navbar
 #' @export
 bulmaNavbarBurger <- function(){
-
-  burger <- shiny::tags$button(
+  
+  shiny::tags$button(
     class = "button navbar-burger",
     `data-target` = "navMenu",
     shiny::tags$span(),
     shiny::tags$span(),
     shiny::tags$span()
   )
-
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-burger-js.js"), package = "shinybulma")
-        )
-      )
-    ),
-    burger
-  )
-
 }
 
 #' @rdname navbar

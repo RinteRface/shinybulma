@@ -4,7 +4,8 @@
 \alias{bulmaContainer}
 \title{Add container}
 \usage{
-bulmaContainer(..., fluid = FALSE, widescreen = FALSE, fullhd = FALSE)
+bulmaContainer(..., fluid = FALSE, widescreen = FALSE,
+  fullhd = FALSE)
 }
 \arguments{
 \item{...}{any element.}

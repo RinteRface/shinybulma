@@ -40,17 +40,5 @@ bulmaLoading <- function(title = "Loading", class = NULL){
     )
   )
   
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeCSS(
-          system.file(file.path("css", "bulma-pageloader.min.css"), package = "shinybulma")
-        )
-      )
-    ),
-    tags,
-    shiny::includeScript(
-      system.file(file.path("js", "bulma-pageloader-js.js"), package = "shinybulma")
-    )
-  )
+  return(tags)
 }

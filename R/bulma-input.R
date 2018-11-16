@@ -58,16 +58,7 @@ bulmaRadioInput <- function(inputId, choices, selected){
       control <- shiny::tagAppendChild(control, choiceTag)
   }
 
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-radio-js.js"), package = "shinybulma")
-        )
-      )
-    ),
-    control
-  )
+  return(control)
 }
 
 #' Add text input
@@ -122,18 +113,7 @@ bulmaTextInput <- function(inputId, label = NULL, placeholder){
     )
   )
   
-  div <- shiny::tagAppendChild(div, input)
-
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-text-js.js"), package = "shinybulma")
-        )
-      )
-    ),
-    div
-  )
+  shiny::tagAppendChild(div, input)
 }
 
 #' Add dropdown input
@@ -203,16 +183,7 @@ bulmaSelectInput <- function(inputId, label, choices, rounded = FALSE){
     )
   )
 
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-select-js.js"), package = "shinybulma")
-        )
-      )
-    ),
-    select
-  )
+  return(select)
 }
 
 #' Add action button
@@ -254,16 +225,7 @@ bulmaActionButton <- function(inputId, label, color = NULL){
     )
   )
 
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-button-js.js"), package = "shinybulma")
-        )
-      )
-    ),
-    button
-  )
+  return(button)
 }
 
 
@@ -509,19 +471,6 @@ bulmaSliderInput <- function(inputId, value, min, max, color = NULL, step = 1, c
   )
   
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-slider.min.js"), package = "shinybulma")
-        ),
-        shiny::includeCSS(
-          system.file(file.path("css", "bulma-slider.min.css"), package = "shinybulma")
-        ),
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-slider-js.js"), package = "shinybulma")
-        )
-      )
-    ),
     input, output
   )
 }
@@ -597,22 +546,6 @@ document.addEventListener( 'DOMContentLoaded', function () {
   )
   
   shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-calendar.min.js"), package = "shinybulma")
-        ),
-        shiny::includeCSS(
-          system.file(file.path("css", "bulma-extensions.min.css"), package = "shinybulma")
-        ),
-        shiny::includeCSS(
-          system.file(file.path("css", "bulma-calendar.min.css"), package = "shinybulma")
-        ),
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-calendar-js.js"), package = "shinybulma")
-        )
-      )
-    ),
     shiny::tags$script(fun),
     input
   )
@@ -711,17 +644,5 @@ bulmaCheckInput <- function(inputId, choices, color = NULL, checked = NULL){
     tags <- shiny::tagAppendChild(tags, t)
   }
   
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeCSS(
-          system.file(file.path("css", "bulma-checkradio.min.css"), package = "shinybulma")
-        ),
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-checkbox-js.js"), package = "shinybulma")
-        )
-      )
-    ),
-    tags
-  )
+  return(tags)
 }

@@ -5,8 +5,8 @@
 \title{bulma timeline item}
 \usage{
 bulmaTimelineItem(..., color = NULL, marker_color = NULL,
-  marker_image = FALSE, marker_image_size = NULL, marker_icon = FALSE,
-  content_header = NULL, content_body = NULL)
+  marker_image = FALSE, marker_image_size = NULL,
+  marker_icon = FALSE, content_header = NULL, content_body = NULL)
 }
 \arguments{
 \item{...}{Insert an icon or image here (if they are enabled via marker_image and

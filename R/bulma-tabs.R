@@ -73,16 +73,7 @@ bulmaTabs <- function(tabs, center = FALSE, ...){
     ...
   )
 
-  shiny::tagList(
-    shiny::singleton(
-      shiny::tags$head(
-        shiny::includeScript(
-          system.file(file.path("js", "bulma-tabs-js.js"), package = "shinybulma")
-        )
-      )
-    ),
-    cmb
-  )
+  return(cmb)
 }
 
 #' @rdname tabs
