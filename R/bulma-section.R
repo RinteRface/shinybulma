@@ -45,7 +45,7 @@ bulmaSection <- function(..., container = TRUE, size = NULL){
   if(isTRUE(container)){
     shiny::div(
       class = "section",
-      div(
+      shiny::div(
         class = "container",
         ...
       )

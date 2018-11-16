@@ -13,8 +13,8 @@
 \alias{bulmaNav}
 \title{Add navbar}
 \usage{
-bulmaNavbar(..., transparent = FALSE, color = NULL, fix.top = FALSE,
-  fix.bottom = FALSE)
+bulmaNavbar(..., container = TRUE, transparent = FALSE, color = NULL,
+  fix.top = FALSE, fix.bottom = FALSE)
 
 bulmaNavbarStart(...)
 
@@ -36,6 +36,8 @@ bulmaNav(target, ...)
 }
 \arguments{
 \item{...}{any element.}
+
+\item{container}{If \code{TRUE} wraps a \code{\link{bulmaContainer}} as a children of the section.}
 
 \item{transparent}{set to have transparent.}
 

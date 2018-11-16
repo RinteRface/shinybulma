@@ -8,6 +8,7 @@
 #' @param fix.top,fix.bottom set one to have navbar fixed at top or bottom of page.
 #' @param label item label.
 #' @param href,target id of \code{bulmaNav} linked, \code{href} and \code{target} must be identical.
+#' @param container If \code{TRUE} wraps a \code{\link{bulmaContainer}} as a children of the section.
 #'
 #' @examples
 #' if(interactive()){
@@ -107,7 +108,7 @@
 #' @author John Coene, \email{jcoenep@@gmail.com}
 #' @rdname navbar
 #' @export
-bulmaNavbar <- function(..., transparent = FALSE, color = NULL, fix.top = FALSE, 
+bulmaNavbar <- function(..., container = TRUE, transparent = FALSE, color = NULL, fix.top = FALSE, 
                         fix.bottom = FALSE){
 
   if(isTRUE(fix.top) && isTRUE(fix.bottom))
@@ -123,12 +124,24 @@ bulmaNavbar <- function(..., transparent = FALSE, color = NULL, fix.top = FALSE,
   if(isTRUE(fix.top)) cl <- paste(cl, "is-fixed-top")
   if(isTRUE(fix.bottom)) cl <- paste(cl, "is-fixed-bottom")
 
-  nav <- shiny::tags$nav(
-    class = cl,
-    role = "navigation",
-    `aria-label` = "main navigation",
-    ...
-  )
+  if(isTRUE(container)){
+    nav <- shiny::tags$nav(
+      class = cl,
+      role = "navigation",
+      `aria-label` = "main navigation",
+      shiny::div(
+        class = "container",
+        ...
+      )
+    )
+  } else {
+    nav <- shiny::tags$nav(
+      class = cl,
+      role = "navigation",
+      `aria-label` = "main navigation",
+      ...
+    )
+  }
 
   if(isTRUE(fix.top) || isTRUE(fix.bottom)){
     x <- ifelse(isTRUE(fix.top), "top", "bottom")
