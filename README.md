@@ -10,7 +10,7 @@
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("JohnCoene/shinybulma")
+devtools::install_github("RinteRface/shinybulma")
 ```
 
 ## Example
