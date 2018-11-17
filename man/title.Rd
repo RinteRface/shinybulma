@@ -5,12 +5,14 @@
 \alias{bulmaSubtitle}
 \title{Add subtitle}
 \usage{
-bulmaTitle(..., tag = shiny::h1, id = NULL)
+bulmaTitle(..., class = NULL, tag = shiny::h1, id = NULL)
 
-bulmaSubtitle(..., tag = shiny::h2, id = NULL)
+bulmaSubtitle(..., class = NULL, tag = shiny::h2, id = NULL)
 }
 \arguments{
 \item{...}{any element.}
+
+\item{class}{A valid \code{CSS} class.}
 
 \item{tag}{html tag.}
 
