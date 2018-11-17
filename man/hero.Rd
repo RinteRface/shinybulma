@@ -7,19 +7,17 @@
 \alias{bulmaHeroFoot}
 \title{Add section}
 \usage{
-bulmaHero(..., container = TRUE, color = NULL, size = NULL,
-  bold = FALSE, fullheight = FALSE)
+bulmaHero(..., color = NULL, size = NULL, bold = FALSE,
+  fullheight = FALSE)
 
 bulmaHeroHead(...)
 
-bulmaHeroBody(...)
+bulmaHeroBody(..., container = TRUE)
 
 bulmaHeroFoot(...)
 }
 \arguments{
 \item{...}{any element.}
-
-\item{container}{If \code{TRUE} wraps a \code{\link{bulmaContainer}} as a children of the section.}
 
 \item{color}{hero color.}
 
@@ -28,6 +26,8 @@ bulmaHeroFoot(...)
 \item{bold}{set to \code{TRUE} to generate a subtle gradient.}
 
 \item{fullheight}{set to \code{TRUE} to set hero to \code{100vh}.}
+
+\item{container}{If \code{TRUE} wraps a \code{\link{bulmaContainer}} as a children of the section.}
 }
 \description{
 Add a section tag.

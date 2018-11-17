@@ -34,7 +34,7 @@
 #' @author John Coene, \email{jcoenep@@gmail.com}
 #' @rdname hero
 #' @export
-bulmaHero <- function(..., container = TRUE, color = NULL, size = NULL, bold = FALSE,
+bulmaHero <- function(..., color = NULL, size = NULL, bold = FALSE,
                       fullheight = FALSE){
 
   cl <- "hero"
@@ -44,20 +44,10 @@ bulmaHero <- function(..., container = TRUE, color = NULL, size = NULL, bold = F
   if(isTRUE(bold)) cl <- paste(cl, "is-bold")
   if(isTRUE(fullheight)) cl <- paste(cl, "is-fullheight")
 
-  if(isTRUE(container)){
-    shiny::tags$section(
-      class = cl,
-      shiny::div(
-        class = "container",
-        ...
-      )
-    )
-  } else {
-    shiny::tags$section(
-      class = cl,
-      ...
-    )
-  }
+  shiny::tags$section(
+    class = cl,
+    ...
+  )
   
 }
 
@@ -72,11 +62,21 @@ bulmaHeroHead <- function(...){
 
 #' @rdname hero
 #' @export
-bulmaHeroBody <- function(...){
-  shiny::tags$div(
-    class = "hero-body",
-    ...
-  )
+bulmaHeroBody <- function(..., container = TRUE){
+  if(isTRUE(container)){
+    shiny::div(
+      class = "hero-body",
+      shiny::div(
+        class = "container",
+        ...
+      )
+    )
+  } else {
+    shiny::tags$div(
+      class = "hero-body",
+      ...
+    )
+  }
 }
 
 #' @rdname hero
