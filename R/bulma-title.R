@@ -40,7 +40,7 @@
 #' @export
 bulmaTitle <- function(..., class = NULL, tag = shiny::h1, id = NULL){
   
-  cl <- paste0("title", class)
+  cl <- paste("title", class)
   
   tag(
     class = cl, 
@@ -53,7 +53,7 @@ bulmaTitle <- function(..., class = NULL, tag = shiny::h1, id = NULL){
 #' @export
 bulmaSubtitle <- function(..., class = NULL, tag = shiny::h2, id = NULL){
   
-  cl <- paste0("subtitle", class)
+  cl <- paste("subtitle", class)
   
   tag(
     class = cl,
