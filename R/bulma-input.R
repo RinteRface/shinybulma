@@ -68,25 +68,37 @@ bulmaRadioInput <- function(inputId, choices, selected){
 #' @param inputId The input slot that will be used to access the value.
 #' @param label Input label.
 #' @param placeholder Input placeholder.
+#' @param color A valid bulma color, e.g.:\code{success}.
+#' @param size A valid bulma \emph{text} size, \code{small}, \code{medium} or \code{large}.
+#' @param rows Number of rows of text.
+#' @param disabled,readonly Set to \code{TRUE} to disable or set on read-only.
 #'
 #' @examples
 #' if(interactive()){
 #' library(shiny)
 #'
 #' shinyApp(
-#'   ui = bulmaPage(
-#'    bulmaTitle("Hello Bulma"),
+#'   ui = bulmaNavbarPage(
+#'    theme = "dark",
 #'    bulmaTextInput("txt", label = "Input text", placeholder = "Type here"),
-#'    verbatimTextOutput("default")
+#'    verbatimTextOutput("txtOutput"),
+#'    bulmaTextAreaInput("txtArea", rows = 10, label = "Input text area", 
+#'                       color = "primary", size = "medium"),
+#'    verbatimTextOutput("txtAreaOutput"),
+#'    bulmaTextAreaInput("disabled", label = "disabled", disabled = TRUE, 
+#'                       placeholder = "disabled")
 #'   ),
 #'   server = function(input, output) {
-#'     output$default <- renderText({ input$txt })
+#'     output$txtOutput <- renderPrint({ input$txt })
+#'     output$txtAreaOutput <- renderPrint({ input$txtArea })
 #'   }
 #' )
 #' }
 #' @author John Coene, \email{jcoenep@@gmail.com}
+#' 
+#' @rdname text-input
 #' @export
-bulmaTextInput <- function(inputId, label = NULL, placeholder){
+bulmaTextInput <- function(inputId, label = NULL, placeholder = "", color = NULL){
   
   # init div
   div <- shiny::tags$div(
@@ -102,14 +114,60 @@ bulmaTextInput <- function(inputId, label = NULL, placeholder){
     div <- shiny::tagAppendChild(div, label)
   }
   
+  if(!is.null(color))
+    cl <- paste0(cl, " is-", color)
+  
   # create and append input
   input <- shiny::tags$div(
     class = "control",
     shiny::tags$input(
-      class = "input shinybulmaTextInput",
+      class = cl,
       type = "text",
       id = inputId,
       placeholder = placeholder
+    )
+  )
+  
+  shiny::tagAppendChild(div, input)
+}
+
+#' @rdname text-input
+#' @export
+bulmaTextAreaInput <- function(inputId, label = NULL, placeholder = "", rows = 1, color = NULL, 
+                               size = NULL, disabled = FALSE, readonly = FALSE){
+  
+  # init div
+  div <- shiny::tags$div(
+    class = "field"
+  )
+  
+  # append label
+  if(!is.null(label)){
+    label <- shiny::tags$label(
+      class = "label",
+      label
+    )
+    div <- shiny::tagAppendChild(div, label)
+  }
+  
+  cl <- "textarea input shinybulmaTextInput"
+  
+  if(!is.null(color))
+    cl <- paste0(cl, " is-", color)
+  
+  if(!is.null(size))
+    cl <- paste0(cl, " is-", size)
+  
+  # create and append input
+  input <- shiny::tags$div(
+    class = "control",
+    shiny::tags$textarea(
+      class = cl,
+      id = inputId,
+      placeholder = placeholder,
+      rows = if(!is.null(rows)) rows,
+      disabled = if(isTRUE(disabled)) NA,
+      readonly = if(isTRUE(readonly)) NA
     )
   )
   
