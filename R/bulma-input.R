@@ -114,6 +114,8 @@ bulmaTextInput <- function(inputId, label = NULL, placeholder = "", color = NULL
     div <- shiny::tagAppendChild(div, label)
   }
   
+  cl <- ""
+  
   if(!is.null(color))
     cl <- paste0(cl, " is-", color)
   
