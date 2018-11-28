@@ -1,10 +1,10 @@
-[![Travis build status](https://travis-ci.org/RinteRface/shinybulma.svg?branch=master)](https://travis-ci.org/RinteRface/shinybulma) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/RinteRface/shinybulma?branch=master&svg=true)](https://ci.appveyor.com/project/RinteRface/shinybulma)
+# shinybulma <img src="http://rinterface.com/inst/images/shinybulma.svg" width="200px" align="right"/>
 
-# shinybulma
+[![Travis build status](https://travis-ci.org/RinteRface/shinybulma.svg?branch=master)](https://travis-ci.org/RinteRface/shinybulma) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/RinteRface/shinybulma?branch=master&svg=true)](https://ci.appveyor.com/project/RinteRface/shinybulma)
 
 ![](https://bulma.io/images/made-with-bulma.png)
 
-[bulma.io](https://bulma.io) for [Shiny](https://shiny.rstudio.com/). Contains extensions: [bulma-extensions](https://wikiki.github.io) as well as [themes](https://jenil.github.io/bulmaswatch/).
+> [bulma.io](https://bulma.io) for [Shiny](https://shiny.rstudio.com/). Contains extensions: [bulma-extensions](https://wikiki.github.io) as well as [themes](https://jenil.github.io/bulmaswatch/).
 
 ## Installation
 
@@ -17,6 +17,7 @@ devtools::install_github("RinteRface/shinybulma")
 
 ``` r
 library(shiny)
+library(shinybulma)
 
 shinyApp(
   ui = bulmaPage(
