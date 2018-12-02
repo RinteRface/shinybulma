@@ -24,6 +24,7 @@
 #'   }
 #' )
 #' }
+#' 
 #' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export
 bulmaRadioInput <- function(inputId, choices, selected){
@@ -86,17 +87,21 @@ bulmaRadioInput <- function(inputId, choices, selected){
 #'                       color = "primary", size = "medium"),
 #'    verbatimTextOutput("txtAreaOutput"),
 #'    bulmaTextAreaInput("disabled", label = "disabled", disabled = TRUE, 
-#'                       placeholder = "disabled")
+#'                       placeholder = "disabled"),
+#'    bulmaActionButton("update", "Update text input")
 #'   ),
-#'   server = function(input, output) {
+#'   server = function(input, output, session) {
 #'     output$txtOutput <- renderPrint({ input$txt })
 #'     output$txtAreaOutput <- renderPrint({ input$txtArea })
+#'     observeEvent( input$update, {
+#'       updateTextInput(session, "txt", value = "Updated")
+#'     })
 #'   }
 #' )
 #' }
 #' @author John Coene, \email{jcoenep@@gmail.com}
 #' 
-#' @rdname text-input
+#' @name text-input
 #' @export
 bulmaTextInput <- function(inputId, label = NULL, placeholder = "", color = NULL){
   
@@ -174,6 +179,19 @@ bulmaTextAreaInput <- function(inputId, label = NULL, placeholder = "", rows = 1
   )
   
   shiny::tagAppendChild(div, input)
+}
+
+#' @rdname text-input
+#' @export
+bulmaUpdateTextInput <- function(session, inputId, value = NULL){
+  
+  if(missing(inputId))
+    stop("missing input id", call. = FALSE)
+  
+  msg <- drop_nulls(
+    list(label = label, value = value)
+  )
+  session$sendInputMessage(inputId, msg)
 }
 
 #' Add dropdown input

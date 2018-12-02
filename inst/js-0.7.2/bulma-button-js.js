@@ -1,8 +1,7 @@
 
 $(document).on("click", "button.shinyBulmaActionButton", function(evt) {
     var el = $(evt.target);
-    el.val(parseInt(el.val()) + 1 + 1);
-    console.log(el.val());
+    el.val(parseInt(el.val()) + 1);
     el.trigger("change");
 });
 
@@ -15,7 +14,11 @@ $.extend(shinyBulmaActionButton, {
     return parseInt($(el).val());
   },
   subscribe: function(el, callback) {
-    $(el).on("change.shinyBulmaActionButton", function(e) {
+    $(el).on("click.shinyBulmaActionButton", function(e) {
+      var $el = $(this);
+      var val = $el.data('val') || 0;
+      $el.data('val', val + 1);
+
       callback();
     });
   },
