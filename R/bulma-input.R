@@ -73,6 +73,8 @@ bulmaRadioInput <- function(inputId, choices, selected){
 #' @param size A valid bulma \emph{text} size, \code{small}, \code{medium} or \code{large}.
 #' @param rows Number of rows of text.
 #' @param disabled,readonly Set to \code{TRUE} to disable or set on read-only.
+#' @param session A shiny session.
+#' @param value Value to update.
 #'
 #' @examples
 #' if(interactive()){
@@ -188,9 +190,7 @@ bulmaUpdateTextInput <- function(session, inputId, value = NULL){
   if(missing(inputId))
     stop("missing input id", call. = FALSE)
   
-  msg <- drop_nulls(
-    list(label = label, value = value)
-  )
+  msg <- list(value = value)
   session$sendInputMessage(inputId, msg)
 }
 

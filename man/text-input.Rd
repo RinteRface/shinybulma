@@ -28,6 +28,10 @@ bulmaUpdateTextInput(session, inputId, value = NULL)
 \item{size}{A valid bulma \emph{text} size, \code{small}, \code{medium} or \code{large}.}
 
 \item{disabled, readonly}{Set to \code{TRUE} to disable or set on read-only.}
+
+\item{session}{A shiny session.}
+
+\item{value}{Value to update.}
 }
 \description{
 Add text input.
