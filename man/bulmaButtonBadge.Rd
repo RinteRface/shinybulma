@@ -4,10 +4,19 @@
 \alias{bulmaButtonBadge}
 \title{bulma Button Badge}
 \usage{
-bulmaButtonBadge(label = NULL, url = NULL, color = NULL,
-  style = NULL, loading = FALSE, size = NULL, badge_color = NULL,
-  badge_style = NULL, badge_size = NULL, badge_position = NULL,
-  badge_text = NULL)
+bulmaButtonBadge(
+  label = NULL,
+  url = NULL,
+  color = NULL,
+  style = NULL,
+  loading = FALSE,
+  size = NULL,
+  badge_color = NULL,
+  badge_style = NULL,
+  badge_size = NULL,
+  badge_position = NULL,
+  badge_text = NULL
+)
 }
 \arguments{
 \item{label}{button label.}

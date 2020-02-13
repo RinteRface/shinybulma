@@ -4,8 +4,16 @@
 \alias{bulmaSwitchInput}
 \title{Add switch input}
 \usage{
-bulmaSwitchInput(inputId, label = NULL, value = FALSE, color = NULL,
-  size = NULL, style = NULL, rtl = FALSE, disabled = FALSE)
+bulmaSwitchInput(
+  inputId,
+  label = NULL,
+  value = FALSE,
+  color = NULL,
+  size = NULL,
+  style = NULL,
+  rtl = FALSE,
+  disabled = FALSE
+)
 }
 \arguments{
 \item{inputId}{Id to access value.}

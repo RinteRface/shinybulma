@@ -4,8 +4,14 @@
 \alias{bulmaBadge}
 \title{bulma badge components}
 \usage{
-bulmaBadge(..., color = NULL, size = NULL, style = NULL,
-  position = NULL, badge_text = NULL)
+bulmaBadge(
+  ...,
+  color = NULL,
+  size = NULL,
+  style = NULL,
+  position = NULL,
+  badge_text = NULL
+)
 }
 \arguments{
 \item{...}{Any element where the badge will be stuck.}

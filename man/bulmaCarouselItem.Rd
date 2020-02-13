@@ -4,8 +4,14 @@
 \alias{bulmaCarouselItem}
 \title{bulma carousel item}
 \usage{
-bulmaCarouselItem(background = TRUE, active = FALSE, src = NULL,
-  title = NULL, url = NULL, url_text = NULL)
+bulmaCarouselItem(
+  background = TRUE,
+  active = FALSE,
+  src = NULL,
+  title = NULL,
+  url = NULL,
+  url_text = NULL
+)
 }
 \arguments{
 \item{background}{by default TRUE. The item background.}

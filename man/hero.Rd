@@ -7,8 +7,7 @@
 \alias{bulmaHeroFoot}
 \title{Add section}
 \usage{
-bulmaHero(..., color = NULL, size = NULL, bold = FALSE,
-  fullheight = FALSE)
+bulmaHero(..., color = NULL, size = NULL, bold = FALSE, fullheight = FALSE)
 
 bulmaHeroHead(...)
 

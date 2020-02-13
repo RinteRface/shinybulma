@@ -9,8 +9,16 @@
 \usage{
 bulmaTextInput(inputId, label = NULL, placeholder = "", color = NULL)
 
-bulmaTextAreaInput(inputId, label = NULL, placeholder = "", rows = 1,
-  color = NULL, size = NULL, disabled = FALSE, readonly = FALSE)
+bulmaTextAreaInput(
+  inputId,
+  label = NULL,
+  placeholder = "",
+  rows = 1,
+  color = NULL,
+  size = NULL,
+  disabled = FALSE,
+  readonly = FALSE
+)
 
 bulmaUpdateTextInput(session, inputId, value = NULL)
 }

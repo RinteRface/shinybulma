@@ -4,9 +4,17 @@
 \alias{bulmaPricingPlan}
 \title{bulma pricing table plan}
 \usage{
-bulmaPricingPlan(..., active = FALSE, color = NULL,
-  plan_title = NULL, plan_price = NULL, plan_currency = NULL,
-  plan_period = NULL, button_status = NULL, button_name = NULL)
+bulmaPricingPlan(
+  ...,
+  active = FALSE,
+  color = NULL,
+  plan_title = NULL,
+  plan_price = NULL,
+  plan_currency = NULL,
+  plan_period = NULL,
+  button_status = NULL,
+  button_name = NULL
+)
 }
 \arguments{
 \item{...}{Slot for bulmaPricingPlanItem.}

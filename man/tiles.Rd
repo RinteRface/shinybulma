@@ -10,8 +10,13 @@ bulmaTileAncestor(...)
 
 bulmaTileParent(..., vertical = FALSE, width = NULL)
 
-bulmaTileChild(..., title = "", subtitle = "", color = NULL,
-  type = "notification")
+bulmaTileChild(
+  ...,
+  title = "",
+  subtitle = "",
+  color = NULL,
+  type = "notification"
+)
 }
 \arguments{
 \item{...}{any element.}

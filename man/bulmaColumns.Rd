@@ -4,9 +4,15 @@
 \alias{bulmaColumns}
 \title{Add a column}
 \usage{
-bulmaColumns(..., gapless = FALSE, centered = FALSE,
-  multiline = FALSE, mobile = FALSE, tablet = FALSE,
-  desktop = FALSE)
+bulmaColumns(
+  ...,
+  gapless = FALSE,
+  centered = FALSE,
+  multiline = FALSE,
+  mobile = FALSE,
+  tablet = FALSE,
+  desktop = FALSE
+)
 }
 \arguments{
 \item{...}{any element.}

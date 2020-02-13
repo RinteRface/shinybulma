@@ -13,8 +13,14 @@
 \alias{bulmaNav}
 \title{Add navbar}
 \usage{
-bulmaNavbar(..., container = TRUE, transparent = FALSE, color = NULL,
-  fix.top = FALSE, fix.bottom = FALSE)
+bulmaNavbar(
+  ...,
+  container = TRUE,
+  transparent = FALSE,
+  color = NULL,
+  fix.top = FALSE,
+  fix.bottom = FALSE
+)
 
 bulmaNavbarStart(...)
 
@@ -28,7 +34,7 @@ bulmaNavbarItem(label, href = NULL)
 
 bulmaNavbarLink(label, href = "")
 
-bulmaNavbarBurger()
+bulmaNavbarBurger(color = "primary")
 
 bulmaNavbarDropdown(..., label, href = "")
 

@@ -4,8 +4,7 @@
 \alias{bulmaSidebarTrigger}
 \title{bulma right sidebar trigger}
 \usage{
-bulmaSidebarTrigger(color = NULL, size = NULL, style = NULL,
-  state = NULL)
+bulmaSidebarTrigger(color = NULL, size = NULL, style = NULL, state = NULL)
 }
 \arguments{
 \item{color}{Button color : \code{link}, \code{info}, \code{primary}, \code{warning},

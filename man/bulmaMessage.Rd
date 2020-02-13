@@ -4,8 +4,13 @@
 \alias{bulmaMessage}
 \title{bulma messqge}
 \usage{
-bulmaMessage(..., color = NULL, size = NULL, header = TRUE,
-  header_title = NULL)
+bulmaMessage(
+  ...,
+  color = NULL,
+  size = NULL,
+  header = TRUE,
+  header_title = NULL
+)
 }
 \arguments{
 \item{...}{Any message to display in the body.}

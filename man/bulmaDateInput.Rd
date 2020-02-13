@@ -4,8 +4,16 @@
 \alias{bulmaDateInput}
 \title{Date picker}
 \usage{
-bulmaDateInput(inputId, value, min = Sys.Date() - 3, max = Sys.Date(),
-  overlay = FALSE, lang = "en", class = NULL, ...)
+bulmaDateInput(
+  inputId,
+  value,
+  min = Sys.Date() - 3,
+  max = Sys.Date(),
+  overlay = FALSE,
+  lang = "en",
+  class = NULL,
+  ...
+)
 }
 \arguments{
 \item{inputId}{Id to access value.}

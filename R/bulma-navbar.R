@@ -222,10 +222,10 @@ bulmaNavbarLink <- function(label, href = ""){
 
 #' @rdname navbar
 #' @export
-bulmaNavbarBurger <- function(){
+bulmaNavbarBurger <- function(color = "primary"){
   
   shiny::tags$button(
-    class = "button navbar-burger",
+    class = paste0("button navbar-burger is-", color),
     `data-target` = "navMenu",
     shiny::tags$span(),
     shiny::tags$span(),

@@ -24,7 +24,7 @@ bulmaProgressOutput(outputId)
 \item{size}{size of progress bar, default to \code{NULL}
 takes \code{small}, \code{meidum} or \code{large}.}
 
-\item{expr}{An expression that returns a Shiny tag object, \code{\link{HTML}},
+\item{expr}{An expression that returns a Shiny tag object, \code{\link[shiny:HTML]{HTML()}},
 or a list of such objects.}
 
 \item{env}{The environment in which to evaluate \code{expr}.}

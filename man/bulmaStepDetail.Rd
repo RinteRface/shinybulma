@@ -4,8 +4,13 @@
 \alias{bulmaStepDetail}
 \title{bulma step detail}
 \usage{
-bulmaStepDetail(..., color = NULL, completed = FALSE, title = NULL,
-  marker = NULL)
+bulmaStepDetail(
+  ...,
+  color = NULL,
+  completed = FALSE,
+  title = NULL,
+  marker = NULL
+)
 }
 \arguments{
 \item{...}{Description of the step.}

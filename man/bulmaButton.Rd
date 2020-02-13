@@ -4,9 +4,16 @@
 \alias{bulmaButton}
 \title{Button}
 \usage{
-bulmaButton(..., color = NULL, style = NULL, class = NULL,
-  rounded = FALSE, size = NULL, display = NULL,
-  tag = shiny::tags$a)
+bulmaButton(
+  ...,
+  color = NULL,
+  style = NULL,
+  class = NULL,
+  rounded = FALSE,
+  size = NULL,
+  display = NULL,
+  tag = shiny::tags$a
+)
 }
 \arguments{
 \item{...}{button content.}
