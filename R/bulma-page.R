@@ -5,6 +5,32 @@
 #' @param ... any element.
 #' @param title page title.
 #' @param theme a theme.
+#' 
+#' @section Themes:
+#' You can preview all themes at \url{https://jenil.github.io/bulmaswatch/}.
+#' \itemize{
+#'  \item{\code{cerulean}}
+#'  \item{\code{cyborg}}
+#'  \item{\code{dark}}
+#'  \item{\code{darly}}
+#'  \item{\code{flatly}}
+#'  \item{\code{journal}}
+#'  \item{\code{default}}
+#'  \item{\code{litera}}
+#'  \item{\code{lumen}}
+#'  \item{\code{lux}}
+#'  \item{\code{materia}}
+#'  \item{\code{minty}}
+#'  \item{\code{nuclear}}
+#'  \item{\code{pulse}}
+#'  \item{\code{sansdstone}}
+#'  \item{\code{simplex}}
+#'  \item{\code{slate}}
+#'  \item{\code{solar}}
+#'  \item{\code{spacelab}}
+#'  \item{\code{united}}
+#'  \item{\code{yeti}}
+#' }
 #'
 #' @examples
 #' if(interactive()){
