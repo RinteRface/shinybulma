@@ -47,7 +47,7 @@ addDeps <- function(x, theme) {
         name = "bulma-themes", 
         version = "0.7.2",
         src = c(file = system.file("bulma-themes-0.7.2", package = "shinybulma")),
-        script = bulma_themes_css
+        stylesheet = bulma_themes_css
       )
     },
     # jquery UI deps for sortable elements
