@@ -36,25 +36,20 @@ bulmaSection <- function(..., container = TRUE, size = NULL){
   cl <- "section"
 
   if(!is.null(size)) cl <- paste0(cl, " is-", size)
-
-  section <- shiny::tags$section(
-    class = cl,
-    ...
-  )
   
   if(isTRUE(container)){
-    shiny::div(
-      class = "section",
+    shiny::tags$section(
+      class = cl,
       shiny::div(
         class = "container",
         ...
       )
     )
   } else {
-    shiny::div(
-      class = "section",
+    shiny::tags$section(
+      class = cl,
       ...
-    ) 
+    )
   }
   
 }
