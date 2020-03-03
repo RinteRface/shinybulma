@@ -32,33 +32,31 @@ shinyApp(
       )
     ),
     bulmaSection(
-      bulmaContainer(
-        bulmaTileAncestor(
-          bulmaTileParent(
-            vertical = TRUE,
-            bulmaTileChild(
-              bulmaTitle("Tile 1"),
-              p("Put some data here"),
-              color = "link"
-            ),
-            bulmaTileChild(
-              bulmaTitle("Tile 2"),
-              plotOutput("chart"),
-              color = "danger"
-            )
+      bulmaTileAncestor(
+        bulmaTileParent(
+          vertical = TRUE,
+          bulmaTileChild(
+            bulmaTitle("Tile 1"),
+            p("Put some data here"),
+            color = "link"
           ),
-          bulmaTileParent(
-            vertical = TRUE,
-            bulmaTileChild(
-              bulmaTitle("Tile 3"),
-              p("Put some data here"),
-              color = "warning"
-            ),
-            bulmaTileChild(
-              bulmaTitle("Tile 3"),
-              ("Put some data here"),
-              color = "info"
-            )
+          bulmaTileChild(
+            bulmaTitle("Tile 2"),
+            plotOutput("chart"),
+            color = "danger"
+          )
+        ),
+        bulmaTileParent(
+          vertical = TRUE,
+          bulmaTileChild(
+            bulmaTitle("Tile 3"),
+            p("Put some data here"),
+            color = "warning"
+          ),
+          bulmaTileChild(
+            bulmaTitle("Tile 3"),
+            ("Put some data here"),
+            color = "info"
           )
         )
       )
