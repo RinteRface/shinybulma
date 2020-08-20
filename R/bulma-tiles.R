@@ -69,7 +69,7 @@ bulmaTileParent <- function(..., vertical = FALSE, width = NULL){
   cl <-"tile is-parent"
   
   if(isTRUE(vertical)) cl <- paste(cl, "is-vertical")
-  if(!is.null(width)) cl <- paste0(cl, " is-")
+  if(!is.null(width)) cl <- paste0(cl, " is-", width)
   
   shiny::tags$div(
     class = cl,
