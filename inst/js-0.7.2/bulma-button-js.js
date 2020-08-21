@@ -1,9 +1,9 @@
-
+/*
 $(document).on("click", "button.shinyBulmaActionButton", function(evt) {
     var el = $(evt.target);
     el.val(parseInt(el.val()) + 1);
     el.trigger("change");
-});
+});*/
 
 var shinyBulmaActionButton = new Shiny.InputBinding();
 $.extend(shinyBulmaActionButton, {
@@ -11,7 +11,7 @@ $.extend(shinyBulmaActionButton, {
     return $(scope).find(".shinyBulmaActionButton");
   },
   getValue: function(el) {
-    return parseInt($(el).val());
+    return $(el).data('val') || 0;
   },
   subscribe: function(el, callback) {
     $(el).on("click.shinyBulmaActionButton", function(e) {
