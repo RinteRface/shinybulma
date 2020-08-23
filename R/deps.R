@@ -24,6 +24,8 @@ addDeps <- function(x, theme) {
   jquery_ui_js <- "jquery-ui.min.js"
   custom_js <- "custom-js.js"
 
+  # bulmaJS extensions https://bulmajs.tomerbe.co.uk/docs/master/1-getting-started/2-installation/
+  bulma_js <- "bulma.js"
   
   bulmaDeps <- list(
     # bulma CSS (CDN)
@@ -40,6 +42,13 @@ addDeps <- function(x, theme) {
       src = c(file = system.file("bulma-extensions-3.0.0", package = "shinybulma")),
       script = bulma_extensions_js,
       stylesheet = bulma_extensions_css
+    ),
+    # bulmaJS
+    htmltools::htmlDependency(
+      name = "bulmaJS", 
+      version = "0.11",
+      src = c(file = system.file("bulma-js-0.11", package = "shinybulma")),
+      script = bulma_js
     ),
     # Themes
     if (!is.null(theme)) {
