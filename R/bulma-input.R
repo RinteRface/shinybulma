@@ -289,7 +289,7 @@ bulmaSelectInput <- function(inputId, label, choices, rounded = FALSE){
 #' @export
 bulmaActionButton <- function(inputId, label, color = NULL){
 
-  cl <- "button shinyBulmaActionButton"
+  cl <- "button action-button"
 
   if(!is.null(color)) cl <- paste0(cl, " is-", color)
 
