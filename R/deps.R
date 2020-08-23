@@ -1,16 +1,5 @@
-# Add an html dependency, without overwriting existing ones
-appendDependencies <- function(x, value) {
-  if (inherits(value, "html_dependency"))
-    value <- list(value)
-  
-  old <- attr(x, "html_dependencies", TRUE)
-  
-  htmltools::htmlDependencies(x) <- c(old, value)
-  x
-}
-
-# Add dashboard dependencies to a tag object
-addDeps <- function(x, theme) {
+# Add bulma dependencies to a tag object
+add_bulma_deps <- function(tag, theme) {
   
   # bulma
   bulma_css <- "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/"
@@ -81,5 +70,5 @@ addDeps <- function(x, theme) {
       script = list.files(system.file("js-0.7.2", package = "shinybulma"))
     )
   )
-  appendDependencies(x, bulmaDeps)
+  htmltools::attachDependencies(tag, bulmaDeps, append = TRUE)
 }

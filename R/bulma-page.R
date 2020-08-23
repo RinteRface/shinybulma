@@ -93,7 +93,7 @@ bulmaPage <- function(..., title = NULL, theme = "default"){
       shiny::tags$title(title)
     ),
     # Body --------------------------------------------------------------------
-    addDeps(shiny::tagList(...), theme = theme)
+    add_bulma_deps(shiny::tagList(...), theme = theme)
   )
 }
 
