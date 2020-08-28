@@ -2,7 +2,7 @@ Package: shinybulma
 Title: Bulma for Shiny
 Version: 0.0.1
 Authors@R: c(person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre")),
-  person("David", "Granjon", email = "david.granjon@uzh.ch", role = "ctb", comment = "bulma-extensions"),
+  person("David", "Granjon", email = "david.granjon@uzh.ch", role = "aut", comment = "bulma-extensions"),
   person(family = "RinteRface", role = "cph")
   )
 Description: Bulma for Shiny. Contains also an implementation of some of the major components
@@ -14,4 +14,4 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: shiny, htmltools
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1.9000
