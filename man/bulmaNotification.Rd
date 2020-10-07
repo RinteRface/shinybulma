@@ -4,83 +4,38 @@
 \alias{bulmaNotification}
 \title{bulma notification}
 \usage{
-bulmaNotification(..., color = NULL)
+bulmaNotification(
+  body,
+  color = NULL,
+  session = shiny::getDefaultReactiveDomain()
+)
 }
 \arguments{
-\item{...}{Any element.}
+\item{body}{Content of the alert.}
 
 \item{color}{The background color : \code{link}, \code{info}, \code{primary}, \code{warning},
 \code{danger}, \code{success}, \code{black}, \code{dark} and \code{ligth}.}
+
+\item{session}{A valid shiny session.}
 }
 \description{
 Create a notification box \url{https://bulma.io/documentation/elements/notification/}.
 }
 \examples{
-if (interactive()) {
- library(shiny)
+library(shiny)
 
- ui <- bulmaPage(
-  bulmaContainer(
-   bulmaColumns(
-    bulmaColumn(
-      width = 3,
-      bulmaNotification(
-        color = "info",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit lorem ipsum dolor. Pellentesque risus mi, tempus
-        quis placerat ut, porta nec nulla. Vestibulum rhoncus
-        ac ex sit amet fringilla. Nullam gravida purus diam,
-        et dictum felis venenatis efficitur. Sit amet,
-        consectetur adipiscing elit"
-      )
-    ),
-    bulmaColumn(
-      width = 3,
-      bulmaNotification(
-        color = "warning",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit lorem ipsum dolor. Pellentesque risus mi, tempus
-        quis placerat ut, porta nec nulla. Vestibulum rhoncus
-        ac ex sit amet fringilla. Nullam gravida purus diam,
-        et dictum felis venenatis efficitur. Sit amet,
-        consectetur adipiscing elit"
-      )
-    ),
-    bulmaColumn(
-      width = 3,
-      bulmaNotification(
-        color = "danger",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit lorem ipsum dolor. Pellentesque risus mi, tempus
-        quis placerat ut, porta nec nulla. Vestibulum rhoncus
-        ac ex sit amet fringilla. Nullam gravida purus diam,
-        et dictum felis venenatis efficitur. Sit amet,
-        consectetur adipiscing elit"
-      )
-    ),
-    bulmaColumn(
-      width = 3,
-      bulmaNotification(
-        color = "primary",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit lorem ipsum dolor. Pellentesque risus mi, tempus
-        quis placerat ut, porta nec nulla. Vestibulum rhoncus
-        ac ex sit amet fringilla. Nullam gravida purus diam,
-        et dictum felis venenatis efficitur. Sit amet,
-        consectetur adipiscing elit"
-      )
-    )
-   )
-  )
- )
+ui <- bulmaPage(
+ bulmaActionButton("alert", "Send alert")
+)
 
- server <- function(input, output, session) {
-
- }
-
- shinyApp(ui = ui, server = server)
-
+server <- function(input, output){
+ observeEvent(input$alert, {
+   bulmaNotification(color = "red")
+ })
 }
+
+if(interactive())
+ shinyApp(ui, server)
 
 }
 \author{
