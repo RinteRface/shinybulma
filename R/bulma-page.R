@@ -11,6 +11,7 @@
 #' \itemize{
 #'  \item{\code{cerulean}}
 #'  \item{\code{cyborg}}
+#'  \item{\code{cosmo}}
 #'  \item{\code{dark}}
 #'  \item{\code{darly}}
 #'  \item{\code{flatly}}
@@ -28,6 +29,7 @@
 #'  \item{\code{slate}}
 #'  \item{\code{solar}}
 #'  \item{\code{spacelab}}
+#'  \item{\code{superhero}}
 #'  \item{\code{united}}
 #'  \item{\code{yeti}}
 #' }
