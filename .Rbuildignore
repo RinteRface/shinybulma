@@ -6,3 +6,4 @@
 ^pkgdown$
 ^cran-comments\.md$
 ^CODE_OF_CONDUCT\.md$
+test.R
