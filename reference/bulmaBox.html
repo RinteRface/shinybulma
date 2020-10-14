@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shinybulma</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.2.9000</span>
       </span>
     </div>
 
@@ -120,7 +120,7 @@
     <p>Create a simple box with or without media <a href='https://bulma.io/documentation/elements/box/'>https://bulma.io/documentation/elements/box/</a>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>bulmaBox</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>bulmaBox</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -134,40 +134,45 @@
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>It is lighter than a bulmaCard element.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>David Granjon, <a href='mailto:dgranjon@ymail.com'>dgranjon@ymail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()) {
- <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>shiny</span>)
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
+ <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://shiny.rstudio.com'>shiny</a></span><span class='op'>)</span>
 
- <span class='no'>ui</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='page.html'>bulmaPage</a></span>(
-  <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span>(
-   <span class='fu'><a href='bulmaColumns.html'>bulmaColumns</a></span>(
-    <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span>(
-      <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>6</span>,
-      <span class='fu'>bulmaBox</span>(
-        <span class='fu'><a href='bulmaBoxMedia.html'>bulmaBoxMedia</a></span>(
-          <span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"https://bulma.io/images/placeholders/128x128.png"</span>,
+ <span class='va'>ui</span> <span class='op'>&lt;-</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span>
+  <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span>
+   <span class='fu'><a href='bulmaColumns.html'>bulmaColumns</a></span><span class='op'>(</span>
+    <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span><span class='op'>(</span>
+      width <span class='op'>=</span> <span class='fl'>6</span>,
+      <span class='fu'>bulmaBox</span><span class='op'>(</span>
+        <span class='fu'><a href='bulmaBoxMedia.html'>bulmaBoxMedia</a></span><span class='op'>(</span>
+          src <span class='op'>=</span> <span class='st'>"https://bulma.io/images/placeholders/128x128.png"</span>,
           <span class='st'>"test"</span>
-        )
-      )
-    ),
-    <span class='fu'><a href='bulmaDivider.html'>bulmaDivider</a></span>(<span class='kw'>vertical</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),
-    <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span>(
-      <span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>6</span>,
-      <span class='fu'>bulmaBox</span>(
+        <span class='op'>)</span>
+      <span class='op'>)</span>
+    <span class='op'>)</span>,
+    <span class='fu'><a href='bulmaDivider.html'>bulmaDivider</a></span><span class='op'>(</span>vertical <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+    <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span><span class='op'>(</span>
+      width <span class='op'>=</span> <span class='fl'>6</span>,
+      <span class='fu'>bulmaBox</span><span class='op'>(</span>
         <span class='st'>"test"</span>
-      )
-     )
-    )
-  )
- )
+      <span class='op'>)</span>
+     <span class='op'>)</span>
+    <span class='op'>)</span>
+  <span class='op'>)</span>
+ <span class='op'>)</span>
 
- <span class='no'>server</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>input</span>, <span class='no'>output</span>, <span class='no'>session</span>) {
+ <span class='va'>server</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span>, <span class='va'>session</span><span class='op'>)</span> <span class='op'>{</span>
 
- }
+ <span class='op'>}</span>
 
- <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span>(<span class='kw'>ui</span> <span class='kw'>=</span> <span class='no'>ui</span>, <span class='kw'>server</span> <span class='kw'>=</span> <span class='no'>server</span>)
-}</div></pre>
+ <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>ui <span class='op'>=</span> <span class='va'>ui</span>, server <span class='op'>=</span> <span class='va'>server</span><span class='op'>)</span>
+<span class='op'>}</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -183,7 +188,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

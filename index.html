@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">shinybulma</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.2.9000</span>
       </span>
     </div>
 
@@ -82,64 +82,66 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="co"># install.packages("devtools")</span>
-<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu">install_github</span>(<span class="st">"RinteRface/shinybulma"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="co"># install.packages("devtools")</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"RinteRface/shinybulma"</span><span class="op">)</span></pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">shiny</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">shinybulma</span>)
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://shiny.rstudio.com">shiny</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/JohnCoene/shinybulma">shinybulma</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html">shinyApp</a></span>(
-  <span class="kw">ui</span> <span class="kw">=</span> <span class="fu"><a href="reference/page.html">bulmaPage</a></span>(
-    <span class="fu"><a href="reference/hero.html">bulmaHero</a></span>(
-      <span class="kw">fullheight</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-      <span class="kw">color</span> <span class="kw">=</span> <span class="st">"primary"</span>,
-      <span class="fu"><a href="reference/hero.html">bulmaHeroBody</a></span>(
-        <span class="fu"><a href="reference/bulmaContainer.html">bulmaContainer</a></span>(
-          <span class="fu"><a href="reference/title.html">bulmaTitle</a></span>(<span class="st">"Shiny meets Bulma!"</span>),
-          <span class="fu"><a href="reference/title.html">bulmaSubtitle</a></span>(<span class="st">"A neat framework for your Shiny apps."</span>)
-        )
-      )
-    ),
-    <span class="fu"><a href="reference/bulmaSection.html">bulmaSection</a></span>(
-      <span class="fu"><a href="reference/tiles.html">bulmaTileAncestor</a></span>(
-        <span class="fu"><a href="reference/tiles.html">bulmaTileParent</a></span>(
-          <span class="kw">vertical</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-          <span class="fu"><a href="reference/tiles.html">bulmaTileChild</a></span>(
-            <span class="fu"><a href="reference/title.html">bulmaTitle</a></span>(<span class="st">"Tile 1"</span>),
-            <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/reexports.html">p</a></span>(<span class="st">"Put some data here"</span>),
-            <span class="kw">color</span> <span class="kw">=</span> <span class="st">"link"</span>
-          ),
-          <span class="fu"><a href="reference/tiles.html">bulmaTileChild</a></span>(
-            <span class="fu"><a href="reference/title.html">bulmaTitle</a></span>(<span class="st">"Tile 2"</span>),
-            <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/plotOutput.html">plotOutput</a></span>(<span class="st">"chart"</span>),
-            <span class="kw">color</span> <span class="kw">=</span> <span class="st">"danger"</span>
-          )
-        ),
-        <span class="fu"><a href="reference/tiles.html">bulmaTileParent</a></span>(
-          <span class="kw">vertical</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-          <span class="fu"><a href="reference/tiles.html">bulmaTileChild</a></span>(
-            <span class="fu"><a href="reference/title.html">bulmaTitle</a></span>(<span class="st">"Tile 3"</span>),
-            <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/reexports.html">p</a></span>(<span class="st">"Put some data here"</span>),
-            <span class="kw">color</span> <span class="kw">=</span> <span class="st">"warning"</span>
-          ),
-          <span class="fu"><a href="reference/tiles.html">bulmaTileChild</a></span>(
-            <span class="fu"><a href="reference/title.html">bulmaTitle</a></span>(<span class="st">"Tile 3"</span>),
-            (<span class="st">"Put some data here"</span>),
-            <span class="kw">color</span> <span class="kw">=</span> <span class="st">"info"</span>
-          )
-        )
-      )
-    )
-  ),
-  <span class="kw">server</span> <span class="kw">=</span> <span class="kw">function</span>(<span class="no">input</span>, <span class="no">output</span>) {
-    <span class="no">output</span>$<span class="no">chart</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPlot.html">renderPlot</a></span>({
-      <span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="fl">20</span>, <span class="fl">5</span>, <span class="fl">10</span>), <span class="kw">y</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="fl">20</span>, <span class="fl">10</span>, <span class="fl">12</span>))
-    })
-  }
-)</pre></div>
+<span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html">shinyApp</a></span><span class="op">(</span>
+  ui <span class="op">=</span> <span class="fu"><a href="reference/bulmaPage.html">bulmaPage</a></span><span class="op">(</span>
+    <span class="fu"><a href="reference/bulmaHero.html">bulmaHero</a></span><span class="op">(</span>
+      fullheight <span class="op">=</span> <span class="cn">TRUE</span>,
+      color <span class="op">=</span> <span class="st">"primary"</span>,
+      <span class="fu"><a href="reference/bulmaHero.html">bulmaHeroBody</a></span><span class="op">(</span>
+        <span class="fu"><a href="reference/bulmaContainer.html">bulmaContainer</a></span><span class="op">(</span>
+          <span class="fu"><a href="reference/bulmaTitle.html">bulmaTitle</a></span><span class="op">(</span><span class="st">"Shiny meets Bulma!"</span><span class="op">)</span>,
+          <span class="fu"><a href="reference/bulmaTitle.html">bulmaSubtitle</a></span><span class="op">(</span><span class="st">"A neat framework for your Shiny apps."</span><span class="op">)</span>
+        <span class="op">)</span>
+      <span class="op">)</span>
+    <span class="op">)</span>,
+    <span class="fu"><a href="reference/bulmaSection.html">bulmaSection</a></span><span class="op">(</span>
+      <span class="fu"><a href="reference/bulmaTileAncestor.html">bulmaTileAncestor</a></span><span class="op">(</span>
+        <span class="fu"><a href="reference/bulmaTileAncestor.html">bulmaTileParent</a></span><span class="op">(</span>
+          vertical <span class="op">=</span> <span class="cn">TRUE</span>,
+          <span class="fu"><a href="reference/bulmaTileAncestor.html">bulmaTileChild</a></span><span class="op">(</span>
+            <span class="fu"><a href="reference/bulmaTitle.html">bulmaTitle</a></span><span class="op">(</span><span class="st">"Tile 1"</span><span class="op">)</span>,
+            <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">p</a></span><span class="op">(</span><span class="st">"Put some data here"</span><span class="op">)</span>,
+            color <span class="op">=</span> <span class="st">"link"</span>
+          <span class="op">)</span>,
+          <span class="fu"><a href="reference/bulmaTileAncestor.html">bulmaTileChild</a></span><span class="op">(</span>
+            <span class="fu"><a href="reference/bulmaTitle.html">bulmaTitle</a></span><span class="op">(</span><span class="st">"Tile 2"</span><span class="op">)</span>,
+            <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/plotOutput.html">plotOutput</a></span><span class="op">(</span><span class="st">"chart"</span><span class="op">)</span>,
+            color <span class="op">=</span> <span class="st">"danger"</span>
+          <span class="op">)</span>
+        <span class="op">)</span>,
+        <span class="fu"><a href="reference/bulmaTileAncestor.html">bulmaTileParent</a></span><span class="op">(</span>
+          vertical <span class="op">=</span> <span class="cn">TRUE</span>,
+          <span class="fu"><a href="reference/bulmaTileAncestor.html">bulmaTileChild</a></span><span class="op">(</span>
+            <span class="fu"><a href="reference/bulmaTitle.html">bulmaTitle</a></span><span class="op">(</span><span class="st">"Tile 3"</span><span class="op">)</span>,
+            <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">p</a></span><span class="op">(</span><span class="st">"Put some data here"</span><span class="op">)</span>,
+            color <span class="op">=</span> <span class="st">"warning"</span>
+          <span class="op">)</span>,
+          <span class="fu"><a href="reference/bulmaTileAncestor.html">bulmaTileChild</a></span><span class="op">(</span>
+            <span class="fu"><a href="reference/bulmaTitle.html">bulmaTitle</a></span><span class="op">(</span><span class="st">"Tile 3"</span><span class="op">)</span>,
+            <span class="op">(</span><span class="st">"Put some data here"</span><span class="op">)</span>,
+            color <span class="op">=</span> <span class="st">"info"</span>
+          <span class="op">)</span>
+        <span class="op">)</span>
+      <span class="op">)</span>
+    <span class="op">)</span>
+  <span class="op">)</span>,
+  server <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">output</span><span class="op">$</span><span class="va">chart</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://shiny.rstudio.com/reference/shiny/latest/renderPlot.html">renderPlot</a></span><span class="op">(</span><span class="op">{</span>
+      <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">5</span>, <span class="fl">10</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">10</span>, <span class="fl">12</span><span class="op">)</span><span class="op">)</span>
+    <span class="op">}</span><span class="op">)</span>
+  <span class="op">}</span>
+<span class="op">)</span></pre></div>
 </div>
 <div id="extensions-demo" class="section level2">
 <h2 class="hasAnchor">
@@ -205,7 +207,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shinybulma</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.2.9000</span>
       </span>
     </div>
 
@@ -120,9 +120,9 @@
     <p>Build a bulma Shiny app.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>bulmaPage</span>(<span class='no'>...</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>theme</span> <span class='kw'>=</span> <span class='st'>"default"</span>)
+    <pre class="usage"><span class='fu'>bulmaPage</span><span class='op'>(</span><span class='va'>...</span>, title <span class='op'>=</span> <span class='cn'>NULL</span>, theme <span class='op'>=</span> <span class='st'>"default"</span><span class='op'>)</span>
 
-<span class='fu'>bulmaNavbarPage</span>(<span class='no'>...</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>theme</span> <span class='kw'>=</span> <span class='st'>"default"</span>)</pre>
+<span class='fu'>bulmaNavbarPage</span><span class='op'>(</span><span class='va'>...</span>, title <span class='op'>=</span> <span class='cn'>NULL</span>, theme <span class='op'>=</span> <span class='st'>"default"</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -148,6 +148,7 @@
 <p>You can preview all themes at <a href='https://jenil.github.io/bulmaswatch/'>https://jenil.github.io/bulmaswatch/</a>.</p><ul>
 <li><p><code>cerulean</code></p></li>
 <li><p><code>cyborg</code></p></li>
+<li><p><code>cosmo</code></p></li>
 <li><p><code>dark</code></p></li>
 <li><p><code>darly</code></p></li>
 <li><p><code>flatly</code></p></li>
@@ -165,54 +166,60 @@
 <li><p><code>slate</code></p></li>
 <li><p><code>solar</code></p></li>
 <li><p><code>spacelab</code></p></li>
+<li><p><code>superhero</code></p></li>
 <li><p><code>united</code></p></li>
 <li><p><code>yeti</code></p></li>
 </ul>
 
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>John Coene, <a href='mailto:jcoenep@gmail.com'>jcoenep@gmail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>shiny</span>)
+    <pre class="examples"><div class='input'><span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://shiny.rstudio.com'>shiny</a></span><span class='op'>)</span>
 
-<span class='kw pkg'>shiny</span><span class='kw ns'>::</span><span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span>(
-  <span class='kw'>ui</span> <span class='kw'>=</span> <span class='fu'>bulmaNavbarPage</span>(
-   <span class='fu'><a href='navbar.html'>bulmaNavbar</a></span>(
-     <span class='fu'><a href='navbar.html'>bulmaNavbarBrand</a></span>(
-       <span class='fu'><a href='navbar.html'>bulmaNavbarItem</a></span>(
+<span class='fu'>shiny</span><span class='fu'>::</span><span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
+  ui <span class='op'>=</span> <span class='fu'>bulmaNavbarPage</span><span class='op'>(</span>
+   <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbar</a></span><span class='op'>(</span>
+     <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarBrand</a></span><span class='op'>(</span>
+       <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarItem</a></span><span class='op'>(</span>
          <span class='st'>"shinybulma"</span>
-       ),
-       <span class='fu'><a href='navbar.html'>bulmaNavbarBurger</a></span>()
-     ),
-     <span class='fu'><a href='navbar.html'>bulmaNavbarMenu</a></span>( <span class='co'># not visible on smaller devices</span>
-       <span class='fu'><a href='navbar.html'>bulmaNavbarItem</a></span>(
+       <span class='op'>)</span>,
+       <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarBurger</a></span><span class='op'>(</span><span class='op'>)</span>
+     <span class='op'>)</span>,
+     <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarMenu</a></span><span class='op'>(</span> <span class='co'># not visible on smaller devices</span>
+       <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarItem</a></span><span class='op'>(</span>
          <span class='st'>"Item 1"</span>
-       ),
-       <span class='fu'><a href='navbar.html'>bulmaNavbarItem</a></span>(
+       <span class='op'>)</span>,
+       <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarItem</a></span><span class='op'>(</span>
          <span class='st'>"Item 2"</span>
-       ),
-     <span class='fu'><a href='navbar.html'>bulmaNavbarDropdown</a></span>(
-       <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Drop-down"</span>,
-       <span class='fu'><a href='navbar.html'>bulmaNavbarItem</a></span>(
+       <span class='op'>)</span>,
+     <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarDropdown</a></span><span class='op'>(</span>
+       label <span class='op'>=</span> <span class='st'>"Drop-down"</span>,
+       <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarItem</a></span><span class='op'>(</span>
          <span class='st'>"Select 1"</span>
-       ),
-       <span class='fu'><a href='navbar.html'>bulmaNavbarItem</a></span>(
+       <span class='op'>)</span>,
+       <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarItem</a></span><span class='op'>(</span>
          <span class='st'>"Select 2"</span>
-       )
-     )
-    )
-   ),
-   <span class='fu'><a href='navbar.html'>bulmaNav</a></span>(
+       <span class='op'>)</span>
+     <span class='op'>)</span>
+    <span class='op'>)</span>
+   <span class='op'>)</span>,
+   <span class='fu'><a href='bulmaNavbar.html'>bulmaNav</a></span><span class='op'>(</span>
      <span class='st'>"Item 1"</span>,
-     <span class='fu'><a href='title.html'>bulmaTitle</a></span>(<span class='st'>"Content for item 1 here."</span>)
-   ),
-   <span class='fu'><a href='navbar.html'>bulmaNav</a></span>(
+     <span class='fu'><a href='bulmaTitle.html'>bulmaTitle</a></span><span class='op'>(</span><span class='st'>"Content for item 1 here."</span><span class='op'>)</span>
+   <span class='op'>)</span>,
+   <span class='fu'><a href='bulmaNavbar.html'>bulmaNav</a></span><span class='op'>(</span>
      <span class='st'>"Item 2"</span>,
-     <span class='fu'><a href='title.html'>bulmaTitle</a></span>(<span class='st'>"Content for item 2 here."</span>)
-   )
-  ),
-  <span class='kw'>server</span> <span class='kw'>=</span> <span class='kw'>function</span>(<span class='no'>input</span>, <span class='no'>output</span>) {}
-)
-}</div></pre>
+     <span class='fu'><a href='bulmaTitle.html'>bulmaTitle</a></span><span class='op'>(</span><span class='st'>"Content for item 2 here."</span><span class='op'>)</span>
+   <span class='op'>)</span>
+  <span class='op'>)</span>,
+  server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span>
+<span class='op'>)</span>
+<span class='op'>}</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -228,7 +235,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

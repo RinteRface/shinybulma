@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">shinybulma</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.2.9000</span>
       </span>
     </div>
 
@@ -120,17 +120,17 @@
     <p>Flexible card component.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>bulmaCard</span>(<span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>bulmaCard</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>bulmaCardHeader</span>(<span class='no'>...</span>)
+<span class='fu'>bulmaCardHeader</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>bulmaCardHeaderTitle</span>(<span class='no'>...</span>)
+<span class='fu'>bulmaCardHeaderTitle</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>bulmaCardContent</span>(<span class='no'>...</span>)
+<span class='fu'>bulmaCardContent</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>bulmaCardFooter</span>(<span class='no'>...</span>)
+<span class='fu'>bulmaCardFooter</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>bulmaCardFooterItem</span>(<span class='no'>...</span>, <span class='kw'>tag</span> <span class='kw'>=</span> <span class='kw pkg'>shiny</span><span class='kw ns'>::</span><span class='no'><a href='https://shiny.rstudio.com/reference/shiny/latest/reexports.html'>span</a></span>)</pre>
+<span class='fu'>bulmaCardFooterItem</span><span class='op'>(</span><span class='va'>...</span>, tag <span class='op'>=</span> <span class='fu'>shiny</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>span</a></span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,39 +145,44 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>John Coene, <a href='mailto:jcoenep@ymail.com'>jcoenep@ymail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>shiny</span>)
+    <pre class="examples"><div class='input'><span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://shiny.rstudio.com'>shiny</a></span><span class='op'>)</span>
 
-<span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span>(
-  <span class='kw'>ui</span> <span class='kw'>=</span> <span class='fu'><a href='page.html'>bulmaPage</a></span>(
-   <span class='fu'><a href='bulmaSection.html'>bulmaSection</a></span>(
-     <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span>(
-       <span class='fu'>bulmaCard</span>(
-         <span class='fu'>bulmaCardHeader</span>(
-           <span class='fu'>bulmaCardHeaderTitle</span>(
+<span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
+  ui <span class='op'>=</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span>
+   <span class='fu'><a href='bulmaSection.html'>bulmaSection</a></span><span class='op'>(</span>
+     <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span>
+       <span class='fu'>bulmaCard</span><span class='op'>(</span>
+         <span class='fu'>bulmaCardHeader</span><span class='op'>(</span>
+           <span class='fu'>bulmaCardHeaderTitle</span><span class='op'>(</span>
              <span class='st'>"Card title"</span>
-           )
-         ),
-         <span class='fu'>bulmaCardContent</span>(
+           <span class='op'>)</span>
+         <span class='op'>)</span>,
+         <span class='fu'>bulmaCardContent</span><span class='op'>(</span>
            <span class='st'>"Content of the card."</span>
-         ),
-         <span class='fu'>bulmaCardFooter</span>(
-           <span class='fu'>bulmaCardFooterItem</span>(
+         <span class='op'>)</span>,
+         <span class='fu'>bulmaCardFooter</span><span class='op'>(</span>
+           <span class='fu'>bulmaCardFooterItem</span><span class='op'>(</span>
              <span class='st'>"Item 1"</span>
-           ),
-           <span class='fu'>bulmaCardFooterItem</span>(
+           <span class='op'>)</span>,
+           <span class='fu'>bulmaCardFooterItem</span><span class='op'>(</span>
              <span class='st'>"Item 2"</span>
-           )
-         )
-       )
-     )
-   )
-  ),
-  <span class='kw'>server</span> <span class='kw'>=</span> <span class='kw'>function</span>(<span class='no'>input</span>, <span class='no'>output</span>) {}
-)
-}</div></pre>
+           <span class='op'>)</span>
+         <span class='op'>)</span>
+       <span class='op'>)</span>
+     <span class='op'>)</span>
+   <span class='op'>)</span>
+  <span class='op'>)</span>,
+  server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span>
+<span class='op'>)</span>
+<span class='op'>}</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -193,7 +198,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
