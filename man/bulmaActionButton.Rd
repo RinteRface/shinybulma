@@ -4,7 +4,7 @@
 \alias{bulmaActionButton}
 \title{Add action button}
 \usage{
-bulmaActionButton(inputId, label, color = NULL)
+bulmaActionButton(inputId, label, color = NULL, wrap = TRUE)
 }
 \arguments{
 \item{inputId}{the input slot that will be used to access the value.}
@@ -12,6 +12,8 @@ bulmaActionButton(inputId, label, color = NULL)
 \item{label}{button label.}
 
 \item{color}{button color.}
+
+\item{wrap}{if `TRUE` the button is wrapped in a `div(..., class = "control")` element.}
 }
 \description{
 Add an action button.
