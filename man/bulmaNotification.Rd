@@ -5,16 +5,16 @@
 \title{bulma notification}
 \usage{
 bulmaNotification(
-  body,
-  color = NULL,
+  id = NULL,
+  options = NULL,
   session = shiny::getDefaultReactiveDomain()
 )
 }
 \arguments{
-\item{body}{Content of the alert.}
+\item{id}{Notification target. It will be attached on the provided DOM element. If id is NULL,
+the notification is attached to the body.}
 
-\item{color}{The background color : \code{link}, \code{info}, \code{primary}, \code{warning},
-\code{danger}, \code{success}, \code{black}, \code{dark} and \code{ligth}.}
+\item{options}{A list of notification options. See \url{https://github.com/VizuaaLOG/BulmaJS}.}
 
 \item{session}{A valid shiny session.}
 }
@@ -22,21 +22,29 @@ bulmaNotification(
 Create a notification box \url{https://bulma.io/documentation/elements/notification/}.
 }
 \examples{
-library(shiny)
+if (interactive()) {
+ library(shiny)
 
-ui <- bulmaPage(
- bulmaActionButton("alert", "Send alert")
-)
-
-server <- function(input, output){
- observeEvent(input$alert, {
-   bulmaNotification(color = "red")
- })
-}
-
-if(interactive())
+ ui <- bulmaPage(
+  bulmaActionButton("show_notif", "Show notification"),
+  div(id = "target", style = "top: 0px; right: 0px; position: absolute;")
+ )
+ 
+ server <- function(input, output, session) {
+  observeEvent(input$show_notif, {
+    bulmaNotification(
+      id = "target", 
+      options = list(
+        body = "This is the message",
+        color = "info",
+        dismissInterval = 200000,
+        isDismissable = TRUE
+      )
+    )
+  })
+ }
  shinyApp(ui, server)
-
+}
 }
 \author{
 David Granjon, \email{dgranjon@ymail.com}
