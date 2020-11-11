@@ -13,5 +13,5 @@ Depends: R (>= 3.2.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: shiny, htmltools, jsonlite
+Imports: shiny, htmltools
 RoxygenNote: 7.1.1.9000

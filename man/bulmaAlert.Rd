@@ -4,30 +4,10 @@
 \alias{bulmaAlert}
 \title{Create a bulma JS alert}
 \usage{
-bulmaAlert(
-  type = c("danger", "warning", "success", "info"),
-  title = NULL,
-  body,
-  confirm = "Ok",
-  cancel = "cancel",
-  showHeader = TRUE,
-  session = shiny::getDefaultReactiveDomain()
-)
+bulmaAlert(options, session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
-\item{type}{Alert type. Either danger, warning, success or info.}
-
-\item{title}{Alert title.}
-
-\item{body}{Alert content.}
-
-\item{confirm}{Confirm button text. May also be a JSON containing more options. See 
-\url{https://bulmajs.tomerbe.co.uk/docs/master/2-core-components/alert/#confirm-cancel-events}}
-
-\item{cancel}{Cancel button text. May also be a JSON containing more options. See 
-\url{https://bulmajs.tomerbe.co.uk/docs/master/2-core-components/alert/#confirm-cancel-events}}
-
-\item{showHeader}{Show the modal header. Default to TRUE.}
+\item{options}{List containing alert configuration. See \url{https://bulmajs.tomerbe.co.uk/}.}
 
 \item{session}{Shiny session object. Internal use.}
 }
@@ -49,9 +29,14 @@ if (interactive()) {
  server <- function(input, output, session) {
    observeEvent(input$alert, {
      bulmaAlert(
-       type = "danger",
-       title = "An alert",
-       body = "Ooohh what button you gonna click?"
+       list(
+        type = "warning",
+        title = "Warning!!!", 
+        body = "Notification content", 
+        confirm = "Ok", 
+        cancel = "cancel",
+        showHeader = TRUE
+       )
      )
    })
  }

@@ -2,14 +2,7 @@
 #' 
 #' Alert extension for bulma
 #'
-#' @param type Alert type. Either danger, warning, success or info.
-#' @param title Alert title.
-#' @param body Alert content.
-#' @param confirm Confirm button text. May also be a JSON containing more options. See 
-#' \url{https://bulmajs.tomerbe.co.uk/docs/master/2-core-components/alert/#confirm-cancel-events}
-#' @param cancel Cancel button text. May also be a JSON containing more options. See 
-#' \url{https://bulmajs.tomerbe.co.uk/docs/master/2-core-components/alert/#confirm-cancel-events}
-#' @param showHeader Show the modal header. Default to TRUE.
+#' @param options List containing alert configuration. See \url{https://bulmajs.tomerbe.co.uk/}.
 #' @param session Shiny session object. Internal use.
 #'
 #' @return An alert message
@@ -27,33 +20,21 @@
 #'  server <- function(input, output, session) {
 #'    observeEvent(input$alert, {
 #'      bulmaAlert(
-#'        type = "danger",
-#'        title = "An alert",
-#'        body = "Ooohh what button you gonna click?"
+#'        list(
+#'         type = "warning",
+#'         title = "Warning!!!", 
+#'         body = "Notification content", 
+#'         confirm = "Ok", 
+#'         cancel = "cancel",
+#'         showHeader = TRUE
+#'        )
 #'      )
 #'    })
 #'  }
 #'  
 #'  shinyApp(ui, server)
 #' }
-bulmaAlert <- function(type = c("danger", "warning", "success", "info"),
-                       title = NULL, body, confirm = "Ok", cancel = "cancel",
-                       showHeader = TRUE, session = shiny::getDefaultReactiveDomain()) {
-  type <- match.arg(type)
-  
-  message <- jsonlite::toJSON(
-    dropNulls(
-      list(
-        type = type,
-        title = title,
-        body = body,
-        confirm = confirm,
-        cancel = cancel,
-        showHeader = showHeader
-      )
-    ),
-    pretty = TRUE,
-    auto_unbox = TRUE
-  )
+bulmaAlert <- function(options, session = shiny::getDefaultReactiveDomain()) {
+  message <- list(options)
   session$sendCustomMessage(type = "bulma-alert", message)
 }
