@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>bulma notification — bulmaNotification • shinybulma</title>
+<title>Modal — bulmaModal • shinybulma</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="bulma notification — bulmaNotification" />
-<meta property="og:description" content="Create a notification box https://bulma.io/documentation/elements/notification/." />
+<meta property="og:title" content="Modal — bulmaModal" />
+<meta property="og:description" content="Display a modal" />
 
 
 
@@ -111,32 +111,27 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>bulma notification</h1>
-    <small class="dont-index">Source: <a href='https://github.com/JohnCoene/shinybulma/blob/master/R/bulma-notification.R'><code>R/bulma-notification.R</code></a></small>
-    <div class="hidden name"><code>bulmaNotification.Rd</code></div>
+    <h1>Modal</h1>
+    <small class="dont-index">Source: <a href='https://github.com/JohnCoene/shinybulma/blob/master/R/bulma-modal.R'><code>R/bulma-modal.R</code></a></small>
+    <div class="hidden name"><code>bulmaModal.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Create a notification box <a href='https://bulma.io/documentation/elements/notification/'>https://bulma.io/documentation/elements/notification/</a>.</p>
+    <p>Display a modal</p>
     </div>
 
-    <pre class="usage"><span class='fu'>bulmaNotification</span><span class='op'>(</span>
-  id <span class='op'>=</span> <span class='cn'>NULL</span>,
-  options <span class='op'>=</span> <span class='cn'>NULL</span>,
-  session <span class='op'>=</span> <span class='fu'>shiny</span><span class='fu'>::</span><span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/domains.html'>getDefaultReactiveDomain</a></span><span class='op'>(</span><span class='op'>)</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>bulmaModal</span><span class='op'>(</span><span class='va'>id</span>, <span class='va'>options</span>, session <span class='op'>=</span> <span class='fu'>shiny</span><span class='fu'>::</span><span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/domains.html'>getDefaultReactiveDomain</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>id</th>
-      <td><p>Notification target. It will be attached on the provided DOM element. If id is NULL,
-the notification is attached to the body.</p></td>
+      <td><p>Unique modal id.</p></td>
     </tr>
     <tr>
       <th>options</th>
-      <td><p>A list of notification options. See <a href='https://github.com/VizuaaLOG/BulmaJS'>https://github.com/VizuaaLOG/BulmaJS</a>.</p></td>
+      <td><p>Modal configuration. See <a href='https://github.com/VizuaaLOG/BulmaJS'>https://github.com/VizuaaLOG/BulmaJS</a>.</p></td>
     </tr>
     <tr>
       <th>session</th>
@@ -144,34 +139,38 @@ the notification is attached to the body.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p>David Granjon, <a href='mailto:dgranjon@ymail.com'>dgranjon@ymail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
- <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://shiny.rstudio.com'>shiny</a></span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://shiny.rstudio.com'>shiny</a></span><span class='op'>)</span>
+<span class='va'>ui</span> <span class='op'>&lt;-</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span>
+ <span class='fu'><a href='bulmaActionButton.html'>bulmaActionButton</a></span><span class='op'>(</span><span class='st'>"show_modal"</span>, <span class='st'>"Show modal"</span><span class='op'>)</span>,
+ <span class='fu'><a href='bulmaActionButton.html'>bulmaActionButton</a></span><span class='op'>(</span><span class='st'>"show_modal2"</span>, <span class='st'>"Show modal 2"</span><span class='op'>)</span>
+<span class='op'>)</span>
 
- <span class='va'>ui</span> <span class='op'>&lt;-</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span>
-  <span class='fu'><a href='bulmaActionButton.html'>bulmaActionButton</a></span><span class='op'>(</span><span class='st'>"show_notif"</span>, <span class='st'>"Show notification"</span><span class='op'>)</span>,
-  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>id <span class='op'>=</span> <span class='st'>"target"</span>, style <span class='op'>=</span> <span class='st'>"top: 0px; right: 0px; position: absolute;"</span><span class='op'>)</span>
- <span class='op'>)</span>
- 
- <span class='va'>server</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span>, <span class='va'>session</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/observeEvent.html'>observeEvent</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>show_notif</span>, <span class='op'>{</span>
-    <span class='fu'>bulmaNotification</span><span class='op'>(</span>
-      id <span class='op'>=</span> <span class='st'>"target"</span>, 
-      options <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-        body <span class='op'>=</span> <span class='st'>"This is the message"</span>,
-        color <span class='op'>=</span> <span class='st'>"info"</span>,
-        dismissInterval <span class='op'>=</span> <span class='fl'>200000</span>,
-        isDismissable <span class='op'>=</span> <span class='cn'>TRUE</span>
-      <span class='op'>)</span>
+<span class='va'>server</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span><span class='op'>{</span>
+ <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/observeEvent.html'>observeEvent</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>show_modal</span>, <span class='op'>{</span>
+   <span class='fu'>bulmaModal</span><span class='op'>(</span>
+    id <span class='op'>=</span> <span class='st'>"mymodal"</span>, 
+    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+     title <span class='op'>=</span> <span class='st'>"Modal title"</span>,
+     body <span class='op'>=</span> <span class='st'>"Modal content"</span>
     <span class='op'>)</span>
-  <span class='op'>}</span><span class='op'>)</span>
- <span class='op'>}</span>
- <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span><span class='op'>(</span><span class='va'>ui</span>, <span class='va'>server</span><span class='op'>)</span>
+   <span class='op'>)</span>
+ <span class='op'>}</span><span class='op'>)</span>
+ <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/observeEvent.html'>observeEvent</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>show_modal2</span>, <span class='op'>{</span>
+   <span class='fu'>bulmaModal</span><span class='op'>(</span>
+    id <span class='op'>=</span> <span class='st'>"mymodal2"</span>, 
+    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
+     title <span class='op'>=</span> <span class='st'>"Modal title 2"</span>,
+     body <span class='op'>=</span> <span class='st'>"Modal content 2"</span>
+    <span class='op'>)</span>
+   <span class='op'>)</span>
+ <span class='op'>}</span><span class='op'>)</span>
 <span class='op'>}</span>
+
+<span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+ <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span><span class='op'>(</span><span class='va'>ui</span>, <span class='va'>server</span><span class='op'>)</span>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
