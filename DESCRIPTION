@@ -3,7 +3,7 @@ Title: Bulma for Shiny
 Version: 0.0.2.9000
 Authors@R: c(person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre")),
   person("David", "Granjon", email = "david.granjon@uzh.ch", role = "aut", comment = "bulma-extensions"),
-  person("Thorn", "Thaler", email = "thorn.thaler@thothal.at", rolw = "aut"),
+  person("Thorn", "Thaler", email = "thorn.thaler@thothal.at", role = "aut"),
   person(family = "RinteRface", role = "cph")
   )
 Description: Bulma for Shiny. Contains also an implementation of some of the major components
