@@ -4,87 +4,43 @@
 #'
 #' @description Create a notification box \url{https://bulma.io/documentation/elements/notification/}.
 #'
-#' @param ... Any element.
-#' @param color The background color : \code{link}, \code{info}, \code{primary}, \code{warning},
-#'  \code{danger}, \code{success}, \code{black}, \code{dark} and \code{ligth}.
-#'
-#' @export
+#' @param id Notification target. It will be attached on the provided DOM element. If id is NULL,
+#' the notification is attached to the body.
+#' @param options A list of notification options. See \url{https://github.com/VizuaaLOG/BulmaJS}.
+#' @param session A valid shiny session.
 #'
 #' @examples
 #' if (interactive()) {
 #'  library(shiny)
-#'
+#' 
 #'  ui <- bulmaPage(
-#'   bulmaContainer(
-#'    bulmaColumns(
-#'     bulmaColumn(
-#'       width = 3,
-#'       bulmaNotification(
+#'   bulmaActionButton("show_notif", "Show notification"),
+#'   div(id = "target", style = "top: 0px; right: 0px; position: absolute;")
+#'  )
+#'  
+#'  server <- function(input, output, session) {
+#'   observeEvent(input$show_notif, {
+#'     bulmaNotification(
+#'       id = "target", 
+#'       options = list(
+#'         body = "This is the message",
 #'         color = "info",
-#'         "Lorem ipsum dolor sit amet, consectetur adipiscing
-#'         elit lorem ipsum dolor. Pellentesque risus mi, tempus
-#'         quis placerat ut, porta nec nulla. Vestibulum rhoncus
-#'         ac ex sit amet fringilla. Nullam gravida purus diam,
-#'         et dictum felis venenatis efficitur. Sit amet,
-#'         consectetur adipiscing elit"
-#'       )
-#'     ),
-#'     bulmaColumn(
-#'       width = 3,
-#'       bulmaNotification(
-#'         color = "warning",
-#'         "Lorem ipsum dolor sit amet, consectetur adipiscing
-#'         elit lorem ipsum dolor. Pellentesque risus mi, tempus
-#'         quis placerat ut, porta nec nulla. Vestibulum rhoncus
-#'         ac ex sit amet fringilla. Nullam gravida purus diam,
-#'         et dictum felis venenatis efficitur. Sit amet,
-#'         consectetur adipiscing elit"
-#'       )
-#'     ),
-#'     bulmaColumn(
-#'       width = 3,
-#'       bulmaNotification(
-#'         color = "danger",
-#'         "Lorem ipsum dolor sit amet, consectetur adipiscing
-#'         elit lorem ipsum dolor. Pellentesque risus mi, tempus
-#'         quis placerat ut, porta nec nulla. Vestibulum rhoncus
-#'         ac ex sit amet fringilla. Nullam gravida purus diam,
-#'         et dictum felis venenatis efficitur. Sit amet,
-#'         consectetur adipiscing elit"
-#'       )
-#'     ),
-#'     bulmaColumn(
-#'       width = 3,
-#'       bulmaNotification(
-#'         color = "primary",
-#'         "Lorem ipsum dolor sit amet, consectetur adipiscing
-#'         elit lorem ipsum dolor. Pellentesque risus mi, tempus
-#'         quis placerat ut, porta nec nulla. Vestibulum rhoncus
-#'         ac ex sit amet fringilla. Nullam gravida purus diam,
-#'         et dictum felis venenatis efficitur. Sit amet,
-#'         consectetur adipiscing elit"
+#'         dismissInterval = 200000,
+#'         isDismissable = TRUE
 #'       )
 #'     )
-#'    )
-#'   )
-#'  )
-#'
-#'  server <- function(input, output, session) {
-#'
+#'   })
 #'  }
-#'
-#'  shinyApp(ui = ui, server = server)
-#'
+#'  shinyApp(ui, server)
 #' }
-#'
-
-bulmaNotification <- function(..., color = NULL) {
-
-  cl <- "notification"
-  if (!is.null(color)) cl <- paste0(cl, " is-", color)
-
-  shiny::tags$div(
-    class = cl,
-    ...
+#' @export
+bulmaNotification <- function(id = NULL, options = NULL, session = shiny::getDefaultReactiveDomain()) {
+  message <- dropNulls(
+    list(
+      id = id,
+      options = options
+    )
   )
+  
+  session$sendCustomMessage(type = "bulma-notification", message)
 }
