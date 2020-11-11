@@ -2,9 +2,9 @@
 add_bulma_deps <- function(tag, theme) {
   
   # bulma
-  bulma_css <- "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/"
+  bulma_css <- "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/"
   # fontawesome
-  fontawesome_css <- "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/"
+  fontawesome_css <- "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/"
   # bulma extensions
   bulma_extensions_css <- "bulma-extensions.min.css"
   bulma_extensions_js <- "bulma-extensions.min.js"
@@ -60,7 +60,7 @@ add_bulma_deps <- function(tag, theme) {
       name = "fontawesome",
       version = as.character(utils::packageVersion("shinybulma")),
       src = c(href = fontawesome_css),
-      stylesheet = "font-awesome.min.css"
+      stylesheet = "all.min.css"
     ),
     # Custom js (inputs, ...)
     htmltools::htmlDependency(
