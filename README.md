@@ -1,6 +1,8 @@
-# shinybulma <img src="http://rinterface.com/inst/images/shinybulma.svg" width="200px" align="right"/>
+# shinybulma <img src="http://rinterface.com/inst/images/shinybulma.svg" width="150px" align="right"/>
 
-[![Travis build status](https://travis-ci.org/RinteRface/shinybulma.svg?branch=master)](https://travis-ci.org/RinteRface/shinybulma) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/RinteRface/shinybulma?branch=master&svg=true)](https://ci.appveyor.com/project/RinteRface/shinybulma)
+[![R build status](https://github.com/RinteRface/shinybulma/workflows/R-CMD-check/badge.svg)](https://github.com/RinteRface/shinybulma/actions)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![CRAN status](https://www.r-pkg.org/badges/version/shinybulma)](https://cran.r-project.org/package=shinybulma)
 
 ![](https://bulma.io/images/made-with-bulma.png)
 
@@ -74,3 +76,7 @@ shinyApp(
 
 https://dgranjon.shinyapps.io/bulmaExtension/
 
+
+## Code of Conduct
+  
+  Please note that the shinybulma project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

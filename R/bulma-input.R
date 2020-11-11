@@ -271,6 +271,7 @@ bulmaSelectInput <- function(inputId, label, choices, rounded = FALSE){
 #' @param inputId the input slot that will be used to access the value.
 #' @param color button color.
 #' @param label button label.
+#' @param wrap  if `TRUE` the button is wrapped in a `div(..., class = "control")` element.
 #'
 #' @examples
 #' if(interactive()){
@@ -287,22 +288,26 @@ bulmaSelectInput <- function(inputId, label, choices, rounded = FALSE){
 #' }
 #' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export
-bulmaActionButton <- function(inputId, label, color = NULL){
-
-  cl <- "button action-button"
-
+bulmaActionButton <- function(inputId, label, color = NULL, wrap = TRUE){
+  
+  cl <- "button shinyBulmaActionButton"
+  
   if(!is.null(color)) cl <- paste0(cl, " is-", color)
-
-  button <- shiny::tags$div(
-    class = "control",
-    shiny::tags$button(
-      id = inputId,
-      class = cl,
-      value = 0,
-      label
-    )
+  
+  button <-  shiny::tags$button(
+    id = inputId,
+    class = cl,
+    value = 0,
+    label
   )
-
+  
+  if (wrap) {
+    button <- shiny::tags$div(
+      class = "control",
+      button
+    )
+  }
+  
   return(button)
 }
 
@@ -538,6 +543,7 @@ bulmaSliderInput <- function(inputId, value, min, max, color = NULL, step = 1, c
     step = step,
     min = min,
     max = max,
+    value = value,
     style = "width: 100%;",
     orient = orient,
     ...
