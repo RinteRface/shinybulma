@@ -4,10 +4,12 @@
 \alias{bulmaModal}
 \title{Modal}
 \usage{
-bulmaModal(title, body, session = shiny::getDefaultReactiveDomain())
+bulmaModal(id, options, session = shiny::getDefaultReactiveDomain())
 }
 \arguments{
-\item{title, body}{Content of the modal.}
+\item{id}{Unique modal id.}
+
+\item{options}{Modal configuration. See \url{https://github.com/VizuaaLOG/BulmaJS}.}
 
 \item{session}{A valid shiny session.}
 }
@@ -15,13 +17,30 @@ bulmaModal(title, body, session = shiny::getDefaultReactiveDomain())
 Display a modal
 }
 \examples{
+library(shiny)
 ui <- bulmaPage(
- bulmaActionButton("alert", "Send alert")
+ bulmaActionButton("show_modal", "Show modal"),
+ bulmaActionButton("show_modal2", "Show modal 2")
 )
 
 server <- function(input, output){
- observeEvent(input$alert, {
-   bulmaModal("Hello", "World")
+ observeEvent(input$show_modal, {
+   bulmaModal(
+    id = "mymodal", 
+    list(
+     title = "Modal title",
+     body = "Modal content"
+    )
+   )
+ })
+ observeEvent(input$show_modal2, {
+   bulmaModal(
+    id = "mymodal2", 
+    list(
+     title = "Modal title 2",
+     body = "Modal content 2"
+    )
+   )
  })
 }
 

@@ -35,6 +35,5 @@
 #'  shinyApp(ui, server)
 #' }
 bulmaAlert <- function(options, session = shiny::getDefaultReactiveDomain()) {
-  message <- list(options)
-  session$sendCustomMessage(type = "bulma-alert", message)
+  session$sendCustomMessage(type = "bulma-alert", options)
 }

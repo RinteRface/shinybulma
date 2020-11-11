@@ -1,8 +1,8 @@
 $(function() {
   Shiny.addCustomMessageHandler("bulma-alert", function(message) {
-    Bulma().alert(message[0]);
+    Bulma().alert(message);
     // rounded corners to the top of modal card if no header
-    if (!message[0].showHeader) {
+    if (!message.showHeader) {
       $(".modal-card").css({"border-radius": "6px 6px 6px 6px"});
     }
   });
