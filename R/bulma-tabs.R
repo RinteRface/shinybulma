@@ -55,7 +55,7 @@ bulmaTabs <- function(..., center = FALSE) {
   
   tabs <- lapply(seq_along(tabs), function(idx) {
     tab <- tabs[[idx]]
-    if (tagHasAttribute(tab, "id")) {
+    if (shiny::tagHasAttribute(tab, "id")) {
       warning("existing `id` attribute will be overwritten")
     }
     tab_id <- paste(tabset_id, idx, sep = "-")
@@ -65,12 +65,12 @@ bulmaTabs <- function(..., center = FALSE) {
   })
   
   links <- lapply(tabs, function(tab) {
-    if (!tagHasAttribute(tab, "data-label")) {
+    if (!shiny::tagHasAttribute(tab, "data-label")) {
       stop("tabs must contain an `data-label` attribute - ",
            "create tabs with `bulmaTab`")
     }
-    label <- tagGetAttribute(tab, "data-label")
-    tab_id <- tagGetAttribute(tab, "id")
+    label <- shiny::tagGetAttribute(tab, "data-label")
+    tab_id <- shiny::tagGetAttribute(tab, "id")
     shiny::tags$li(
       shiny::tags$a(
         href = paste0("#", tab_id),
@@ -79,12 +79,12 @@ bulmaTabs <- function(..., center = FALSE) {
     )
   })
   
-  tabs_header <- div(
+  tabs_header <- shiny::tags$div(
     shiny::tags$ul(links),
     class = "tabs")
   
   if (center) {
-    tabs_header <- tagAppendAttributes(
+    tabs_header <- shiny::tagAppendAttributes(
       tabs_header,
       class = "is-centered"
     )

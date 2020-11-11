@@ -5,16 +5,14 @@
 \alias{bulmaTab}
 \title{Add tabs}
 \usage{
-bulmaTabs(tabs, center = FALSE, ...)
+bulmaTabs(..., center = FALSE)
 
 bulmaTab(label, ...)
 }
 \arguments{
-\item{tabs}{\code{bulmaTab} elements.}
+\item{...}{any element.}
 
 \item{center}{set to center.}
-
-\item{...}{any element.}
 
 \item{label}{label of tab.}
 }
@@ -29,7 +27,6 @@ shinyApp(
   ui = bulmaPage(
    bulmaTitle("Hello Bulma"),
    bulmaTabs(
-     tabs = c("Tab 1", "Tab 2", "Tab 3"),
      center = TRUE,
      bulmaTab(
        "Tab 1",
