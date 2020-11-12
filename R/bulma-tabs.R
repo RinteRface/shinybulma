@@ -3,7 +3,6 @@
 #' Add tabs
 #'
 #' @inheritParams bulmaPage
-#' @param tabs \code{bulmaTab} elements.
 #' @param center set to center.
 #' @param label label of tab.
 #'
@@ -15,7 +14,6 @@
 #'   ui = bulmaPage(
 #'    bulmaTitle("Hello Bulma"),
 #'    bulmaTabs(
-#'      tabs = c("Tab 1", "Tab 2", "Tab 3"),
 #'      center = TRUE,
 #'      bulmaTab(
 #'        "Tab 1",
@@ -48,42 +46,65 @@
 #' @author John Coene, \email{jcoenep@@gmail.com}
 #' @rdname tabs
 #' @export
-bulmaTabs <- function(tabs, center = FALSE, ...){
-
-  list <- shiny::tags$ul()
-
-  for(tab in tabs){
-    list <- shiny::tagAppendChild(list, shiny::tags$li(
+bulmaTabs <- function(..., center = FALSE) {
+  ## add a random tabset id to generate "unique" tab ids
+  ## idea taken from tabsetPanel
+  tabset_id <- sprintf("tab_%05d", sample(10000, 1))
+  
+  tabs <- list(...)
+  
+  tabs <- lapply(seq_along(tabs), function(idx) {
+    tab <- tabs[[idx]]
+    if (shiny::tagHasAttribute(tab, "id")) {
+      warning("existing `id` attribute will be overwritten")
+    }
+    tab_id <- paste(tabset_id, idx, sep = "-")
+    ## do not use tagAppendAttribute b/c we want to overwrite
+    tab$attribs$id <- tab_id
+    tab
+  })
+  
+  links <- lapply(tabs, function(tab) {
+    if (!shiny::tagHasAttribute(tab, "data-label")) {
+      stop("tabs must contain an `data-label` attribute - ",
+           "create tabs with `bulmaTab`")
+    }
+    label <- shiny::tagGetAttribute(tab, "data-label")
+    tab_id <- shiny::tagGetAttribute(tab, "id")
+    shiny::tags$li(
       shiny::tags$a(
-        href = paste0("#", gsub("[[:cntrl:]]|[[:punct:]]|[[:space:]]", "-", tab)),
-        tab
+        href = paste0("#", tab_id),
+        label
       )
-    ))
+    )
+  })
+  
+  tabs_header <- shiny::tags$div(
+    shiny::tags$ul(links),
+    class = "tabs")
+  
+  if (center) {
+    tabs_header <- shiny::tagAppendAttributes(
+      tabs_header,
+      class = "is-centered"
+    )
   }
-
-  cl <- "tabs"
-  if(isTRUE(center)) cl <- paste(cl, "is-centered")
-
-  cmb <- shiny::tags$div(
+  
+  shiny::tags$div(
     class = "bulmaTabs",
-    shiny::tags$div(
-      list,
-      class = cl
-    ),
-    ...
+    tabs_header,
+    tabs
   )
-
-  return(cmb)
 }
 
 #' @rdname tabs
 #' @export
 bulmaTab <- function(label, ...){
-
-  id <- gsub("[[:cntrl:]]|[[:punct:]]|[[:space:]]", "-", label)
-
+  ## add label as custom `data-label` field to the div
+  ## this label can then be reused in bulmaTabs
   shiny::tags$div(
-    id = id,
+    class = "bulmaTab",
+    `data-label` = label,
     ...
   )
 }
