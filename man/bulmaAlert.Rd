@@ -32,7 +32,7 @@ if (interactive()) {
        list(
         type = "warning",
         title = "Warning!!!", 
-        body = "Notification content", 
+        body = "Alert content", 
         confirm = "Ok", 
         cancel = "cancel",
         showHeader = TRUE
