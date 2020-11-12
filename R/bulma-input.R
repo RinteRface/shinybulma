@@ -271,20 +271,21 @@ bulmaSelectInput <- function(inputId, label, choices, rounded = FALSE){
 #' @param inputId the input slot that will be used to access the value.
 #' @param color button color.
 #' @param label button label.
-#' @param wrap  if `TRUE` the button is wrapped in a `div(..., class = "control")` element.
+#' @param wrap  if \code{TRUE} the button is wrapped in a \code{div(..., class = "control")} element.
 #'
 #' @examples
 #' if(interactive()){
-#' shiny::shinyApp(
-#'   ui = bulmaPage(
-#'     bulmaActionButton("goButton", "Render in console")
-#'   ),
-#'   server = function(input, output) {
-#'     observeEvent(input$goButton, {
-#'       print("button clicked")
-#'     })
-#'  }
-#' )
+#'  library(shiny)
+#'  shinyApp(
+#'    ui = bulmaPage(
+#'      bulmaActionButton("goButton", "Render in console")
+#'    ),
+#'    server = function(input, output) {
+#'      observeEvent(input$goButton, {
+#'        print("button clicked")
+#'      })
+#'   }
+#'  )
 #' }
 #' @author John Coene, \email{jcoenep@@gmail.com}
 #' @export

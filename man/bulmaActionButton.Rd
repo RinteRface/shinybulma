@@ -13,23 +13,24 @@ bulmaActionButton(inputId, label, color = NULL, wrap = TRUE)
 
 \item{color}{button color.}
 
-\item{wrap}{if `TRUE` the button is wrapped in a `div(..., class = "control")` element.}
+\item{wrap}{if \code{TRUE} the button is wrapped in a \code{div(..., class = "control")} element.}
 }
 \description{
 Add an action button.
 }
 \examples{
 if(interactive()){
-shiny::shinyApp(
-  ui = bulmaPage(
-    bulmaActionButton("goButton", "Render in console")
-  ),
-  server = function(input, output) {
-    observeEvent(input$goButton, {
-      print("button clicked")
-    })
- }
-)
+ library(shiny)
+ shinyApp(
+   ui = bulmaPage(
+     bulmaActionButton("goButton", "Render in console")
+   ),
+   server = function(input, output) {
+     observeEvent(input$goButton, {
+       print("button clicked")
+     })
+  }
+ )
 }
 }
 \author{
