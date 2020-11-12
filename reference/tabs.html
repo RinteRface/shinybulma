@@ -120,7 +120,7 @@
     <p>Add tabs</p>
     </div>
 
-    <pre class="usage"><span class='fu'>bulmaTabs</span><span class='op'>(</span><span class='va'>tabs</span>, center <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>bulmaTabs</span><span class='op'>(</span><span class='va'>...</span>, center <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
 <span class='fu'>bulmaTab</span><span class='op'>(</span><span class='va'>label</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
@@ -128,16 +128,12 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>tabs</th>
-      <td><p><code>bulmaTab</code> elements.</p></td>
+      <th>...</th>
+      <td><p>any element.</p></td>
     </tr>
     <tr>
       <th>center</th>
       <td><p>set to center.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>any element.</p></td>
     </tr>
     <tr>
       <th>label</th>
@@ -157,7 +153,6 @@
   ui <span class='op'>=</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span>
    <span class='fu'><a href='bulmaTitle.html'>bulmaTitle</a></span><span class='op'>(</span><span class='st'>"Hello Bulma"</span><span class='op'>)</span>,
    <span class='fu'>bulmaTabs</span><span class='op'>(</span>
-     tabs <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Tab 1"</span>, <span class='st'>"Tab 2"</span>, <span class='st'>"Tab 3"</span><span class='op'>)</span>,
      center <span class='op'>=</span> <span class='cn'>TRUE</span>,
      <span class='fu'>bulmaTab</span><span class='op'>(</span>
        <span class='st'>"Tab 1"</span>,
