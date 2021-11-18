@@ -80,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -94,7 +94,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/JohnCoene/shinybulma/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -140,54 +140,54 @@
     <p>David Granjon, <a href='mailto:dgranjon@ymail.com'>dgranjon@ymail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
- <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://shiny.rstudio.com'>shiny</a></span><span class='op'>)</span>
-
- <span class='va'>ui</span> <span class='op'>&lt;-</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span>
-  <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span>
-   <span class='fu'>bulmaSteps</span><span class='op'>(</span>
-    size <span class='op'>=</span> <span class='cn'>NULL</span>,
-    <span class='fu'><a href='bulmaStepItem.html'>bulmaStepItem</a></span><span class='op'>(</span>
-      color <span class='op'>=</span> <span class='st'>"success"</span>, completed <span class='op'>=</span> <span class='cn'>TRUE</span>, active <span class='op'>=</span> <span class='cn'>FALSE</span>,
-      <span class='fu'><a href='bulmaStepDetail.html'>bulmaStepDetail</a></span><span class='op'>(</span>
-        color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, title <span class='op'>=</span> <span class='st'>"Step 1"</span>, marker <span class='op'>=</span> <span class='fl'>1</span>,
-        <span class='st'>"This is the first step of the process."</span>
-      <span class='op'>)</span>
-    <span class='op'>)</span>,
-    <span class='fu'><a href='bulmaStepItem.html'>bulmaStepItem</a></span><span class='op'>(</span>
-      color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, active <span class='op'>=</span> <span class='cn'>FALSE</span>,
-      <span class='fu'><a href='bulmaStepDetail.html'>bulmaStepDetail</a></span><span class='op'>(</span>
-        color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, title <span class='op'>=</span> <span class='st'>"Step 2"</span>, marker <span class='op'>=</span> <span class='cn'>NULL</span>,
-        <span class='st'>"This is the second step. You get here once you have completed the first step."</span>
-      <span class='op'>)</span>
-    <span class='op'>)</span>,
-    <span class='fu'><a href='bulmaStepItem.html'>bulmaStepItem</a></span><span class='op'>(</span>
-      color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, active <span class='op'>=</span> <span class='cn'>FALSE</span>,
-      <span class='fu'><a href='bulmaStepDetail.html'>bulmaStepDetail</a></span><span class='op'>(</span>
-        color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, title <span class='op'>=</span> <span class='st'>"Step 3"</span>, marker <span class='op'>=</span> <span class='fl'>3</span>,
-        <span class='st'>"This is the third step. One more step before the end."</span>
-      <span class='op'>)</span>
-    <span class='op'>)</span>,
-    <span class='fu'><a href='bulmaStepItem.html'>bulmaStepItem</a></span><span class='op'>(</span>
-      color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, active <span class='op'>=</span> <span class='cn'>TRUE</span>,
-      <span class='fu'><a href='bulmaStepDetail.html'>bulmaStepDetail</a></span><span class='op'>(</span>
-        color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, title <span class='op'>=</span> <span class='st'>"Step 4"</span>, marker <span class='op'>=</span> <span class='cn'>NULL</span>,
-        <span class='st'>"Final step. You have completed all the previous steps and end the process."</span>
-      <span class='op'>)</span>
-    <span class='op'>)</span>
-    <span class='op'>)</span>
-  <span class='op'>)</span>
- <span class='op'>)</span>
-
- <span class='va'>server</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span>, <span class='va'>session</span><span class='op'>)</span> <span class='op'>{</span>
-
- <span class='op'>}</span>
-
- <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>ui <span class='op'>=</span> <span class='va'>ui</span>, server <span class='op'>=</span> <span class='va'>server</span><span class='op'>)</span>
-
-<span class='op'>}</span>
-
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'> <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://shiny.rstudio.com/'>shiny</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'> <span class='va'>ui</span> <span class='op'>&lt;-</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span></span>
+<span class='r-in'>  <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span></span>
+<span class='r-in'>   <span class='fu'>bulmaSteps</span><span class='op'>(</span></span>
+<span class='r-in'>    size <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='bulmaStepItem.html'>bulmaStepItem</a></span><span class='op'>(</span></span>
+<span class='r-in'>      color <span class='op'>=</span> <span class='st'>"success"</span>, completed <span class='op'>=</span> <span class='cn'>TRUE</span>, active <span class='op'>=</span> <span class='cn'>FALSE</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='bulmaStepDetail.html'>bulmaStepDetail</a></span><span class='op'>(</span></span>
+<span class='r-in'>        color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, title <span class='op'>=</span> <span class='st'>"Step 1"</span>, marker <span class='op'>=</span> <span class='fl'>1</span>,</span>
+<span class='r-in'>        <span class='st'>"This is the first step of the process."</span></span>
+<span class='r-in'>      <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='bulmaStepItem.html'>bulmaStepItem</a></span><span class='op'>(</span></span>
+<span class='r-in'>      color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, active <span class='op'>=</span> <span class='cn'>FALSE</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='bulmaStepDetail.html'>bulmaStepDetail</a></span><span class='op'>(</span></span>
+<span class='r-in'>        color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, title <span class='op'>=</span> <span class='st'>"Step 2"</span>, marker <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>        <span class='st'>"This is the second step. You get here once you have completed the first step."</span></span>
+<span class='r-in'>      <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='bulmaStepItem.html'>bulmaStepItem</a></span><span class='op'>(</span></span>
+<span class='r-in'>      color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, active <span class='op'>=</span> <span class='cn'>FALSE</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='bulmaStepDetail.html'>bulmaStepDetail</a></span><span class='op'>(</span></span>
+<span class='r-in'>        color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, title <span class='op'>=</span> <span class='st'>"Step 3"</span>, marker <span class='op'>=</span> <span class='fl'>3</span>,</span>
+<span class='r-in'>        <span class='st'>"This is the third step. One more step before the end."</span></span>
+<span class='r-in'>      <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span>,</span>
+<span class='r-in'>    <span class='fu'><a href='bulmaStepItem.html'>bulmaStepItem</a></span><span class='op'>(</span></span>
+<span class='r-in'>      color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, active <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='bulmaStepDetail.html'>bulmaStepDetail</a></span><span class='op'>(</span></span>
+<span class='r-in'>        color <span class='op'>=</span> <span class='cn'>NULL</span>, completed <span class='op'>=</span> <span class='cn'>FALSE</span>, title <span class='op'>=</span> <span class='st'>"Step 4"</span>, marker <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>        <span class='st'>"Final step. You have completed all the previous steps and end the process."</span></span>
+<span class='r-in'>      <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'> <span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'> <span class='va'>server</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span>, <span class='va'>session</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'></span>
+<span class='r-in'> <span class='op'>}</span></span>
+<span class='r-in'></span>
+<span class='r-in'> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>ui <span class='op'>=</span> <span class='va'>ui</span>, server <span class='op'>=</span> <span class='va'>server</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='op'>}</span></span>
+<span class='r-in'></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

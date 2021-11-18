@@ -80,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -94,7 +94,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/JohnCoene/shinybulma/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -177,105 +177,105 @@ NULL by default, which corresponds to squared style.</p></td>
     <p>David Granjon, <a href='mailto:dgranjon@ymail.com'>dgranjon@ymail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://shiny.rstudio.com'>shiny</a></span><span class='op'>)</span>
-
-<span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
- ui <span class='op'>=</span> <span class='fu'><a href='bulmaPage.html'>bulmaNavbarPage</a></span><span class='op'>(</span>
-   <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbar</a></span><span class='op'>(</span>
-     <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarBrand</a></span><span class='op'>(</span>
-       <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarItem</a></span><span class='op'>(</span>
-         <span class='st'>"shinybulma"</span>
-       <span class='op'>)</span>,
-       <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarBurger</a></span><span class='op'>(</span><span class='op'>)</span>
-     <span class='op'>)</span>,
-     <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarMenu</a></span><span class='op'>(</span> <span class='co'># not visible on smaller devices</span>
-       <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarItem</a></span><span class='op'>(</span>
-         <span class='st'>"Switch Inputs"</span>
-       <span class='op'>)</span>
-     <span class='op'>)</span>
-   <span class='op'>)</span>,
-   <span class='fu'><a href='bulmaNavbar.html'>bulmaNav</a></span><span class='op'>(</span>
-     <span class='st'>"Switch Inputs"</span>,
-     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>style <span class='op'>=</span> <span class='st'>"text-align: center;"</span>,
-         <span class='fu'><a href='bulmaTitle.html'>bulmaTitle</a></span><span class='op'>(</span><span class='st'>"The plot only displays if switch 1 is TRUE."</span><span class='op'>)</span><span class='op'>)</span>,
-     
-     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>hr</a></span><span class='op'>(</span><span class='op'>)</span>,
-     
-     <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span>
-       <span class='fu'><a href='bulmaColumns.html'>bulmaColumns</a></span><span class='op'>(</span>
-         <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span><span class='op'>(</span>
-           width <span class='op'>=</span> <span class='fl'>6</span>,
-           <span class='fu'><a href='bulmaTitle.html'>bulmaSubtitle</a></span><span class='op'>(</span><span class='st'>"Inputs"</span><span class='op'>)</span>,
-           <span class='fu'>bulmaSwitchInput</span><span class='op'>(</span>
-             inputId <span class='op'>=</span> <span class='st'>"switch1"</span>, 
-             label <span class='op'>=</span> <span class='st'>"switch 1"</span>, 
-             value <span class='op'>=</span> <span class='cn'>FALSE</span>,
-             color <span class='op'>=</span> <span class='cn'>NULL</span>, 
-             size <span class='op'>=</span> <span class='cn'>NULL</span>, 
-             style <span class='op'>=</span> <span class='cn'>NULL</span>,
-             rtl <span class='op'>=</span> <span class='cn'>FALSE</span>, 
-             disabled <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>,
-           
-           <span class='fu'>bulmaSwitchInput</span><span class='op'>(</span>
-             inputId <span class='op'>=</span> <span class='st'>"switch2"</span>, 
-             label <span class='op'>=</span> <span class='st'>"switch 2"</span>, 
-             value <span class='op'>=</span> <span class='cn'>TRUE</span>,
-             color <span class='op'>=</span> <span class='st'>"warning"</span>, 
-             size <span class='op'>=</span> <span class='st'>"large"</span>, 
-             style <span class='op'>=</span> <span class='st'>"rounded"</span>,
-             
-             rtl <span class='op'>=</span> <span class='cn'>FALSE</span>, 
-             disabled <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
-           
-           <span class='fu'>bulmaSwitchInput</span><span class='op'>(</span>
-             inputId <span class='op'>=</span> <span class='st'>"switch3"</span>, 
-             label <span class='op'>=</span> <span class='st'>"switch 3"</span>, 
-             value <span class='op'>=</span> <span class='cn'>TRUE</span>,
-             
-             color <span class='op'>=</span> <span class='st'>"danger"</span>, 
-             size <span class='op'>=</span> <span class='st'>"small"</span>, 
-             style <span class='op'>=</span> <span class='st'>"thin"</span>,
-             
-             rtl <span class='op'>=</span> <span class='cn'>FALSE</span>, 
-             disabled <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>,
-           
-           <span class='fu'>bulmaSwitchInput</span><span class='op'>(</span>
-             inputId <span class='op'>=</span> <span class='st'>"switch4"</span>, 
-             label <span class='op'>=</span> <span class='st'>"switch 4"</span>, 
-             value <span class='op'>=</span> <span class='cn'>FALSE</span>,
-             
-             color <span class='op'>=</span> <span class='cn'>NULL</span>, 
-             size <span class='op'>=</span> <span class='cn'>NULL</span>, 
-             style <span class='op'>=</span> <span class='st'>"mixed3"</span>,
-             rtl <span class='op'>=</span> <span class='cn'>FALSE</span>, 
-             disabled <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-         <span class='op'>)</span>,
-         <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span><span class='op'>(</span>
-           width <span class='op'>=</span> <span class='fl'>6</span>,
-           <span class='fu'><a href='bulmaTitle.html'>bulmaSubtitle</a></span><span class='op'>(</span><span class='st'>"Outputs"</span><span class='op'>)</span>,
-           <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/plotOutput.html'>plotOutput</a></span><span class='op'>(</span><span class='st'>"plot1"</span><span class='op'>)</span>,
-           <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/htmlOutput.html'>uiOutput</a></span><span class='op'>(</span><span class='st'>"switches"</span><span class='op'>)</span>
-         <span class='op'>)</span>
-       <span class='op'>)</span>
-     <span class='op'>)</span>
-   <span class='op'>)</span>
- <span class='op'>)</span>,
- server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span>
-   
-   <span class='va'>output</span><span class='op'>$</span><span class='va'>plot1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/renderPlot.html'>renderPlot</a></span><span class='op'>(</span><span class='op'>{</span>
-     <span class='kw'>if</span> <span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>switch1</span> <span class='op'>==</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'>{</span>
-       <span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>$</span><span class='va'>wt</span>, <span class='va'>mtcars</span><span class='op'>$</span><span class='va'>mpg</span><span class='op'>)</span>
-     <span class='op'>}</span>
-   <span class='op'>}</span><span class='op'>)</span>
-   
-   <span class='va'>output</span><span class='op'>$</span><span class='va'>switches</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/renderPrint.html'>renderPrint</a></span><span class='op'>(</span><span class='op'>{</span>
-     <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>switch1</span>, <span class='va'>input</span><span class='op'>$</span><span class='va'>switch2</span>, <span class='va'>input</span><span class='op'>$</span><span class='va'>switch3</span>, <span class='va'>input</span><span class='op'>$</span><span class='va'>switch4</span><span class='op'>)</span>
-   <span class='op'>}</span><span class='op'>)</span>
- <span class='op'>}</span>
- <span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://shiny.rstudio.com/'>shiny</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span></span>
+<span class='r-in'> ui <span class='op'>=</span> <span class='fu'><a href='bulmaPage.html'>bulmaNavbarPage</a></span><span class='op'>(</span></span>
+<span class='r-in'>   <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbar</a></span><span class='op'>(</span></span>
+<span class='r-in'>     <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarBrand</a></span><span class='op'>(</span></span>
+<span class='r-in'>       <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarItem</a></span><span class='op'>(</span></span>
+<span class='r-in'>         <span class='st'>"shinybulma"</span></span>
+<span class='r-in'>       <span class='op'>)</span>,</span>
+<span class='r-in'>       <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarBurger</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'>     <span class='op'>)</span>,</span>
+<span class='r-in'>     <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarMenu</a></span><span class='op'>(</span> <span class='co'># not visible on smaller devices</span></span>
+<span class='r-in'>       <span class='fu'><a href='bulmaNavbar.html'>bulmaNavbarItem</a></span><span class='op'>(</span></span>
+<span class='r-in'>         <span class='st'>"Switch Inputs"</span></span>
+<span class='r-in'>       <span class='op'>)</span></span>
+<span class='r-in'>     <span class='op'>)</span></span>
+<span class='r-in'>   <span class='op'>)</span>,</span>
+<span class='r-in'>   <span class='fu'><a href='bulmaNavbar.html'>bulmaNav</a></span><span class='op'>(</span></span>
+<span class='r-in'>     <span class='st'>"Switch Inputs"</span>,</span>
+<span class='r-in'>     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>style <span class='op'>=</span> <span class='st'>"text-align: center;"</span>,</span>
+<span class='r-in'>         <span class='fu'><a href='bulmaTitle.html'>bulmaTitle</a></span><span class='op'>(</span><span class='st'>"The plot only displays if switch 1 is TRUE."</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span class='r-in'>     </span>
+<span class='r-in'>     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>hr</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span class='r-in'>     </span>
+<span class='r-in'>     <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span></span>
+<span class='r-in'>       <span class='fu'><a href='bulmaColumns.html'>bulmaColumns</a></span><span class='op'>(</span></span>
+<span class='r-in'>         <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span><span class='op'>(</span></span>
+<span class='r-in'>           width <span class='op'>=</span> <span class='fl'>6</span>,</span>
+<span class='r-in'>           <span class='fu'><a href='bulmaTitle.html'>bulmaSubtitle</a></span><span class='op'>(</span><span class='st'>"Inputs"</span><span class='op'>)</span>,</span>
+<span class='r-in'>           <span class='fu'>bulmaSwitchInput</span><span class='op'>(</span></span>
+<span class='r-in'>             inputId <span class='op'>=</span> <span class='st'>"switch1"</span>, </span>
+<span class='r-in'>             label <span class='op'>=</span> <span class='st'>"switch 1"</span>, </span>
+<span class='r-in'>             value <span class='op'>=</span> <span class='cn'>FALSE</span>,</span>
+<span class='r-in'>             color <span class='op'>=</span> <span class='cn'>NULL</span>, </span>
+<span class='r-in'>             size <span class='op'>=</span> <span class='cn'>NULL</span>, </span>
+<span class='r-in'>             style <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>             rtl <span class='op'>=</span> <span class='cn'>FALSE</span>, </span>
+<span class='r-in'>             disabled <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>,</span>
+<span class='r-in'>           </span>
+<span class='r-in'>           <span class='fu'>bulmaSwitchInput</span><span class='op'>(</span></span>
+<span class='r-in'>             inputId <span class='op'>=</span> <span class='st'>"switch2"</span>, </span>
+<span class='r-in'>             label <span class='op'>=</span> <span class='st'>"switch 2"</span>, </span>
+<span class='r-in'>             value <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
+<span class='r-in'>             color <span class='op'>=</span> <span class='st'>"warning"</span>, </span>
+<span class='r-in'>             size <span class='op'>=</span> <span class='st'>"large"</span>, </span>
+<span class='r-in'>             style <span class='op'>=</span> <span class='st'>"rounded"</span>,</span>
+<span class='r-in'>             </span>
+<span class='r-in'>             rtl <span class='op'>=</span> <span class='cn'>FALSE</span>, </span>
+<span class='r-in'>             disabled <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,</span>
+<span class='r-in'>           </span>
+<span class='r-in'>           <span class='fu'>bulmaSwitchInput</span><span class='op'>(</span></span>
+<span class='r-in'>             inputId <span class='op'>=</span> <span class='st'>"switch3"</span>, </span>
+<span class='r-in'>             label <span class='op'>=</span> <span class='st'>"switch 3"</span>, </span>
+<span class='r-in'>             value <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
+<span class='r-in'>             </span>
+<span class='r-in'>             color <span class='op'>=</span> <span class='st'>"danger"</span>, </span>
+<span class='r-in'>             size <span class='op'>=</span> <span class='st'>"small"</span>, </span>
+<span class='r-in'>             style <span class='op'>=</span> <span class='st'>"thin"</span>,</span>
+<span class='r-in'>             </span>
+<span class='r-in'>             rtl <span class='op'>=</span> <span class='cn'>FALSE</span>, </span>
+<span class='r-in'>             disabled <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>,</span>
+<span class='r-in'>           </span>
+<span class='r-in'>           <span class='fu'>bulmaSwitchInput</span><span class='op'>(</span></span>
+<span class='r-in'>             inputId <span class='op'>=</span> <span class='st'>"switch4"</span>, </span>
+<span class='r-in'>             label <span class='op'>=</span> <span class='st'>"switch 4"</span>, </span>
+<span class='r-in'>             value <span class='op'>=</span> <span class='cn'>FALSE</span>,</span>
+<span class='r-in'>             </span>
+<span class='r-in'>             color <span class='op'>=</span> <span class='cn'>NULL</span>, </span>
+<span class='r-in'>             size <span class='op'>=</span> <span class='cn'>NULL</span>, </span>
+<span class='r-in'>             style <span class='op'>=</span> <span class='st'>"mixed3"</span>,</span>
+<span class='r-in'>             rtl <span class='op'>=</span> <span class='cn'>FALSE</span>, </span>
+<span class='r-in'>             disabled <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></span>
+<span class='r-in'>         <span class='op'>)</span>,</span>
+<span class='r-in'>         <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span><span class='op'>(</span></span>
+<span class='r-in'>           width <span class='op'>=</span> <span class='fl'>6</span>,</span>
+<span class='r-in'>           <span class='fu'><a href='bulmaTitle.html'>bulmaSubtitle</a></span><span class='op'>(</span><span class='st'>"Outputs"</span><span class='op'>)</span>,</span>
+<span class='r-in'>           <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/plotOutput.html'>plotOutput</a></span><span class='op'>(</span><span class='st'>"plot1"</span><span class='op'>)</span>,</span>
+<span class='r-in'>           <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/htmlOutput.html'>uiOutput</a></span><span class='op'>(</span><span class='st'>"switches"</span><span class='op'>)</span></span>
+<span class='r-in'>         <span class='op'>)</span></span>
+<span class='r-in'>       <span class='op'>)</span></span>
+<span class='r-in'>     <span class='op'>)</span></span>
+<span class='r-in'>   <span class='op'>)</span></span>
+<span class='r-in'> <span class='op'>)</span>,</span>
+<span class='r-in'> server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>   </span>
+<span class='r-in'>   <span class='va'>output</span><span class='op'>$</span><span class='va'>plot1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/renderPlot.html'>renderPlot</a></span><span class='op'>(</span><span class='op'>{</span></span>
+<span class='r-in'>     <span class='kw'>if</span> <span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>switch1</span> <span class='op'>==</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>       <span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>$</span><span class='va'>wt</span>, <span class='va'>mtcars</span><span class='op'>$</span><span class='va'>mpg</span><span class='op'>)</span></span>
+<span class='r-in'>     <span class='op'>}</span></span>
+<span class='r-in'>   <span class='op'>}</span><span class='op'>)</span></span>
+<span class='r-in'>   </span>
+<span class='r-in'>   <span class='va'>output</span><span class='op'>$</span><span class='va'>switches</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/renderPrint.html'>renderPrint</a></span><span class='op'>(</span><span class='op'>{</span></span>
+<span class='r-in'>     <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>input</span><span class='op'>$</span><span class='va'>switch1</span>, <span class='va'>input</span><span class='op'>$</span><span class='va'>switch2</span>, <span class='va'>input</span><span class='op'>$</span><span class='va'>switch3</span>, <span class='va'>input</span><span class='op'>$</span><span class='va'>switch4</span><span class='op'>)</span></span>
+<span class='r-in'>   <span class='op'>}</span><span class='op'>)</span></span>
+<span class='r-in'> <span class='op'>}</span></span>
+<span class='r-in'> <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

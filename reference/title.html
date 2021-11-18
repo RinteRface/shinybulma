@@ -80,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -94,7 +94,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/JohnCoene/shinybulma/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -150,36 +150,36 @@
     <p>John Coene, <a href='mailto:jcoenep@gmail.com'>jcoenep@gmail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
-<span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
-  ui <span class='op'>=</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span>
-    <span class='fu'><a href='bulmaHero.html'>bulmaHero</a></span><span class='op'>(</span>
-      fullheight <span class='op'>=</span> <span class='cn'>TRUE</span>,
-      color <span class='op'>=</span> <span class='st'>"primary"</span>,
-      <span class='fu'><a href='bulmaHero.html'>bulmaHeroHead</a></span><span class='op'>(</span>
-        <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span>
-          <span class='fu'>bulmaTitle</span><span class='op'>(</span><span class='st'>"Hero Title"</span><span class='op'>)</span>
-        <span class='op'>)</span>
-      <span class='op'>)</span>,
-      <span class='fu'><a href='bulmaHero.html'>bulmaHeroHead</a></span><span class='op'>(</span>
-        <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span>
-          <span class='fu'>bulmaSubtitle</span><span class='op'>(</span>
-            <span class='st'>"Some content"</span>
-          <span class='op'>)</span>
-        <span class='op'>)</span>
-      <span class='op'>)</span>,
-      <span class='fu'><a href='bulmaHero.html'>bulmaHeroFoot</a></span><span class='op'>(</span>
-        <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span>
-          <span class='st'>"The footer"</span>
-        <span class='op'>)</span>
-      <span class='op'>)</span>
-    <span class='op'>)</span>
-  <span class='op'>)</span>,
-  server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span>
-<span class='op'>)</span>
-<span class='op'>}</span>
-
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span></span>
+<span class='r-in'>  ui <span class='op'>=</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='fu'><a href='bulmaHero.html'>bulmaHero</a></span><span class='op'>(</span></span>
+<span class='r-in'>      fullheight <span class='op'>=</span> <span class='cn'>TRUE</span>,</span>
+<span class='r-in'>      color <span class='op'>=</span> <span class='st'>"primary"</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='bulmaHero.html'>bulmaHeroHead</a></span><span class='op'>(</span></span>
+<span class='r-in'>        <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span></span>
+<span class='r-in'>          <span class='fu'>bulmaTitle</span><span class='op'>(</span><span class='st'>"Hero Title"</span><span class='op'>)</span></span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>)</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='bulmaHero.html'>bulmaHeroHead</a></span><span class='op'>(</span></span>
+<span class='r-in'>        <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span></span>
+<span class='r-in'>          <span class='fu'>bulmaSubtitle</span><span class='op'>(</span></span>
+<span class='r-in'>            <span class='st'>"Some content"</span></span>
+<span class='r-in'>          <span class='op'>)</span></span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>)</span>,</span>
+<span class='r-in'>      <span class='fu'><a href='bulmaHero.html'>bulmaHeroFoot</a></span><span class='op'>(</span></span>
+<span class='r-in'>        <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span></span>
+<span class='r-in'>          <span class='st'>"The footer"</span></span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>      <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span></span>
+<span class='r-in'>  <span class='op'>)</span>,</span>
+<span class='r-in'>  server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+<span class='r-in'></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

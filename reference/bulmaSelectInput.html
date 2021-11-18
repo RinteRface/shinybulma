@@ -80,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -94,7 +94,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/JohnCoene/shinybulma/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -148,24 +148,24 @@
     <p>John Coene, <a href='mailto:jcoenep@gmail.com'>jcoenep@gmail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://shiny.rstudio.com'>shiny</a></span><span class='op'>)</span>
-
-<span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>
-  ui <span class='op'>=</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span>
-   <span class='fu'><a href='bulmaTitle.html'>bulmaTitle</a></span><span class='op'>(</span><span class='st'>"Hello Bulma"</span><span class='op'>)</span>,
-   <span class='fu'>bulmaSelectInput</span><span class='op'>(</span><span class='st'>"var"</span>, <span class='st'>"Select"</span>,
-     choices <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Miles per galon"</span> <span class='op'>=</span> <span class='st'>"mpg"</span>, <span class='st'>"Displacement"</span> <span class='op'>=</span> <span class='st'>"disp"</span><span class='op'>)</span><span class='op'>)</span>,
-   <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/tableOutput.html'>tableOutput</a></span><span class='op'>(</span><span class='st'>"plot"</span><span class='op'>)</span>
-  <span class='op'>)</span>,
-  server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span>
-    <span class='va'>output</span><span class='op'>$</span><span class='va'>plot</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/renderTable.html'>renderTable</a></span><span class='op'>(</span><span class='op'>{</span>
-      <span class='va'>mtcars</span><span class='op'>[</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"wt"</span>, <span class='va'>input</span><span class='op'>$</span><span class='va'>var</span><span class='op'>)</span>, drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span>
-    <span class='op'>}</span>, rownames <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-  <span class='op'>}</span>
-<span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span></span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://shiny.rstudio.com/'>shiny</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span></span>
+<span class='r-in'>  ui <span class='op'>=</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span></span>
+<span class='r-in'>   <span class='fu'><a href='bulmaTitle.html'>bulmaTitle</a></span><span class='op'>(</span><span class='st'>"Hello Bulma"</span><span class='op'>)</span>,</span>
+<span class='r-in'>   <span class='fu'>bulmaSelectInput</span><span class='op'>(</span><span class='st'>"var"</span>, <span class='st'>"Select"</span>,</span>
+<span class='r-in'>     choices <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Miles per galon"</span> <span class='op'>=</span> <span class='st'>"mpg"</span>, <span class='st'>"Displacement"</span> <span class='op'>=</span> <span class='st'>"disp"</span><span class='op'>)</span><span class='op'>)</span>,</span>
+<span class='r-in'>   <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/renderTable.html'>tableOutput</a></span><span class='op'>(</span><span class='st'>"plot"</span><span class='op'>)</span></span>
+<span class='r-in'>  <span class='op'>)</span>,</span>
+<span class='r-in'>  server <span class='op'>=</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'>    <span class='va'>output</span><span class='op'>$</span><span class='va'>plot</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/renderTable.html'>renderTable</a></span><span class='op'>(</span><span class='op'>{</span></span>
+<span class='r-in'>      <span class='va'>mtcars</span><span class='op'>[</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"wt"</span>, <span class='va'>input</span><span class='op'>$</span><span class='va'>var</span><span class='op'>)</span>, drop <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>]</span></span>
+<span class='r-in'>    <span class='op'>}</span>, rownames <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span class='r-in'>  <span class='op'>}</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

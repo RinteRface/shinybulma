@@ -80,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -94,7 +94,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/JohnCoene/shinybulma/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -165,133 +165,133 @@ When <code>NULL</code>, it is displayed on the right side by default.</p></td>
     <p>David Granjon, <a href='mailto:dgranjon@ymail.com'>dgranjon@ymail.com</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
- <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://shiny.rstudio.com'>shiny</a></span><span class='op'>)</span>
-
- <span class='va'>ui</span> <span class='op'>&lt;-</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span>
- <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span>
- <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,
- <span class='fu'><a href='bulmaColumns.html'>bulmaColumns</a></span><span class='op'>(</span>
-  <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span><span class='op'>(</span>
-   width <span class='op'>=</span> <span class='fl'>2</span>,
-   <span class='fu'>bulmaBadge</span><span class='op'>(</span>
-    <span class='st'>"test"</span>,
-    position <span class='op'>=</span> <span class='st'>""</span>,
-    size <span class='op'>=</span> <span class='cn'>NULL</span>,
-    style <span class='op'>=</span> <span class='cn'>NULL</span>,
-    color <span class='op'>=</span> <span class='cn'>NULL</span>,
-    badge_text <span class='op'>=</span> <span class='fl'>3</span>
-   <span class='op'>)</span>,
-
-   <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,
-
-   <span class='fu'>bulmaBadge</span><span class='op'>(</span>
-     <span class='st'>"test"</span>,
-     position <span class='op'>=</span> <span class='st'>"bottom"</span>,
-     size <span class='op'>=</span> <span class='cn'>NULL</span>,
-     style <span class='op'>=</span> <span class='cn'>NULL</span>,
-     color <span class='op'>=</span> <span class='cn'>NULL</span>,
-     badge_text <span class='op'>=</span> <span class='fl'>3</span>
-   <span class='op'>)</span>,
-
-   <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,
-
-   <span class='fu'>bulmaBadge</span><span class='op'>(</span>
-     <span class='st'>"test"</span>,
-     position <span class='op'>=</span> <span class='st'>"bottom-left"</span>,
-     size <span class='op'>=</span> <span class='cn'>NULL</span>,
-     style <span class='op'>=</span> <span class='cn'>NULL</span>,
-     color <span class='op'>=</span> <span class='cn'>NULL</span>,
-     badge_text <span class='op'>=</span> <span class='fl'>3</span>
-   <span class='op'>)</span>
-   <span class='op'>)</span>,
-   <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span><span class='op'>(</span>
-     width <span class='op'>=</span> <span class='fl'>2</span>,
-     <span class='fu'>bulmaBadge</span><span class='op'>(</span>
-       <span class='st'>"test"</span>,
-       position <span class='op'>=</span> <span class='cn'>NULL</span>,
-       size <span class='op'>=</span> <span class='st'>"small"</span>,
-       style <span class='op'>=</span> <span class='cn'>NULL</span>,
-       color <span class='op'>=</span> <span class='cn'>NULL</span>,
-       badge_text <span class='op'>=</span> <span class='fl'>3</span>
-     <span class='op'>)</span>,
-
-     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,
-
-     <span class='fu'>bulmaBadge</span><span class='op'>(</span>
-       <span class='st'>"test"</span>,
-       position <span class='op'>=</span> <span class='cn'>NULL</span>,
-       size <span class='op'>=</span> <span class='st'>"medium"</span>,
-       style <span class='op'>=</span> <span class='cn'>NULL</span>,
-       color <span class='op'>=</span> <span class='cn'>NULL</span>,
-       badge_text <span class='op'>=</span> <span class='fl'>3</span>
-     <span class='op'>)</span>,
-
-     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,
-
-     <span class='fu'>bulmaBadge</span><span class='op'>(</span>
-       <span class='st'>"test"</span>,
-       position <span class='op'>=</span> <span class='cn'>NULL</span>,
-       size <span class='op'>=</span> <span class='st'>"large"</span>,
-       style <span class='op'>=</span> <span class='cn'>NULL</span>,
-       color <span class='op'>=</span> <span class='cn'>NULL</span>,
-       badge_text <span class='op'>=</span> <span class='fl'>3</span>
-     <span class='op'>)</span>
-   <span class='op'>)</span>,
-   <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span><span class='op'>(</span>
-     width <span class='op'>=</span> <span class='fl'>2</span>,
-     <span class='fu'>bulmaBadge</span><span class='op'>(</span>
-       <span class='st'>"test"</span>,
-       position <span class='op'>=</span> <span class='cn'>NULL</span>,
-       size <span class='op'>=</span> <span class='cn'>NULL</span>,
-       style <span class='op'>=</span> <span class='st'>"outlined"</span>,
-       color <span class='op'>=</span> <span class='st'>"info"</span>,
-       badge_text <span class='op'>=</span> <span class='fl'>3</span>
-     <span class='op'>)</span>,
-
-     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,
-
-     <span class='fu'>bulmaBadge</span><span class='op'>(</span>
-       <span class='st'>"test"</span>,
-       position <span class='op'>=</span> <span class='cn'>NULL</span>,
-       size <span class='op'>=</span> <span class='cn'>NULL</span>,
-       style <span class='op'>=</span> <span class='cn'>NULL</span>,
-       color <span class='op'>=</span> <span class='st'>"warning"</span>,
-       badge_text <span class='op'>=</span> <span class='fl'>3</span>
-     <span class='op'>)</span>,
-
-     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,
-
-     <span class='fu'>bulmaBadge</span><span class='op'>(</span>
-       <span class='st'>"test"</span>,
-       position <span class='op'>=</span> <span class='cn'>NULL</span>,
-       size <span class='op'>=</span> <span class='cn'>NULL</span>,
-       style <span class='op'>=</span> <span class='cn'>NULL</span>,
-       color <span class='op'>=</span> <span class='st'>"danger"</span>,
-       badge_text <span class='op'>=</span> <span class='fl'>3</span>
-     <span class='op'>)</span>,
-
-     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,
-
-     <span class='fu'>bulmaBadge</span><span class='op'>(</span>
-       <span class='st'>"test"</span>,
-       position <span class='op'>=</span> <span class='cn'>NULL</span>,
-       size <span class='op'>=</span> <span class='cn'>NULL</span>,
-       style <span class='op'>=</span> <span class='cn'>NULL</span>,
-       color <span class='op'>=</span> <span class='st'>"success"</span>,
-       badge_text <span class='op'>=</span> <span class='fl'>3</span>
-     <span class='op'>)</span>
-    <span class='op'>)</span>
-   <span class='op'>)</span>
-  <span class='op'>)</span>
- <span class='op'>)</span>
-
- <span class='va'>server</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span>, <span class='va'>session</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span>
-
- <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>ui <span class='op'>=</span> <span class='va'>ui</span>, server <span class='op'>=</span> <span class='va'>server</span><span class='op'>)</span>
-<span class='op'>}</span>
-
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'> <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://shiny.rstudio.com/'>shiny</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'> <span class='va'>ui</span> <span class='op'>&lt;-</span> <span class='fu'><a href='bulmaPage.html'>bulmaPage</a></span><span class='op'>(</span></span>
+<span class='r-in'> <span class='fu'><a href='bulmaContainer.html'>bulmaContainer</a></span><span class='op'>(</span></span>
+<span class='r-in'> <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span class='r-in'> <span class='fu'><a href='bulmaColumns.html'>bulmaColumns</a></span><span class='op'>(</span></span>
+<span class='r-in'>  <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span><span class='op'>(</span></span>
+<span class='r-in'>   width <span class='op'>=</span> <span class='fl'>2</span>,</span>
+<span class='r-in'>   <span class='fu'>bulmaBadge</span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='st'>"test"</span>,</span>
+<span class='r-in'>    position <span class='op'>=</span> <span class='st'>""</span>,</span>
+<span class='r-in'>    size <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>    style <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>    color <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>    badge_text <span class='op'>=</span> <span class='fl'>3</span></span>
+<span class='r-in'>   <span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>   <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>   <span class='fu'>bulmaBadge</span><span class='op'>(</span></span>
+<span class='r-in'>     <span class='st'>"test"</span>,</span>
+<span class='r-in'>     position <span class='op'>=</span> <span class='st'>"bottom"</span>,</span>
+<span class='r-in'>     size <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>     style <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>     color <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>     badge_text <span class='op'>=</span> <span class='fl'>3</span></span>
+<span class='r-in'>   <span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>   <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>   <span class='fu'>bulmaBadge</span><span class='op'>(</span></span>
+<span class='r-in'>     <span class='st'>"test"</span>,</span>
+<span class='r-in'>     position <span class='op'>=</span> <span class='st'>"bottom-left"</span>,</span>
+<span class='r-in'>     size <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>     style <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>     color <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>     badge_text <span class='op'>=</span> <span class='fl'>3</span></span>
+<span class='r-in'>   <span class='op'>)</span></span>
+<span class='r-in'>   <span class='op'>)</span>,</span>
+<span class='r-in'>   <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span><span class='op'>(</span></span>
+<span class='r-in'>     width <span class='op'>=</span> <span class='fl'>2</span>,</span>
+<span class='r-in'>     <span class='fu'>bulmaBadge</span><span class='op'>(</span></span>
+<span class='r-in'>       <span class='st'>"test"</span>,</span>
+<span class='r-in'>       position <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       size <span class='op'>=</span> <span class='st'>"small"</span>,</span>
+<span class='r-in'>       style <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       color <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       badge_text <span class='op'>=</span> <span class='fl'>3</span></span>
+<span class='r-in'>     <span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>     <span class='fu'>bulmaBadge</span><span class='op'>(</span></span>
+<span class='r-in'>       <span class='st'>"test"</span>,</span>
+<span class='r-in'>       position <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       size <span class='op'>=</span> <span class='st'>"medium"</span>,</span>
+<span class='r-in'>       style <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       color <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       badge_text <span class='op'>=</span> <span class='fl'>3</span></span>
+<span class='r-in'>     <span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>     <span class='fu'>bulmaBadge</span><span class='op'>(</span></span>
+<span class='r-in'>       <span class='st'>"test"</span>,</span>
+<span class='r-in'>       position <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       size <span class='op'>=</span> <span class='st'>"large"</span>,</span>
+<span class='r-in'>       style <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       color <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       badge_text <span class='op'>=</span> <span class='fl'>3</span></span>
+<span class='r-in'>     <span class='op'>)</span></span>
+<span class='r-in'>   <span class='op'>)</span>,</span>
+<span class='r-in'>   <span class='fu'><a href='bulmaColumn.html'>bulmaColumn</a></span><span class='op'>(</span></span>
+<span class='r-in'>     width <span class='op'>=</span> <span class='fl'>2</span>,</span>
+<span class='r-in'>     <span class='fu'>bulmaBadge</span><span class='op'>(</span></span>
+<span class='r-in'>       <span class='st'>"test"</span>,</span>
+<span class='r-in'>       position <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       size <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       style <span class='op'>=</span> <span class='st'>"outlined"</span>,</span>
+<span class='r-in'>       color <span class='op'>=</span> <span class='st'>"info"</span>,</span>
+<span class='r-in'>       badge_text <span class='op'>=</span> <span class='fl'>3</span></span>
+<span class='r-in'>     <span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>     <span class='fu'>bulmaBadge</span><span class='op'>(</span></span>
+<span class='r-in'>       <span class='st'>"test"</span>,</span>
+<span class='r-in'>       position <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       size <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       style <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       color <span class='op'>=</span> <span class='st'>"warning"</span>,</span>
+<span class='r-in'>       badge_text <span class='op'>=</span> <span class='fl'>3</span></span>
+<span class='r-in'>     <span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>     <span class='fu'>bulmaBadge</span><span class='op'>(</span></span>
+<span class='r-in'>       <span class='st'>"test"</span>,</span>
+<span class='r-in'>       position <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       size <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       style <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       color <span class='op'>=</span> <span class='st'>"danger"</span>,</span>
+<span class='r-in'>       badge_text <span class='op'>=</span> <span class='fl'>3</span></span>
+<span class='r-in'>     <span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>     <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>br</a></span><span class='op'>(</span><span class='op'>)</span>,</span>
+<span class='r-in'></span>
+<span class='r-in'>     <span class='fu'>bulmaBadge</span><span class='op'>(</span></span>
+<span class='r-in'>       <span class='st'>"test"</span>,</span>
+<span class='r-in'>       position <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       size <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       style <span class='op'>=</span> <span class='cn'>NULL</span>,</span>
+<span class='r-in'>       color <span class='op'>=</span> <span class='st'>"success"</span>,</span>
+<span class='r-in'>       badge_text <span class='op'>=</span> <span class='fl'>3</span></span>
+<span class='r-in'>     <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span></span>
+<span class='r-in'>   <span class='op'>)</span></span>
+<span class='r-in'>  <span class='op'>)</span></span>
+<span class='r-in'> <span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'> <span class='va'>server</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>input</span>, <span class='va'>output</span>, <span class='va'>session</span><span class='op'>)</span> <span class='op'>{</span><span class='op'>}</span></span>
+<span class='r-in'></span>
+<span class='r-in'> <span class='fu'><a href='https://rdrr.io/pkg/shiny/man/shinyApp.html'>shinyApp</a></span><span class='op'>(</span>ui <span class='op'>=</span> <span class='va'>ui</span>, server <span class='op'>=</span> <span class='va'>server</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+<span class='r-in'></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
