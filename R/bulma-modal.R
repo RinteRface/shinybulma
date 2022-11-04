@@ -39,6 +39,8 @@
 #' 
 #' @export 
 bulmaModal <- function(id, options, session = shiny::getDefaultReactiveDomain()){
+  if(length(options$body) > 0)
+    options$body <- as.character(options$body)
   message <- list(id = id, options = options)
   session$sendCustomMessage(type = "bulma-modal", message)
 }
