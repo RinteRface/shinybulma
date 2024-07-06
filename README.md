@@ -1,10 +1,8 @@
 # shinybulma <img src="http://rinterface.com/inst/images/shinybulma.svg" width="150px" align="right"/>
 
-[![R build status](https://github.com/RinteRface/shinybulma/workflows/R-CMD-check/badge.svg)](https://github.com/RinteRface/shinybulma/actions)
+[![R-CMD-check](https://github.com/RinteRface/shinybulma/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/RinteRface/shinybulma/actions/workflows/R-CMD-check.yaml)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-ff69b4.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![CRAN status](https://www.r-pkg.org/badges/version/shinybulma)](https://cran.r-project.org/package=shinybulma)
-
-![](https://bulma.io/images/made-with-bulma.png)
 
 > [bulma.io](https://bulma.io) for [Shiny](https://shiny.rstudio.com/). Contains extensions: [bulma-extensions](https://wikiki.github.io) as well as [themes](https://jenil.github.io/bulmaswatch/).
 
@@ -71,11 +69,6 @@ shinyApp(
   }
 )
 ```
-
-## Extensions demo
-
-https://dgranjon.shinyapps.io/bulmaExtension/
-
 
 ## Code of Conduct
   
